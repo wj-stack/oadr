@@ -197,7 +197,7 @@ namespace oadr2b
     ReportSpecifierType (const reportSpecifierID_type& reportSpecifierID,
                          const granularity_type& granularity,
                          const reportBackDuration_type& reportBackDuration)
-    : ::xml_schema::type (),
+    : ::xml_schema_test::type (),
       reportSpecifierID_ (reportSpecifierID, this),
       granularity_ (granularity, this),
       reportBackDuration_ (reportBackDuration, this),
@@ -210,7 +210,7 @@ namespace oadr2b
     ReportSpecifierType (const reportSpecifierID_type& reportSpecifierID,
                          ::std::unique_ptr< granularity_type > granularity,
                          ::std::unique_ptr< reportBackDuration_type > reportBackDuration)
-    : ::xml_schema::type (),
+    : ::xml_schema_test::type (),
       reportSpecifierID_ (reportSpecifierID, this),
       granularity_ (std::move (granularity), this),
       reportBackDuration_ (std::move (reportBackDuration), this),
@@ -221,9 +221,9 @@ namespace oadr2b
 
     ReportSpecifierType::
     ReportSpecifierType (const ReportSpecifierType& x,
-                         ::xml_schema::flags f,
-                         ::xml_schema::container* c)
-    : ::xml_schema::type (x, f, c),
+                    ::xml_schema_test::flags f,
+                    ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (x, f, c),
       reportSpecifierID_ (x.reportSpecifierID_, f, this),
       granularity_ (x.granularity_, f, this),
       reportBackDuration_ (x.reportBackDuration_, f, this),
@@ -234,16 +234,16 @@ namespace oadr2b
 
     ReportSpecifierType::
     ReportSpecifierType (const ::xercesc::DOMElement& e,
-                         ::xml_schema::flags f,
-                         ::xml_schema::container* c)
-    : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
+                    ::xml_schema_test::flags f,
+                    ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (e, f | ::xml_schema_test::flags::base, c),
       reportSpecifierID_ (this),
       granularity_ (this),
       reportBackDuration_ (this),
       reportInterval_ (this),
       specifierPayload_ (this)
     {
-      if ((f & ::xml_schema::flags::base) == 0)
+      if ((f & ::xml_schema_test::flags::base) == 0)
       {
         ::xsd::cxx::xml::dom::parser< char > p (e, true, false, false);
         this->parse (p, f);
@@ -252,7 +252,7 @@ namespace oadr2b
 
     void ReportSpecifierType::
     parse (::xsd::cxx::xml::dom::parser< char >& p,
-           ::xml_schema::flags f)
+      ::xml_schema_test::flags f)
     {
       for (; p.more_content (); p.next_content (false))
       {
@@ -353,8 +353,8 @@ namespace oadr2b
     }
 
     ReportSpecifierType* ReportSpecifierType::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class ReportSpecifierType (*this, f, c);
     }
@@ -364,7 +364,7 @@ namespace oadr2b
     {
       if (this != &x)
       {
-        static_cast< ::xml_schema::type& > (*this) = x;
+        static_cast< ::xml_schema_test::type& > (*this) = x;
         this->reportSpecifierID_ = x.reportSpecifierID_;
         this->granularity_ = x.granularity_;
         this->reportBackDuration_ = x.reportBackDuration_;
@@ -413,7 +413,7 @@ namespace oadr2b
     void
     operator<< (::xercesc::DOMElement& e, const ReportSpecifierType& i)
     {
-      e << static_cast< const ::xml_schema::type& > (i);
+      e << static_cast< const  ::xml_schema_test::type& > (i);
 
       // reportSpecifierID
       //

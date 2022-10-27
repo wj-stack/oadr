@@ -123,8 +123,8 @@ namespace Atom
   //
 
   idType::
-  idType (const ::xml_schema::uri& _xsd_uri_base)
-  : ::xml_schema::uri (_xsd_uri_base),
+  idType (const  ::xml_schema_test::uri& _xsd_uri_base)
+  : ::xml_schema_test::uri (_xsd_uri_base),
     base_ (this),
     lang_ (this)
   {
@@ -132,9 +132,9 @@ namespace Atom
 
   idType::
   idType (const idType& x,
-          ::xml_schema::flags f,
-          ::xml_schema::container* c)
-  : ::xml_schema::uri (x, f, c),
+     ::xml_schema_test::flags f,
+     ::xml_schema_test::container* c)
+  : ::xml_schema_test::uri (x, f, c),
     base_ (x.base_, f, this),
     lang_ (x.lang_, f, this)
   {
@@ -142,13 +142,13 @@ namespace Atom
 
   idType::
   idType (const ::xercesc::DOMElement& e,
-          ::xml_schema::flags f,
-          ::xml_schema::container* c)
-  : ::xml_schema::uri (e, f | ::xml_schema::flags::base, c),
+     ::xml_schema_test::flags f,
+     ::xml_schema_test::container* c)
+  : ::xml_schema_test::uri (e, f | ::xml_schema_test::flags::base, c),
     base_ (this),
     lang_ (this)
   {
-    if ((f & ::xml_schema::flags::base) == 0)
+    if ((f & ::xml_schema_test::flags::base) == 0)
     {
       ::xsd::cxx::xml::dom::parser< char > p (e, false, false, true);
       this->parse (p, f);
@@ -157,7 +157,7 @@ namespace Atom
 
   void idType::
   parse (::xsd::cxx::xml::dom::parser< char >& p,
-         ::xml_schema::flags f)
+    ::xml_schema_test::flags f)
   {
     while (p.more_attributes ())
     {
@@ -180,8 +180,8 @@ namespace Atom
   }
 
   idType* idType::
-  _clone (::xml_schema::flags f,
-          ::xml_schema::container* c) const
+  _clone (::xml_schema_test::flags f,
+     ::xml_schema_test::container* c) const
   {
     return new class idType (*this, f, c);
   }
@@ -191,7 +191,7 @@ namespace Atom
   {
     if (this != &x)
     {
-      static_cast< ::xml_schema::uri& > (*this) = x;
+      static_cast< ::xml_schema_test::uri& > (*this) = x;
       this->base_ = x.base_;
       this->lang_ = x.lang_;
     }
@@ -231,7 +231,7 @@ namespace Atom
   void
   operator<< (::xercesc::DOMElement& e, const idType& i)
   {
-    e << static_cast< const ::xml_schema::uri& > (i);
+    e << static_cast< const  ::xml_schema_test::uri& > (i);
 
     // base
     //

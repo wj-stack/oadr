@@ -40,299 +40,179 @@
 
 #include "categoryType.hxx"
 
-namespace Atom
-{
-  // categoryType
-  // 
+namespace Atom {
+// categoryType
+//
 
-  const categoryType::term_type& categoryType::
-  term () const
-  {
-    return this->term_.get ();
-  }
-
-  categoryType::term_type& categoryType::
-  term ()
-  {
-    return this->term_.get ();
-  }
-
-  void categoryType::
-  term (const term_type& x)
-  {
-    this->term_.set (x);
-  }
-
-  void categoryType::
-  term (::std::unique_ptr< term_type > x)
-  {
-    this->term_.set (std::move (x));
-  }
-
-  const categoryType::scheme_optional& categoryType::
-  scheme () const
-  {
-    return this->scheme_;
-  }
-
-  categoryType::scheme_optional& categoryType::
-  scheme ()
-  {
-    return this->scheme_;
-  }
-
-  void categoryType::
-  scheme (const scheme_type& x)
-  {
-    this->scheme_.set (x);
-  }
-
-  void categoryType::
-  scheme (const scheme_optional& x)
-  {
-    this->scheme_ = x;
-  }
-
-  void categoryType::
-  scheme (::std::unique_ptr< scheme_type > x)
-  {
-    this->scheme_.set (std::move (x));
-  }
-
-  const categoryType::label_optional& categoryType::
-  label () const
-  {
-    return this->label_;
-  }
-
-  categoryType::label_optional& categoryType::
-  label ()
-  {
-    return this->label_;
-  }
-
-  void categoryType::
-  label (const label_type& x)
-  {
-    this->label_.set (x);
-  }
-
-  void categoryType::
-  label (const label_optional& x)
-  {
-    this->label_ = x;
-  }
-
-  void categoryType::
-  label (::std::unique_ptr< label_type > x)
-  {
-    this->label_.set (std::move (x));
-  }
-
-  const categoryType::base_optional& categoryType::
-  base () const
-  {
-    return this->base_;
-  }
-
-  categoryType::base_optional& categoryType::
-  base ()
-  {
-    return this->base_;
-  }
-
-  void categoryType::
-  base (const base_type& x)
-  {
-    this->base_.set (x);
-  }
-
-  void categoryType::
-  base (const base_optional& x)
-  {
-    this->base_ = x;
-  }
-
-  void categoryType::
-  base (::std::unique_ptr< base_type > x)
-  {
-    this->base_.set (std::move (x));
-  }
-
-  const categoryType::lang_optional& categoryType::
-  lang () const
-  {
-    return this->lang_;
-  }
-
-  categoryType::lang_optional& categoryType::
-  lang ()
-  {
-    return this->lang_;
-  }
-
-  void categoryType::
-  lang (const lang_type& x)
-  {
-    this->lang_.set (x);
-  }
-
-  void categoryType::
-  lang (const lang_optional& x)
-  {
-    this->lang_ = x;
-  }
-
-  void categoryType::
-  lang (::std::unique_ptr< lang_type > x)
-  {
-    this->lang_.set (std::move (x));
-  }
+const categoryType::term_type &categoryType::term() const {
+  return this->term_.get();
 }
+
+categoryType::term_type &categoryType::term() { return this->term_.get(); }
+
+void categoryType::term(const term_type &x) { this->term_.set(x); }
+
+void categoryType::term(::std::unique_ptr<term_type> x) {
+  this->term_.set(std::move(x));
+}
+
+const categoryType::scheme_optional &categoryType::scheme() const {
+  return this->scheme_;
+}
+
+categoryType::scheme_optional &categoryType::scheme() { return this->scheme_; }
+
+void categoryType::scheme(const scheme_type &x) { this->scheme_.set(x); }
+
+void categoryType::scheme(const scheme_optional &x) { this->scheme_ = x; }
+
+void categoryType::scheme(::std::unique_ptr<scheme_type> x) {
+  this->scheme_.set(std::move(x));
+}
+
+const categoryType::label_optional &categoryType::label() const {
+  return this->label_;
+}
+
+categoryType::label_optional &categoryType::label() { return this->label_; }
+
+void categoryType::label(const label_type &x) { this->label_.set(x); }
+
+void categoryType::label(const label_optional &x) { this->label_ = x; }
+
+void categoryType::label(::std::unique_ptr<label_type> x) {
+  this->label_.set(std::move(x));
+}
+
+const categoryType::base_optional &categoryType::base() const {
+  return this->base_;
+}
+
+categoryType::base_optional &categoryType::base() { return this->base_; }
+
+void categoryType::base(const base_type &x) { this->base_.set(x); }
+
+void categoryType::base(const base_optional &x) { this->base_ = x; }
+
+void categoryType::base(::std::unique_ptr<base_type> x) {
+  this->base_.set(std::move(x));
+}
+
+const categoryType::lang_optional &categoryType::lang() const {
+  return this->lang_;
+}
+
+categoryType::lang_optional &categoryType::lang() { return this->lang_; }
+
+void categoryType::lang(const lang_type &x) { this->lang_.set(x); }
+
+void categoryType::lang(const lang_optional &x) { this->lang_ = x; }
+
+void categoryType::lang(::std::unique_ptr<lang_type> x) {
+  this->lang_.set(std::move(x));
+}
+} // namespace Atom
 
 #include <xsd/cxx/xml/dom/parsing-source.hxx>
 
 #include <xsd/cxx/tree/type-factory-map.hxx>
 
-namespace _xsd
-{
-  static
-  const ::xsd::cxx::tree::type_factory_plate< 0, char >
-  type_factory_plate_init;
+namespace _xsd {
+static const ::xsd::cxx::tree::type_factory_plate<0, char>
+    type_factory_plate_init;
 }
 
-namespace Atom
-{
-  // categoryType
-  //
+namespace Atom {
+// categoryType
+//
 
-  categoryType::
-  categoryType (const term_type& term)
-  : ::xml_schema::type (),
-    term_ (term, this),
-    scheme_ (this),
-    label_ (this),
-    base_ (this),
-    lang_ (this)
-  {
-  }
+categoryType::categoryType(const term_type &term)
+    : ::xml_schema_test::type(), term_(term, this), scheme_(this), label_(this),
+      base_(this), lang_(this) {}
 
-  categoryType::
-  categoryType (const categoryType& x,
-                ::xml_schema::flags f,
-                ::xml_schema::container* c)
-  : ::xml_schema::type (x, f, c),
-    term_ (x.term_, f, this),
-    scheme_ (x.scheme_, f, this),
-    label_ (x.label_, f, this),
-    base_ (x.base_, f, this),
-    lang_ (x.lang_, f, this)
-  {
-  }
+categoryType::categoryType(const categoryType &x, ::xml_schema_test::flags f,
+                           ::xml_schema_test::container *c)
+    : ::xml_schema_test::type(x, f, c), term_(x.term_, f, this),
+      scheme_(x.scheme_, f, this), label_(x.label_, f, this),
+      base_(x.base_, f, this), lang_(x.lang_, f, this) {}
 
-  categoryType::
-  categoryType (const ::xercesc::DOMElement& e,
-                ::xml_schema::flags f,
-                ::xml_schema::container* c)
-  : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
-    term_ (this),
-    scheme_ (this),
-    label_ (this),
-    base_ (this),
-    lang_ (this)
-  {
-    if ((f & ::xml_schema::flags::base) == 0)
-    {
-      ::xsd::cxx::xml::dom::parser< char > p (e, false, false, true);
-      this->parse (p, f);
-    }
-  }
-
-  void categoryType::
-  parse (::xsd::cxx::xml::dom::parser< char >& p,
-         ::xml_schema::flags f)
-  {
-    while (p.more_attributes ())
-    {
-      const ::xercesc::DOMAttr& i (p.next_attribute ());
-      const ::xsd::cxx::xml::qualified_name< char > n (
-        ::xsd::cxx::xml::dom::name< char > (i));
-
-      if (n.name () == "term" && n.namespace_ ().empty ())
-      {
-        this->term_.set (term_traits::create (i, f, this));
-        continue;
-      }
-
-      if (n.name () == "scheme" && n.namespace_ ().empty ())
-      {
-        this->scheme_.set (scheme_traits::create (i, f, this));
-        continue;
-      }
-
-      if (n.name () == "label" && n.namespace_ ().empty ())
-      {
-        this->label_.set (label_traits::create (i, f, this));
-        continue;
-      }
-
-      if (n.name () == "base" && n.namespace_ () == "http://www.w3.org/XML/1998/namespace")
-      {
-        this->base_.set (base_traits::create (i, f, this));
-        continue;
-      }
-
-      if (n.name () == "lang" && n.namespace_ () == "http://www.w3.org/XML/1998/namespace")
-      {
-        this->lang_.set (lang_traits::create (i, f, this));
-        continue;
-      }
-    }
-
-    if (!term_.present ())
-    {
-      throw ::xsd::cxx::tree::expected_attribute< char > (
-        "term",
-        "");
-    }
-  }
-
-  categoryType* categoryType::
-  _clone (::xml_schema::flags f,
-          ::xml_schema::container* c) const
-  {
-    return new class categoryType (*this, f, c);
-  }
-
-  categoryType& categoryType::
-  operator= (const categoryType& x)
-  {
-    if (this != &x)
-    {
-      static_cast< ::xml_schema::type& > (*this) = x;
-      this->term_ = x.term_;
-      this->scheme_ = x.scheme_;
-      this->label_ = x.label_;
-      this->base_ = x.base_;
-      this->lang_ = x.lang_;
-    }
-
-    return *this;
-  }
-
-  categoryType::
-  ~categoryType ()
-  {
+categoryType::categoryType(const ::xercesc::DOMElement &e,
+                           ::xml_schema_test::flags f,
+                           ::xml_schema_test::container *c)
+    : ::xml_schema_test::type(e, f | ::xml_schema_test::flags::base, c),
+      term_(this), scheme_(this), label_(this), base_(this), lang_(this) {
+  if ((f & ::xml_schema_test::flags::base) == 0) {
+    ::xsd::cxx::xml::dom::parser<char> p(e, false, false, true);
+    this->parse(p, f);
   }
 }
+
+void categoryType::parse(::xsd::cxx::xml::dom::parser<char> &p,
+                         ::xml_schema_test::flags f) {
+  while (p.more_attributes()) {
+    const ::xercesc::DOMAttr &i(p.next_attribute());
+    const ::xsd::cxx::xml::qualified_name<char> n(
+        ::xsd::cxx::xml::dom::name<char>(i));
+
+    if (n.name() == "term" && n.namespace_().empty()) {
+      this->term_.set(term_traits::create(i, f, this));
+      continue;
+    }
+
+    if (n.name() == "scheme" && n.namespace_().empty()) {
+      this->scheme_.set(scheme_traits::create(i, f, this));
+      continue;
+    }
+
+    if (n.name() == "label" && n.namespace_().empty()) {
+      this->label_.set(label_traits::create(i, f, this));
+      continue;
+    }
+
+    if (n.name() == "base" &&
+        n.namespace_() == "http://www.w3.org/XML/1998/namespace") {
+      this->base_.set(base_traits::create(i, f, this));
+      continue;
+    }
+
+    if (n.name() == "lang" &&
+        n.namespace_() == "http://www.w3.org/XML/1998/namespace") {
+      this->lang_.set(lang_traits::create(i, f, this));
+      continue;
+    }
+  }
+
+  if (!term_.present()) {
+    throw ::xsd::cxx::tree::expected_attribute<char>("term", "");
+  }
+}
+
+categoryType *categoryType::_clone(::xml_schema_test::flags f,
+                                   ::xml_schema_test::container *c) const {
+  return new class categoryType(*this, f, c);
+}
+
+categoryType &categoryType::operator=(const categoryType &x) {
+  if (this != &x) {
+    static_cast<::xml_schema_test::type &>(*this) = x;
+    this->term_ = x.term_;
+    this->scheme_ = x.scheme_;
+    this->label_ = x.label_;
+    this->base_ = x.base_;
+    this->lang_ = x.lang_;
+  }
+
+  return *this;
+}
+
+categoryType::~categoryType() {}
+} // namespace Atom
 
 #include <istream>
-#include <xsd/cxx/xml/sax/std-input-source.hxx>
 #include <xsd/cxx/tree/error-handler.hxx>
+#include <xsd/cxx/xml/sax/std-input-source.hxx>
 
-namespace Atom
-{
-}
+namespace Atom {}
 
 #include <ostream>
 #include <xsd/cxx/tree/error-handler.hxx>
@@ -340,82 +220,58 @@ namespace Atom
 
 #include <xsd/cxx/tree/type-serializer-map.hxx>
 
-namespace _xsd
-{
-  static
-  const ::xsd::cxx::tree::type_serializer_plate< 0, char >
-  type_serializer_plate_init;
+namespace _xsd {
+static const ::xsd::cxx::tree::type_serializer_plate<0, char>
+    type_serializer_plate_init;
 }
 
-namespace Atom
-{
-  void
-  operator<< (::xercesc::DOMElement& e, const categoryType& i)
+namespace Atom {
+void operator<<(::xercesc::DOMElement &e, const categoryType &i) {
+  e << static_cast<const ::xml_schema_test::type &>(i);
+
+  // term
+  //
   {
-    e << static_cast< const ::xml_schema::type& > (i);
+    ::xercesc::DOMAttr &a(::xsd::cxx::xml::dom::create_attribute("term", e));
 
-    // term
-    //
-    {
-      ::xercesc::DOMAttr& a (
-        ::xsd::cxx::xml::dom::create_attribute (
-          "term",
-          e));
+    a << i.term();
+  }
 
-      a << i.term ();
-    }
+  // scheme
+  //
+  if (i.scheme()) {
+    ::xercesc::DOMAttr &a(::xsd::cxx::xml::dom::create_attribute("scheme", e));
 
-    // scheme
-    //
-    if (i.scheme ())
-    {
-      ::xercesc::DOMAttr& a (
-        ::xsd::cxx::xml::dom::create_attribute (
-          "scheme",
-          e));
+    a << *i.scheme();
+  }
 
-      a << *i.scheme ();
-    }
+  // label
+  //
+  if (i.label()) {
+    ::xercesc::DOMAttr &a(::xsd::cxx::xml::dom::create_attribute("label", e));
 
-    // label
-    //
-    if (i.label ())
-    {
-      ::xercesc::DOMAttr& a (
-        ::xsd::cxx::xml::dom::create_attribute (
-          "label",
-          e));
+    a << *i.label();
+  }
 
-      a << *i.label ();
-    }
+  // base
+  //
+  if (i.base()) {
+    ::xercesc::DOMAttr &a(::xsd::cxx::xml::dom::create_attribute(
+        "base", "http://www.w3.org/XML/1998/namespace", e));
 
-    // base
-    //
-    if (i.base ())
-    {
-      ::xercesc::DOMAttr& a (
-        ::xsd::cxx::xml::dom::create_attribute (
-          "base",
-          "http://www.w3.org/XML/1998/namespace",
-          e));
+    a << *i.base();
+  }
 
-      a << *i.base ();
-    }
+  // lang
+  //
+  if (i.lang()) {
+    ::xercesc::DOMAttr &a(::xsd::cxx::xml::dom::create_attribute(
+        "lang", "http://www.w3.org/XML/1998/namespace", e));
 
-    // lang
-    //
-    if (i.lang ())
-    {
-      ::xercesc::DOMAttr& a (
-        ::xsd::cxx::xml::dom::create_attribute (
-          "lang",
-          "http://www.w3.org/XML/1998/namespace",
-          e));
-
-      a << *i.lang ();
-    }
+    a << *i.lang();
   }
 }
+} // namespace Atom
 
 #include <xsd/cxx/post.hxx>
 
@@ -423,4 +279,3 @@ namespace Atom
 //
 //
 // End epilogue.
-

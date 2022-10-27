@@ -249,7 +249,7 @@ namespace oadr2b
                          const intervals_type& intervals,
                          const baselineID_type& baselineID,
                          const baselineName_type& baselineName)
-    : ::xml_schema::type (),
+    : ::xml_schema_test::type (),
       dtstart_ (dtstart, this),
       duration_ (duration, this),
       intervals_ (intervals, this),
@@ -266,7 +266,7 @@ namespace oadr2b
                          ::std::unique_ptr< intervals_type > intervals,
                          const baselineID_type& baselineID,
                          const baselineName_type& baselineName)
-    : ::xml_schema::type (),
+    : ::xml_schema_test::type (),
       dtstart_ (std::move (dtstart), this),
       duration_ (std::move (duration), this),
       intervals_ (std::move (intervals), this),
@@ -279,9 +279,9 @@ namespace oadr2b
 
     eiEventBaselineType::
     eiEventBaselineType (const eiEventBaselineType& x,
-                         ::xml_schema::flags f,
-                         ::xml_schema::container* c)
-    : ::xml_schema::type (x, f, c),
+                    ::xml_schema_test::flags f,
+                    ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (x, f, c),
       dtstart_ (x.dtstart_, f, this),
       duration_ (x.duration_, f, this),
       intervals_ (x.intervals_, f, this),
@@ -294,9 +294,9 @@ namespace oadr2b
 
     eiEventBaselineType::
     eiEventBaselineType (const ::xercesc::DOMElement& e,
-                         ::xml_schema::flags f,
-                         ::xml_schema::container* c)
-    : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
+                    ::xml_schema_test::flags f,
+                    ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (e, f | ::xml_schema_test::flags::base, c),
       dtstart_ (this),
       duration_ (this),
       intervals_ (this),
@@ -305,7 +305,7 @@ namespace oadr2b
       baselineName_ (this),
       itemBase_ (this)
     {
-      if ((f & ::xml_schema::flags::base) == 0)
+      if ((f & ::xml_schema_test::flags::base) == 0)
       {
         ::xsd::cxx::xml::dom::parser< char > p (e, true, false, false);
         this->parse (p, f);
@@ -314,7 +314,7 @@ namespace oadr2b
 
     void eiEventBaselineType::
     parse (::xsd::cxx::xml::dom::parser< char >& p,
-           ::xml_schema::flags f)
+      ::xml_schema_test::flags f)
     {
       for (; p.more_content (); p.next_content (false))
       {
@@ -471,8 +471,8 @@ namespace oadr2b
     }
 
     eiEventBaselineType* eiEventBaselineType::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class eiEventBaselineType (*this, f, c);
     }
@@ -482,7 +482,7 @@ namespace oadr2b
     {
       if (this != &x)
       {
-        static_cast< ::xml_schema::type& > (*this) = x;
+        static_cast< ::xml_schema_test::type& > (*this) = x;
         this->dtstart_ = x.dtstart_;
         this->duration_ = x.duration_;
         this->intervals_ = x.intervals_;
@@ -533,7 +533,7 @@ namespace oadr2b
     void
     operator<< (::xercesc::DOMElement& e, const eiEventBaselineType& i)
     {
-      e << static_cast< const ::xml_schema::type& > (i);
+      e << static_cast< const  ::xml_schema_test::type& > (i);
 
       // dtstart
       //

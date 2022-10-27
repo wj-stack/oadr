@@ -122,7 +122,7 @@ namespace oadr2b
     oadrEvent::
     oadrEvent (const eiEvent_type& eiEvent,
                const oadrResponseRequired_type& oadrResponseRequired)
-    : ::xml_schema::type (),
+    : ::xml_schema_test::type (),
       eiEvent_ (eiEvent, this),
       oadrResponseRequired_ (oadrResponseRequired, this)
     {
@@ -131,7 +131,7 @@ namespace oadr2b
     oadrEvent::
     oadrEvent (::std::unique_ptr< eiEvent_type > eiEvent,
                const oadrResponseRequired_type& oadrResponseRequired)
-    : ::xml_schema::type (),
+    : ::xml_schema_test::type (),
       eiEvent_ (std::move (eiEvent), this),
       oadrResponseRequired_ (oadrResponseRequired, this)
     {
@@ -139,9 +139,9 @@ namespace oadr2b
 
     oadrEvent::
     oadrEvent (const oadrEvent& x,
-               ::xml_schema::flags f,
-               ::xml_schema::container* c)
-    : ::xml_schema::type (x, f, c),
+          ::xml_schema_test::flags f,
+          ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (x, f, c),
       eiEvent_ (x.eiEvent_, f, this),
       oadrResponseRequired_ (x.oadrResponseRequired_, f, this)
     {
@@ -149,13 +149,13 @@ namespace oadr2b
 
     oadrEvent::
     oadrEvent (const ::xercesc::DOMElement& e,
-               ::xml_schema::flags f,
-               ::xml_schema::container* c)
-    : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
+          ::xml_schema_test::flags f,
+          ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (e, f | ::xml_schema_test::flags::base, c),
       eiEvent_ (this),
       oadrResponseRequired_ (this)
     {
-      if ((f & ::xml_schema::flags::base) == 0)
+      if ((f & ::xml_schema_test::flags::base) == 0)
       {
         ::xsd::cxx::xml::dom::parser< char > p (e, true, false, false);
         this->parse (p, f);
@@ -164,7 +164,7 @@ namespace oadr2b
 
     void oadrEvent::
     parse (::xsd::cxx::xml::dom::parser< char >& p,
-           ::xml_schema::flags f)
+      ::xml_schema_test::flags f)
     {
       for (; p.more_content (); p.next_content (false))
       {
@@ -219,8 +219,8 @@ namespace oadr2b
     }
 
     oadrEvent* oadrEvent::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class oadrEvent (*this, f, c);
     }
@@ -230,7 +230,7 @@ namespace oadr2b
     {
       if (this != &x)
       {
-        static_cast< ::xml_schema::type& > (*this) = x;
+        static_cast< ::xml_schema_test::type& > (*this) = x;
         this->eiEvent_ = x.eiEvent_;
         this->oadrResponseRequired_ = x.oadrResponseRequired_;
       }
@@ -276,7 +276,7 @@ namespace oadr2b
     void
     operator<< (::xercesc::DOMElement& e, const oadrEvent& i)
     {
-      e << static_cast< const ::xml_schema::type& > (i);
+      e << static_cast< const  ::xml_schema_test::type& > (i);
 
       // eiEvent
       //

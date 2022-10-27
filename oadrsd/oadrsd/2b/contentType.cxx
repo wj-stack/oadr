@@ -184,7 +184,7 @@ namespace Atom
 
   contentType::
   contentType ()
-  : ::xml_schema::type (),
+  : ::xml_schema_test::type (),
     type_ (this),
     src_ (this),
     base_ (this),
@@ -194,9 +194,9 @@ namespace Atom
 
   contentType::
   contentType (const contentType& x,
-               ::xml_schema::flags f,
-               ::xml_schema::container* c)
-  : ::xml_schema::type (x, f, c),
+          ::xml_schema_test::flags f,
+          ::xml_schema_test::container* c)
+  : ::xml_schema_test::type (x, f, c),
     type_ (x.type_, f, this),
     src_ (x.src_, f, this),
     base_ (x.base_, f, this),
@@ -206,15 +206,15 @@ namespace Atom
 
   contentType::
   contentType (const ::xercesc::DOMElement& e,
-               ::xml_schema::flags f,
-               ::xml_schema::container* c)
-  : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
+          ::xml_schema_test::flags f,
+          ::xml_schema_test::container* c)
+  : ::xml_schema_test::type (e, f | ::xml_schema_test::flags::base, c),
     type_ (this),
     src_ (this),
     base_ (this),
     lang_ (this)
   {
-    if ((f & ::xml_schema::flags::base) == 0)
+    if ((f & ::xml_schema_test::flags::base) == 0)
     {
       ::xsd::cxx::xml::dom::parser< char > p (e, true, false, true);
       this->parse (p, f);
@@ -223,7 +223,7 @@ namespace Atom
 
   void contentType::
   parse (::xsd::cxx::xml::dom::parser< char >& p,
-         ::xml_schema::flags f)
+    ::xml_schema_test::flags f)
   {
     for (; p.more_content (); p.next_content (false))
     {
@@ -267,8 +267,8 @@ namespace Atom
   }
 
   contentType* contentType::
-  _clone (::xml_schema::flags f,
-          ::xml_schema::container* c) const
+  _clone (::xml_schema_test::flags f,
+     ::xml_schema_test::container* c) const
   {
     return new class contentType (*this, f, c);
   }
@@ -278,7 +278,7 @@ namespace Atom
   {
     if (this != &x)
     {
-      static_cast< ::xml_schema::type& > (*this) = x;
+      static_cast< ::xml_schema_test::type& > (*this) = x;
       this->type_ = x.type_;
       this->src_ = x.src_;
       this->base_ = x.base_;
@@ -320,7 +320,7 @@ namespace Atom
   void
   operator<< (::xercesc::DOMElement& e, const contentType& i)
   {
-    e << static_cast< const ::xml_schema::type& > (i);
+    e << static_cast< const  ::xml_schema_test::type& > (i);
 
     // type
     //

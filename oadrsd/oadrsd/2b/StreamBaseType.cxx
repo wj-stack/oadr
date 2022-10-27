@@ -160,7 +160,7 @@ namespace stream
 
   StreamBaseType::
   StreamBaseType ()
-  : ::xml_schema::type (),
+  : ::xml_schema_test::type (),
     dtstart_ (this),
     duration_ (this),
     intervals_ (this)
@@ -169,9 +169,9 @@ namespace stream
 
   StreamBaseType::
   StreamBaseType (const StreamBaseType& x,
-                  ::xml_schema::flags f,
-                  ::xml_schema::container* c)
-  : ::xml_schema::type (x, f, c),
+             ::xml_schema_test::flags f,
+             ::xml_schema_test::container* c)
+  : ::xml_schema_test::type (x, f, c),
     dtstart_ (x.dtstart_, f, this),
     duration_ (x.duration_, f, this),
     intervals_ (x.intervals_, f, this)
@@ -180,14 +180,14 @@ namespace stream
 
   StreamBaseType::
   StreamBaseType (const ::xercesc::DOMElement& e,
-                  ::xml_schema::flags f,
-                  ::xml_schema::container* c)
-  : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
+             ::xml_schema_test::flags f,
+             ::xml_schema_test::container* c)
+  : ::xml_schema_test::type (e, f | ::xml_schema_test::flags::base, c),
     dtstart_ (this),
     duration_ (this),
     intervals_ (this)
   {
-    if ((f & ::xml_schema::flags::base) == 0)
+    if ((f & ::xml_schema_test::flags::base) == 0)
     {
       ::xsd::cxx::xml::dom::parser< char > p (e, true, false, false);
       this->parse (p, f);
@@ -196,7 +196,7 @@ namespace stream
 
   void StreamBaseType::
   parse (::xsd::cxx::xml::dom::parser< char >& p,
-         ::xml_schema::flags f)
+    ::xml_schema_test::flags f)
   {
     for (; p.more_content (); p.next_content (false))
     {
@@ -251,8 +251,8 @@ namespace stream
   }
 
   StreamBaseType* StreamBaseType::
-  _clone (::xml_schema::flags f,
-          ::xml_schema::container* c) const
+  _clone (::xml_schema_test::flags f,
+     ::xml_schema_test::container* c) const
   {
     return new class StreamBaseType (*this, f, c);
   }
@@ -262,7 +262,7 @@ namespace stream
   {
     if (this != &x)
     {
-      static_cast< ::xml_schema::type& > (*this) = x;
+      static_cast< ::xml_schema_test::type& > (*this) = x;
       this->dtstart_ = x.dtstart_;
       this->duration_ = x.duration_;
       this->intervals_ = x.intervals_;
@@ -303,7 +303,7 @@ namespace stream
   void
   operator<< (::xercesc::DOMElement& e, const StreamBaseType& i)
   {
-    e << static_cast< const ::xml_schema::type& > (i);
+    e << static_cast< const  ::xml_schema_test::type& > (i);
 
     // dtstart
     //

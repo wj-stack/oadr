@@ -88,23 +88,23 @@ namespace power
 
   PowerRealType::
   PowerRealType (const PowerRealType& x,
-                 ::xml_schema::flags f,
-                 ::xml_schema::container* c)
+            ::xml_schema_test::flags f,
+            ::xml_schema_test::container* c)
   : ::power::PowerItemType (x, f, c)
   {
   }
 
   PowerRealType::
   PowerRealType (const ::xercesc::DOMElement& e,
-                 ::xml_schema::flags f,
-                 ::xml_schema::container* c)
+            ::xml_schema_test::flags f,
+            ::xml_schema_test::container* c)
   : ::power::PowerItemType (e, f, c)
   {
   }
 
   PowerRealType* PowerRealType::
-  _clone (::xml_schema::flags f,
-          ::xml_schema::container* c) const
+  _clone (::xml_schema_test::flags f,
+     ::xml_schema_test::container* c) const
   {
     return new class PowerRealType (*this, f, c);
   }

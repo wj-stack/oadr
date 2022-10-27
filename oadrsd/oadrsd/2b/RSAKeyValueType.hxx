@@ -98,7 +98,7 @@
 #include <xsd/cxx/tree/serialization/double.hxx>
 #include <xsd/cxx/tree/serialization/decimal.hxx>
 
-namespace xml_schema
+namespace xml_schema_test
 {
   // anyType and anySimpleType.
   //
@@ -146,20 +146,19 @@ namespace xml_schema
 
   // String types.
   //
-  typedef ::xsd::cxx::tree::string< char, simple_type > string;
-  typedef ::xsd::cxx::tree::normalized_string< char, string > normalized_string;
-  typedef ::xsd::cxx::tree::token< char, normalized_string > token;
-  typedef ::xsd::cxx::tree::name< char, token > name;
-  typedef ::xsd::cxx::tree::nmtoken< char, token > nmtoken;
-  typedef ::xsd::cxx::tree::nmtokens< char, simple_type, nmtoken > nmtokens;
-  typedef ::xsd::cxx::tree::ncname< char, name > ncname;
-  typedef ::xsd::cxx::tree::language< char, token > language;
-
+typedef ::xsd::cxx::tree::string<char, simple_type> string;
+typedef ::xsd::cxx::tree::string<char, simple_type> normalized_string;
+typedef ::xsd::cxx::tree::string<char, simple_type> token;
+typedef ::xsd::cxx::tree::string<char, simple_type> name;
+typedef ::xsd::cxx::tree::string<char, simple_type> nmtoken;
+typedef ::xsd::cxx::tree::string<char, simple_type> nmtokens;
+typedef ::xsd::cxx::tree::string<char, simple_type> ncname;
+typedef ::xsd::cxx::tree::string<char, simple_type> language;
   // ID/IDREF.
   //
-  typedef ::xsd::cxx::tree::id< char, ncname > id;
-  typedef ::xsd::cxx::tree::idref< char, ncname, type > idref;
-  typedef ::xsd::cxx::tree::idrefs< char, simple_type, idref > idrefs;
+  typedef ::xsd::cxx::tree::string< char, simple_type > id;
+  typedef ::xsd::cxx::tree::string< char, simple_type > idref;
+  typedef ::xsd::cxx::tree::string< char, simple_type > idrefs;
 
   // URI.
   //
@@ -289,7 +288,7 @@ namespace oadr2b
 {
   namespace sig
   {
-    class RSAKeyValueType: public ::xml_schema::type
+    class RSAKeyValueType: public ::xml_schema_test::type
     {
       public:
       // Modulus
@@ -332,16 +331,16 @@ namespace oadr2b
                        const Exponent_type&);
 
       RSAKeyValueType (const ::xercesc::DOMElement& e,
-                       ::xml_schema::flags f = 0,
-                       ::xml_schema::container* c = 0);
+                  ::xml_schema_test::flags f = 0,
+                  ::xml_schema_test::container* c = 0);
 
       RSAKeyValueType (const RSAKeyValueType& x,
-                       ::xml_schema::flags f = 0,
-                       ::xml_schema::container* c = 0);
+                  ::xml_schema_test::flags f = 0,
+                  ::xml_schema_test::container* c = 0);
 
       virtual RSAKeyValueType*
-      _clone (::xml_schema::flags f = 0,
-              ::xml_schema::container* c = 0) const;
+      _clone (::xml_schema_test::flags f = 0,
+         ::xml_schema_test::container* c = 0) const;
 
       RSAKeyValueType&
       operator= (const RSAKeyValueType& x);
@@ -354,7 +353,7 @@ namespace oadr2b
       protected:
       void
       parse (::xsd::cxx::xml::dom::parser< char >&,
-             ::xml_schema::flags);
+        ::xml_schema_test::flags);
 
       protected:
       ::xsd::cxx::tree::one< Modulus_type > Modulus_;

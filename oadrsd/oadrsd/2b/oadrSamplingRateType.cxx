@@ -139,7 +139,7 @@ namespace oadr2b
     oadrSamplingRateType (const oadrMinPeriod_type& oadrMinPeriod,
                           const oadrMaxPeriod_type& oadrMaxPeriod,
                           const oadrOnChange_type& oadrOnChange)
-    : ::xml_schema::type (),
+    : ::xml_schema_test::type (),
       oadrMinPeriod_ (oadrMinPeriod, this),
       oadrMaxPeriod_ (oadrMaxPeriod, this),
       oadrOnChange_ (oadrOnChange, this)
@@ -148,9 +148,9 @@ namespace oadr2b
 
     oadrSamplingRateType::
     oadrSamplingRateType (const oadrSamplingRateType& x,
-                          ::xml_schema::flags f,
-                          ::xml_schema::container* c)
-    : ::xml_schema::type (x, f, c),
+                     ::xml_schema_test::flags f,
+                     ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (x, f, c),
       oadrMinPeriod_ (x.oadrMinPeriod_, f, this),
       oadrMaxPeriod_ (x.oadrMaxPeriod_, f, this),
       oadrOnChange_ (x.oadrOnChange_, f, this)
@@ -159,14 +159,14 @@ namespace oadr2b
 
     oadrSamplingRateType::
     oadrSamplingRateType (const ::xercesc::DOMElement& e,
-                          ::xml_schema::flags f,
-                          ::xml_schema::container* c)
-    : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
+                     ::xml_schema_test::flags f,
+                     ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (e, f | ::xml_schema_test::flags::base, c),
       oadrMinPeriod_ (this),
       oadrMaxPeriod_ (this),
       oadrOnChange_ (this)
     {
-      if ((f & ::xml_schema::flags::base) == 0)
+      if ((f & ::xml_schema_test::flags::base) == 0)
       {
         ::xsd::cxx::xml::dom::parser< char > p (e, true, false, false);
         this->parse (p, f);
@@ -175,7 +175,7 @@ namespace oadr2b
 
     void oadrSamplingRateType::
     parse (::xsd::cxx::xml::dom::parser< char >& p,
-           ::xml_schema::flags f)
+      ::xml_schema_test::flags f)
     {
       for (; p.more_content (); p.next_content (false))
       {
@@ -248,8 +248,8 @@ namespace oadr2b
     }
 
     oadrSamplingRateType* oadrSamplingRateType::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class oadrSamplingRateType (*this, f, c);
     }
@@ -259,7 +259,7 @@ namespace oadr2b
     {
       if (this != &x)
       {
-        static_cast< ::xml_schema::type& > (*this) = x;
+        static_cast< ::xml_schema_test::type& > (*this) = x;
         this->oadrMinPeriod_ = x.oadrMinPeriod_;
         this->oadrMaxPeriod_ = x.oadrMaxPeriod_;
         this->oadrOnChange_ = x.oadrOnChange_;
@@ -306,7 +306,7 @@ namespace oadr2b
     void
     operator<< (::xercesc::DOMElement& e, const oadrSamplingRateType& i)
     {
-      e << static_cast< const ::xml_schema::type& > (i);
+      e << static_cast< const  ::xml_schema_test::type& > (i);
 
       // oadrMinPeriod
       //

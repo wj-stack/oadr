@@ -96,28 +96,28 @@ namespace icalendar_2_0
 
   tolerate::
   tolerate ()
-  : ::xml_schema::type (),
+  : ::xml_schema_test::type (),
     startafter_ (this)
   {
   }
 
   tolerate::
   tolerate (const tolerate& x,
-            ::xml_schema::flags f,
-            ::xml_schema::container* c)
-  : ::xml_schema::type (x, f, c),
+       ::xml_schema_test::flags f,
+       ::xml_schema_test::container* c)
+  : ::xml_schema_test::type (x, f, c),
     startafter_ (x.startafter_, f, this)
   {
   }
 
   tolerate::
   tolerate (const ::xercesc::DOMElement& e,
-            ::xml_schema::flags f,
-            ::xml_schema::container* c)
-  : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
+       ::xml_schema_test::flags f,
+       ::xml_schema_test::container* c)
+  : ::xml_schema_test::type (e, f | ::xml_schema_test::flags::base, c),
     startafter_ (this)
   {
-    if ((f & ::xml_schema::flags::base) == 0)
+    if ((f & ::xml_schema_test::flags::base) == 0)
     {
       ::xsd::cxx::xml::dom::parser< char > p (e, true, false, false);
       this->parse (p, f);
@@ -126,7 +126,7 @@ namespace icalendar_2_0
 
   void tolerate::
   parse (::xsd::cxx::xml::dom::parser< char >& p,
-         ::xml_schema::flags f)
+    ::xml_schema_test::flags f)
   {
     for (; p.more_content (); p.next_content (false))
     {
@@ -153,8 +153,8 @@ namespace icalendar_2_0
   }
 
   tolerate* tolerate::
-  _clone (::xml_schema::flags f,
-          ::xml_schema::container* c) const
+  _clone (::xml_schema_test::flags f,
+     ::xml_schema_test::container* c) const
   {
     return new class tolerate (*this, f, c);
   }
@@ -164,7 +164,7 @@ namespace icalendar_2_0
   {
     if (this != &x)
     {
-      static_cast< ::xml_schema::type& > (*this) = x;
+      static_cast< ::xml_schema_test::type& > (*this) = x;
       this->startafter_ = x.startafter_;
     }
 
@@ -203,7 +203,7 @@ namespace icalendar_2_0
   void
   operator<< (::xercesc::DOMElement& e, const tolerate& i)
   {
-    e << static_cast< const ::xml_schema::type& > (i);
+    e << static_cast< const  ::xml_schema_test::type& > (i);
 
     // startafter
     //

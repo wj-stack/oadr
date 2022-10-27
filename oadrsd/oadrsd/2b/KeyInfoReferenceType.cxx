@@ -123,7 +123,7 @@ namespace oadr2b
 
     KeyInfoReferenceType::
     KeyInfoReferenceType (const URI_type& URI)
-    : ::xml_schema::type (),
+    : ::xml_schema_test::type (),
       URI_ (URI, this),
       Id_ (this)
     {
@@ -131,9 +131,9 @@ namespace oadr2b
 
     KeyInfoReferenceType::
     KeyInfoReferenceType (const KeyInfoReferenceType& x,
-                          ::xml_schema::flags f,
-                          ::xml_schema::container* c)
-    : ::xml_schema::type (x, f, c),
+                     ::xml_schema_test::flags f,
+                     ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (x, f, c),
       URI_ (x.URI_, f, this),
       Id_ (x.Id_, f, this)
     {
@@ -141,13 +141,13 @@ namespace oadr2b
 
     KeyInfoReferenceType::
     KeyInfoReferenceType (const ::xercesc::DOMElement& e,
-                          ::xml_schema::flags f,
-                          ::xml_schema::container* c)
-    : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
+                     ::xml_schema_test::flags f,
+                     ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (e, f | ::xml_schema_test::flags::base, c),
       URI_ (this),
       Id_ (this)
     {
-      if ((f & ::xml_schema::flags::base) == 0)
+      if ((f & ::xml_schema_test::flags::base) == 0)
       {
         ::xsd::cxx::xml::dom::parser< char > p (e, false, false, true);
         this->parse (p, f);
@@ -156,7 +156,7 @@ namespace oadr2b
 
     void KeyInfoReferenceType::
     parse (::xsd::cxx::xml::dom::parser< char >& p,
-           ::xml_schema::flags f)
+      ::xml_schema_test::flags f)
     {
       while (p.more_attributes ())
       {
@@ -186,8 +186,8 @@ namespace oadr2b
     }
 
     KeyInfoReferenceType* KeyInfoReferenceType::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class KeyInfoReferenceType (*this, f, c);
     }
@@ -197,7 +197,7 @@ namespace oadr2b
     {
       if (this != &x)
       {
-        static_cast< ::xml_schema::type& > (*this) = x;
+        static_cast< ::xml_schema_test::type& > (*this) = x;
         this->URI_ = x.URI_;
         this->Id_ = x.Id_;
       }
@@ -243,7 +243,7 @@ namespace oadr2b
     void
     operator<< (::xercesc::DOMElement& e, const KeyInfoReferenceType& i)
     {
-      e << static_cast< const ::xml_schema::type& > (i);
+      e << static_cast< const  ::xml_schema_test::type& > (i);
 
       // URI
       //

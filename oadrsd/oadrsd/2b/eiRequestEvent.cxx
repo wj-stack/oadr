@@ -137,7 +137,7 @@ namespace payloads
   eiRequestEvent::
   eiRequestEvent (const requestID_type& requestID,
                   const venID_type& venID)
-  : ::xml_schema::type (),
+  : ::xml_schema_test::type (),
     requestID_ (requestID, this),
     venID_ (venID, this),
     replyLimit_ (this)
@@ -146,9 +146,9 @@ namespace payloads
 
   eiRequestEvent::
   eiRequestEvent (const eiRequestEvent& x,
-                  ::xml_schema::flags f,
-                  ::xml_schema::container* c)
-  : ::xml_schema::type (x, f, c),
+             ::xml_schema_test::flags f,
+             ::xml_schema_test::container* c)
+  : ::xml_schema_test::type (x, f, c),
     requestID_ (x.requestID_, f, this),
     venID_ (x.venID_, f, this),
     replyLimit_ (x.replyLimit_, f, this)
@@ -157,14 +157,14 @@ namespace payloads
 
   eiRequestEvent::
   eiRequestEvent (const ::xercesc::DOMElement& e,
-                  ::xml_schema::flags f,
-                  ::xml_schema::container* c)
-  : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
+             ::xml_schema_test::flags f,
+             ::xml_schema_test::container* c)
+  : ::xml_schema_test::type (e, f | ::xml_schema_test::flags::base, c),
     requestID_ (this),
     venID_ (this),
     replyLimit_ (this)
   {
-    if ((f & ::xml_schema::flags::base) == 0)
+    if ((f & ::xml_schema_test::flags::base) == 0)
     {
       ::xsd::cxx::xml::dom::parser< char > p (e, true, false, false);
       this->parse (p, f);
@@ -173,7 +173,7 @@ namespace payloads
 
   void eiRequestEvent::
   parse (::xsd::cxx::xml::dom::parser< char >& p,
-         ::xml_schema::flags f)
+    ::xml_schema_test::flags f)
   {
     for (; p.more_content (); p.next_content (false))
     {
@@ -239,8 +239,8 @@ namespace payloads
   }
 
   eiRequestEvent* eiRequestEvent::
-  _clone (::xml_schema::flags f,
-          ::xml_schema::container* c) const
+  _clone (::xml_schema_test::flags f,
+     ::xml_schema_test::container* c) const
   {
     return new class eiRequestEvent (*this, f, c);
   }
@@ -250,7 +250,7 @@ namespace payloads
   {
     if (this != &x)
     {
-      static_cast< ::xml_schema::type& > (*this) = x;
+      static_cast< ::xml_schema_test::type& > (*this) = x;
       this->requestID_ = x.requestID_;
       this->venID_ = x.venID_;
       this->replyLimit_ = x.replyLimit_;
@@ -291,7 +291,7 @@ namespace payloads
   void
   operator<< (::xercesc::DOMElement& e, const eiRequestEvent& i)
   {
-    e << static_cast< const ::xml_schema::type& > (i);
+    e << static_cast< const  ::xml_schema_test::type& > (i);
 
     // requestID
     //

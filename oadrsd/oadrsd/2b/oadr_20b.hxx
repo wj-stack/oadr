@@ -396,79 +396,79 @@ namespace oadr {
 //
 
 // ::std::unique_ptr<::oadr2b::oadr::oadrPayload>
-// oadrPayload_(const ::std::string &uri, ::xml_schema::flags f = 0,
-//              const ::xml_schema::properties &p = ::xml_schema::properties());
+// oadrPayload_(const ::std::string &uri, ::xml_schema_test::flags f = 0,
+//              const  ::xml_schema_test::properties &p = ::xml_schema_test::properties());
 //
 // ::std::unique_ptr<::oadr2b::oadr::oadrPayload>
-// oadrPayload_(const ::std::string &uri, ::xml_schema::error_handler &eh,
-//              ::xml_schema::flags f = 0,
-//              const ::xml_schema::properties &p = ::xml_schema::properties());
+// oadrPayload_(const ::std::string &uri, ::xml_schema_test::error_handler &eh,
+//         ::xml_schema_test::flags f = 0,
+//              const  ::xml_schema_test::properties &p = ::xml_schema_test::properties());
 //
 // ::std::unique_ptr<::oadr2b::oadr::oadrPayload>
 // oadrPayload_(const ::std::string &uri, ::xercesc::DOMErrorHandler &eh,
-//              ::xml_schema::flags f = 0,
-//              const ::xml_schema::properties &p = ::xml_schema::properties());
+//         ::xml_schema_test::flags f = 0,
+//              const  ::xml_schema_test::properties &p = ::xml_schema_test::properties());
 
 // Parse std::istream.
 //
 
 ::std::unique_ptr<::oadr2b::oadr::oadrPayload>
-oadrPayload_(::std::istream &is, ::xml_schema::flags f = 0,
-             const ::xml_schema::properties &p = ::xml_schema::properties());
+oadrPayload_(::std::istream &is, ::xml_schema_test::flags f = 0,
+             const  ::xml_schema_test::properties &p = ::xml_schema_test::properties());
 
 // ::std::unique_ptr<::oadr2b::oadr::oadrPayload>
-// oadrPayload_(::std::istream &is, ::xml_schema::error_handler &eh,
-//              ::xml_schema::flags f = 0,
-//              const ::xml_schema::properties &p = ::xml_schema::properties());
+// oadrPayload_(::std::istream &is, ::xml_schema_test::error_handler &eh,
+//         ::xml_schema_test::flags f = 0,
+//              const  ::xml_schema_test::properties &p = ::xml_schema_test::properties());
 
 // ::std::unique_ptr<::oadr2b::oadr::oadrPayload>
 // oadrPayload_(::std::istream &is, ::xercesc::DOMErrorHandler &eh,
-//              ::xml_schema::flags f = 0,
-//              const ::xml_schema::properties &p = ::xml_schema::properties());
+//         ::xml_schema_test::flags f = 0,
+//              const  ::xml_schema_test::properties &p = ::xml_schema_test::properties());
 
 ::std::unique_ptr<::oadr2b::oadr::oadrPayload>
 oadrPayload_(::std::istream &is, const ::std::string &id,
-             ::xml_schema::flags f = 0,
-             const ::xml_schema::properties &p = ::xml_schema::properties());
+        ::xml_schema_test::flags f = 0,
+             const  ::xml_schema_test::properties &p = ::xml_schema_test::properties());
 
 // ::std::unique_ptr<::oadr2b::oadr::oadrPayload>
 // oadrPayload_(::std::istream &is, const ::std::string &id,
-//              ::xml_schema::error_handler &eh, ::xml_schema::flags f = 0,
-//              const ::xml_schema::properties &p = ::xml_schema::properties());
+//         ::xml_schema_test::error_handler &eh, ::xml_schema_test::flags f = 0,
+//              const  ::xml_schema_test::properties &p = ::xml_schema_test::properties());
 //
 // ::std::unique_ptr<::oadr2b::oadr::oadrPayload>
 // oadrPayload_(::std::istream &is, const ::std::string &id,
-//              ::xercesc::DOMErrorHandler &eh, ::xml_schema::flags f = 0,
-//              const ::xml_schema::properties &p = ::xml_schema::properties());
+//              ::xercesc::DOMErrorHandler &eh, ::xml_schema_test::flags f = 0,
+//              const  ::xml_schema_test::properties &p = ::xml_schema_test::properties());
 
 // Parse xercesc::InputSource.
 //
 
 ::std::unique_ptr<::oadr2b::oadr::oadrPayload>
-oadrPayload_(::xercesc::InputSource &is, ::xml_schema::flags f = 0,
-             const ::xml_schema::properties &p = ::xml_schema::properties());
+oadrPayload_(::xercesc::InputSource &is, ::xml_schema_test::flags f = 0,
+             const  ::xml_schema_test::properties &p = ::xml_schema_test::properties());
 
 ::std::unique_ptr<::oadr2b::oadr::oadrPayload>
-oadrPayload_(::xercesc::InputSource &is, ::xml_schema::error_handler &eh,
-             ::xml_schema::flags f = 0,
-             const ::xml_schema::properties &p = ::xml_schema::properties());
+oadrPayload_(::xercesc::InputSource &is, ::xml_schema_test::error_handler &eh,
+        ::xml_schema_test::flags f = 0,
+             const  ::xml_schema_test::properties &p = ::xml_schema_test::properties());
 
 ::std::unique_ptr<::oadr2b::oadr::oadrPayload>
 oadrPayload_(::xercesc::InputSource &is, ::xercesc::DOMErrorHandler &eh,
-             ::xml_schema::flags f = 0,
-             const ::xml_schema::properties &p = ::xml_schema::properties());
+        ::xml_schema_test::flags f = 0,
+             const  ::xml_schema_test::properties &p = ::xml_schema_test::properties());
 
 // Parse xercesc::DOMDocument.
 //
 
 ::std::unique_ptr<::oadr2b::oadr::oadrPayload>
-oadrPayload_(const ::xercesc::DOMDocument &d, ::xml_schema::flags f = 0,
-             const ::xml_schema::properties &p = ::xml_schema::properties());
+oadrPayload_(const ::xercesc::DOMDocument &d, ::xml_schema_test::flags f = 0,
+             const  ::xml_schema_test::properties &p = ::xml_schema_test::properties());
 
 ::std::unique_ptr<::oadr2b::oadr::oadrPayload>
-oadrPayload_(::xml_schema::dom::unique_ptr<::xercesc::DOMDocument> d,
-             ::xml_schema::flags f = 0,
-             const ::xml_schema::properties &p = ::xml_schema::properties());
+oadrPayload_(::xml_schema_test::dom::unique_ptr<::xercesc::DOMDocument> d,
+        ::xml_schema_test::flags f = 0,
+             const  ::xml_schema_test::properties &p = ::xml_schema_test::properties());
 } // namespace oadr
 } // namespace oadr2b
 
@@ -486,22 +486,22 @@ namespace oadr {
 //
 
 void oadrPayload_(::std::ostream &os, const ::oadr2b::oadr::oadrPayload &x,
-                  const ::xml_schema::namespace_infomap &m =
-                      ::xml_schema::namespace_infomap(),
-                  const ::std::string &e = "UTF-8", ::xml_schema::flags f = 0);
+                  const  ::xml_schema_test::namespace_infomap &m =
+                 ::xml_schema_test::namespace_infomap(),
+                  const ::std::string &e = "UTF-8", ::xml_schema_test::flags f = 0);
 
 // void oadrPayload_(::std::ostream &os, const ::oadr2b::oadr::oadrPayload &x,
-//                   ::xml_schema::error_handler &eh,
-//                   const ::xml_schema::namespace_infomap &m =
-//                       ::xml_schema::namespace_infomap(),
-//                   const ::std::string &e = "UTF-8", ::xml_schema::flags f =
+//              ::xml_schema_test::error_handler &eh,
+//                   const  ::xml_schema_test::namespace_infomap &m =
+//                  ::xml_schema_test::namespace_infomap(),
+//                   const ::std::string &e = "UTF-8", ::xml_schema_test::flags f =
 //                   0);
 //
 // void oadrPayload_(::std::ostream &os, const ::oadr2b::oadr::oadrPayload &x,
 //                   ::xercesc::DOMErrorHandler &eh,
-//                   const ::xml_schema::namespace_infomap &m =
-//                       ::xml_schema::namespace_infomap(),
-//                   const ::std::string &e = "UTF-8", ::xml_schema::flags f =
+//                   const  ::xml_schema_test::namespace_infomap &m =
+//                  ::xml_schema_test::namespace_infomap(),
+//                   const ::std::string &e = "UTF-8", ::xml_schema_test::flags f =
 //                   0);
 
 // Serialize to xercesc::XMLFormatTarget.
@@ -509,25 +509,25 @@ void oadrPayload_(::std::ostream &os, const ::oadr2b::oadr::oadrPayload &x,
 
 // void oadrPayload_(::xercesc::XMLFormatTarget &ft,
 //                   const ::oadr2b::oadr::oadrPayload &x,
-//                   const ::xml_schema::namespace_infomap &m =
-//                       ::xml_schema::namespace_infomap(),
-//                   const ::std::string &e = "UTF-8", ::xml_schema::flags f =
+//                   const  ::xml_schema_test::namespace_infomap &m =
+//                  ::xml_schema_test::namespace_infomap(),
+//                   const ::std::string &e = "UTF-8", ::xml_schema_test::flags f =
 //                   0);
 //
 // void oadrPayload_(::xercesc::XMLFormatTarget &ft,
 //                   const ::oadr2b::oadr::oadrPayload &x,
-//                   ::xml_schema::error_handler &eh,
-//                   const ::xml_schema::namespace_infomap &m =
-//                       ::xml_schema::namespace_infomap(),
-//                   const ::std::string &e = "UTF-8", ::xml_schema::flags f =
+//              ::xml_schema_test::error_handler &eh,
+//                   const  ::xml_schema_test::namespace_infomap &m =
+//                  ::xml_schema_test::namespace_infomap(),
+//                   const ::std::string &e = "UTF-8", ::xml_schema_test::flags f =
 //                   0);
 //
 // void oadrPayload_(::xercesc::XMLFormatTarget &ft,
 //                   const ::oadr2b::oadr::oadrPayload &x,
 //                   ::xercesc::DOMErrorHandler &eh,
-//                   const ::xml_schema::namespace_infomap &m =
-//                       ::xml_schema::namespace_infomap(),
-//                   const ::std::string &e = "UTF-8", ::xml_schema::flags f =
+//                   const  ::xml_schema_test::namespace_infomap &m =
+//                  ::xml_schema_test::namespace_infomap(),
+//                   const ::std::string &e = "UTF-8", ::xml_schema_test::flags f =
 //                   0);
 
 // Serialize to an existing xercesc::DOMDocument.
@@ -535,16 +535,16 @@ void oadrPayload_(::std::ostream &os, const ::oadr2b::oadr::oadrPayload &x,
 
 // void oadrPayload_(::xercesc::DOMDocument &d,
 //                   const ::oadr2b::oadr::oadrPayload &x,
-//                   ::xml_schema::flags f = 0);
+//              ::xml_schema_test::flags f = 0);
 
 // Serialize to a new xercesc::DOMDocument.
 //
 
 ::xml_schema::dom::unique_ptr<::xercesc::DOMDocument>
 oadrPayload_(const ::oadr2b::oadr::oadrPayload &x,
-             const ::xml_schema::namespace_infomap &m =
-                 ::xml_schema::namespace_infomap(),
-             ::xml_schema::flags f = 0);
+             const  ::xml_schema_test::namespace_infomap &m =
+            ::xml_schema_test::namespace_infomap(),
+        ::xml_schema_test::flags f = 0);
 } // namespace oadr
 } // namespace oadr2b
 

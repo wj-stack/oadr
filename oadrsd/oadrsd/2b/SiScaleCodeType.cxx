@@ -47,41 +47,41 @@ namespace siscale
 
   SiScaleCodeType::
   SiScaleCodeType (value v)
-  : ::xml_schema::string (_xsd_SiScaleCodeType_literals_[v])
+  : ::xml_schema_test::string (_xsd_SiScaleCodeType_literals_[v])
   {
   }
 
   SiScaleCodeType::
   SiScaleCodeType (const char* v)
-  : ::xml_schema::string (v)
+  : ::xml_schema_test::string (v)
   {
   }
 
   SiScaleCodeType::
   SiScaleCodeType (const ::std::string& v)
-  : ::xml_schema::string (v)
+  : ::xml_schema_test::string (v)
   {
   }
 
   SiScaleCodeType::
-  SiScaleCodeType (const ::xml_schema::string& v)
-  : ::xml_schema::string (v)
+  SiScaleCodeType (const  ::xml_schema_test::string& v)
+  : ::xml_schema_test::string (v)
   {
   }
 
   SiScaleCodeType::
   SiScaleCodeType (const SiScaleCodeType& v,
-                   ::xml_schema::flags f,
-                   ::xml_schema::container* c)
-  : ::xml_schema::string (v, f, c)
+              ::xml_schema_test::flags f,
+              ::xml_schema_test::container* c)
+  : ::xml_schema_test::string (v, f, c)
   {
   }
 
   SiScaleCodeType& SiScaleCodeType::
   operator= (value v)
   {
-    static_cast< ::xml_schema::string& > (*this) = 
-    ::xml_schema::string (_xsd_SiScaleCodeType_literals_[v]);
+    static_cast< ::xml_schema_test::string& > (*this) = 
+    ::xml_schema_test::string (_xsd_SiScaleCodeType_literals_[v]);
 
     return *this;
   }
@@ -105,18 +105,18 @@ namespace siscale
 
   SiScaleCodeType::
   SiScaleCodeType (const ::xercesc::DOMElement& e,
-                   ::xml_schema::flags f,
-                   ::xml_schema::container* c)
-  : ::xml_schema::string (e, f, c)
+              ::xml_schema_test::flags f,
+              ::xml_schema_test::container* c)
+  : ::xml_schema_test::string (e, f, c)
   {
     _xsd_SiScaleCodeType_convert ();
   }
 
   SiScaleCodeType::
   SiScaleCodeType (const ::xercesc::DOMAttr& a,
-                   ::xml_schema::flags f,
-                   ::xml_schema::container* c)
-  : ::xml_schema::string (a, f, c)
+              ::xml_schema_test::flags f,
+              ::xml_schema_test::container* c)
+  : ::xml_schema_test::string (a, f, c)
   {
     _xsd_SiScaleCodeType_convert ();
   }
@@ -124,16 +124,16 @@ namespace siscale
   SiScaleCodeType::
   SiScaleCodeType (const ::std::string& s,
                    const ::xercesc::DOMElement* e,
-                   ::xml_schema::flags f,
-                   ::xml_schema::container* c)
-  : ::xml_schema::string (s, e, f, c)
+              ::xml_schema_test::flags f,
+              ::xml_schema_test::container* c)
+  : ::xml_schema_test::string (s, e, f, c)
   {
     _xsd_SiScaleCodeType_convert ();
   }
 
   SiScaleCodeType* SiScaleCodeType::
-  _clone (::xml_schema::flags f,
-          ::xml_schema::container* c) const
+  _clone (::xml_schema_test::flags f,
+     ::xml_schema_test::container* c) const
   {
     return new class SiScaleCodeType (*this, f, c);
   }
@@ -215,20 +215,20 @@ namespace siscale
   void
   operator<< (::xercesc::DOMElement& e, const SiScaleCodeType& i)
   {
-    e << static_cast< const ::xml_schema::string& > (i);
+    e << static_cast< const  ::xml_schema_test::string& > (i);
   }
 
   void
   operator<< (::xercesc::DOMAttr& a, const SiScaleCodeType& i)
   {
-    a << static_cast< const ::xml_schema::string& > (i);
+    a << static_cast< const  ::xml_schema_test::string& > (i);
   }
 
   void
-  operator<< (::xml_schema::list_stream& l,
+  operator<< (::xml_schema_test::list_stream& l,
               const SiScaleCodeType& i)
   {
-    l << static_cast< const ::xml_schema::string& > (i);
+    l << static_cast< const  ::xml_schema_test::string& > (i);
   }
 }
 

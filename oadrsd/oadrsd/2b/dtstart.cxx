@@ -90,28 +90,28 @@ namespace icalendar_2_0
 
   dtstart::
   dtstart (const date_time_type& date_time)
-  : ::xml_schema::type (),
+  : ::xml_schema_test::type (),
     date_time_ (date_time, this)
   {
   }
 
   dtstart::
   dtstart (const dtstart& x,
-           ::xml_schema::flags f,
-           ::xml_schema::container* c)
-  : ::xml_schema::type (x, f, c),
+      ::xml_schema_test::flags f,
+      ::xml_schema_test::container* c)
+  : ::xml_schema_test::type (x, f, c),
     date_time_ (x.date_time_, f, this)
   {
   }
 
   dtstart::
   dtstart (const ::xercesc::DOMElement& e,
-           ::xml_schema::flags f,
-           ::xml_schema::container* c)
-  : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
+      ::xml_schema_test::flags f,
+      ::xml_schema_test::container* c)
+  : ::xml_schema_test::type (e, f | ::xml_schema_test::flags::base, c),
     date_time_ (this)
   {
-    if ((f & ::xml_schema::flags::base) == 0)
+    if ((f & ::xml_schema_test::flags::base) == 0)
     {
       ::xsd::cxx::xml::dom::parser< char > p (e, true, false, false);
       this->parse (p, f);
@@ -120,7 +120,7 @@ namespace icalendar_2_0
 
   void dtstart::
   parse (::xsd::cxx::xml::dom::parser< char >& p,
-         ::xml_schema::flags f)
+    ::xml_schema_test::flags f)
   {
     for (; p.more_content (); p.next_content (false))
     {
@@ -154,8 +154,8 @@ namespace icalendar_2_0
   }
 
   dtstart* dtstart::
-  _clone (::xml_schema::flags f,
-          ::xml_schema::container* c) const
+  _clone (::xml_schema_test::flags f,
+     ::xml_schema_test::container* c) const
   {
     return new class dtstart (*this, f, c);
   }
@@ -165,7 +165,7 @@ namespace icalendar_2_0
   {
     if (this != &x)
     {
-      static_cast< ::xml_schema::type& > (*this) = x;
+      static_cast< ::xml_schema_test::type& > (*this) = x;
       this->date_time_ = x.date_time_;
     }
 
@@ -204,7 +204,7 @@ namespace icalendar_2_0
   void
   operator<< (::xercesc::DOMElement& e, const dtstart& i)
   {
-    e << static_cast< const ::xml_schema::type& > (i);
+    e << static_cast< const  ::xml_schema_test::type& > (i);
 
     // date-time
     //

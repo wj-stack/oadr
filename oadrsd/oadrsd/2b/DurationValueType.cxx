@@ -64,64 +64,64 @@ namespace icalendar_2_0
 
   DurationValueType::
   DurationValueType ()
-  : ::xml_schema::string ()
+  : ::xml_schema_test::string ()
   {
   }
 
   DurationValueType::
   DurationValueType (const char* _xsd_string_base)
-  : ::xml_schema::string (_xsd_string_base)
+  : ::xml_schema_test::string (_xsd_string_base)
   {
   }
 
   DurationValueType::
   DurationValueType (const ::std::string& _xsd_string_base)
-  : ::xml_schema::string (_xsd_string_base)
+  : ::xml_schema_test::string (_xsd_string_base)
   {
   }
 
   DurationValueType::
-  DurationValueType (const ::xml_schema::string& _xsd_string_base)
-  : ::xml_schema::string (_xsd_string_base)
+  DurationValueType (const  ::xml_schema_test::string& _xsd_string_base)
+  : ::xml_schema_test::string (_xsd_string_base)
   {
   }
 
   DurationValueType::
   DurationValueType (const DurationValueType& x,
-                     ::xml_schema::flags f,
-                     ::xml_schema::container* c)
-  : ::xml_schema::string (x, f, c)
+                ::xml_schema_test::flags f,
+                ::xml_schema_test::container* c)
+  : ::xml_schema_test::string (x, f, c)
   {
   }
 
   DurationValueType::
   DurationValueType (const ::xercesc::DOMElement& e,
-                     ::xml_schema::flags f,
-                     ::xml_schema::container* c)
-  : ::xml_schema::string (e, f, c)
+                ::xml_schema_test::flags f,
+                ::xml_schema_test::container* c)
+  : ::xml_schema_test::string (e, f, c)
   {
   }
 
   DurationValueType::
   DurationValueType (const ::xercesc::DOMAttr& a,
-                     ::xml_schema::flags f,
-                     ::xml_schema::container* c)
-  : ::xml_schema::string (a, f, c)
+                ::xml_schema_test::flags f,
+                ::xml_schema_test::container* c)
+  : ::xml_schema_test::string (a, f, c)
   {
   }
 
   DurationValueType::
   DurationValueType (const ::std::string& s,
                      const ::xercesc::DOMElement* e,
-                     ::xml_schema::flags f,
-                     ::xml_schema::container* c)
-  : ::xml_schema::string (s, e, f, c)
+                ::xml_schema_test::flags f,
+                ::xml_schema_test::container* c)
+  : ::xml_schema_test::string (s, e, f, c)
   {
   }
 
   DurationValueType* DurationValueType::
-  _clone (::xml_schema::flags f,
-          ::xml_schema::container* c) const
+  _clone (::xml_schema_test::flags f,
+     ::xml_schema_test::container* c) const
   {
     return new class DurationValueType (*this, f, c);
   }
@@ -158,20 +158,20 @@ namespace icalendar_2_0
   void
   operator<< (::xercesc::DOMElement& e, const DurationValueType& i)
   {
-    e << static_cast< const ::xml_schema::string& > (i);
+    e << static_cast< const  ::xml_schema_test::string& > (i);
   }
 
   void
   operator<< (::xercesc::DOMAttr& a, const DurationValueType& i)
   {
-    a << static_cast< const ::xml_schema::string& > (i);
+    a << static_cast< const  ::xml_schema_test::string& > (i);
   }
 
   void
-  operator<< (::xml_schema::list_stream& l,
+  operator<< (::xml_schema_test::list_stream& l,
               const DurationValueType& i)
   {
-    l << static_cast< const ::xml_schema::string& > (i);
+    l << static_cast< const  ::xml_schema_test::string& > (i);
   }
 }
 

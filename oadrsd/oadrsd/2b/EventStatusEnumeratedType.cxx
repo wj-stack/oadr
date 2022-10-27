@@ -49,41 +49,41 @@ namespace oadr2b
 
     EventStatusEnumeratedType::
     EventStatusEnumeratedType (value v)
-    : ::xml_schema::token (_xsd_EventStatusEnumeratedType_literals_[v])
+    : ::xml_schema_test::token (_xsd_EventStatusEnumeratedType_literals_[v])
     {
     }
 
     EventStatusEnumeratedType::
     EventStatusEnumeratedType (const char* v)
-    : ::xml_schema::token (v)
+    : ::xml_schema_test::token (v)
     {
     }
 
     EventStatusEnumeratedType::
     EventStatusEnumeratedType (const ::std::string& v)
-    : ::xml_schema::token (v)
+    : ::xml_schema_test::token (v)
     {
     }
 
     EventStatusEnumeratedType::
-    EventStatusEnumeratedType (const ::xml_schema::token& v)
-    : ::xml_schema::token (v)
+    EventStatusEnumeratedType (const  ::xml_schema_test::token& v)
+    : ::xml_schema_test::token (v)
     {
     }
 
     EventStatusEnumeratedType::
     EventStatusEnumeratedType (const EventStatusEnumeratedType& v,
-                               ::xml_schema::flags f,
-                               ::xml_schema::container* c)
-    : ::xml_schema::token (v, f, c)
+                          ::xml_schema_test::flags f,
+                          ::xml_schema_test::container* c)
+    : ::xml_schema_test::token (v, f, c)
     {
     }
 
     EventStatusEnumeratedType& EventStatusEnumeratedType::
     operator= (value v)
     {
-      static_cast< ::xml_schema::token& > (*this) = 
-      ::xml_schema::token (_xsd_EventStatusEnumeratedType_literals_[v]);
+      static_cast< ::xml_schema_test::token& > (*this) = 
+ ::xml_schema_test::token (_xsd_EventStatusEnumeratedType_literals_[v]);
 
       return *this;
     }
@@ -110,18 +110,18 @@ namespace oadr2b
 
     EventStatusEnumeratedType::
     EventStatusEnumeratedType (const ::xercesc::DOMElement& e,
-                               ::xml_schema::flags f,
-                               ::xml_schema::container* c)
-    : ::xml_schema::token (e, f, c)
+                          ::xml_schema_test::flags f,
+                          ::xml_schema_test::container* c)
+    : ::xml_schema_test::token (e, f, c)
     {
       _xsd_EventStatusEnumeratedType_convert ();
     }
 
     EventStatusEnumeratedType::
     EventStatusEnumeratedType (const ::xercesc::DOMAttr& a,
-                               ::xml_schema::flags f,
-                               ::xml_schema::container* c)
-    : ::xml_schema::token (a, f, c)
+                          ::xml_schema_test::flags f,
+                          ::xml_schema_test::container* c)
+    : ::xml_schema_test::token (a, f, c)
     {
       _xsd_EventStatusEnumeratedType_convert ();
     }
@@ -129,16 +129,16 @@ namespace oadr2b
     EventStatusEnumeratedType::
     EventStatusEnumeratedType (const ::std::string& s,
                                const ::xercesc::DOMElement* e,
-                               ::xml_schema::flags f,
-                               ::xml_schema::container* c)
-    : ::xml_schema::token (s, e, f, c)
+                          ::xml_schema_test::flags f,
+                          ::xml_schema_test::container* c)
+    : ::xml_schema_test::token (s, e, f, c)
     {
       _xsd_EventStatusEnumeratedType_convert ();
     }
 
     EventStatusEnumeratedType* EventStatusEnumeratedType::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class EventStatusEnumeratedType (*this, f, c);
     }
@@ -216,20 +216,20 @@ namespace oadr2b
     void
     operator<< (::xercesc::DOMElement& e, const EventStatusEnumeratedType& i)
     {
-      e << static_cast< const ::xml_schema::token& > (i);
+      e << static_cast< const  ::xml_schema_test::token& > (i);
     }
 
     void
     operator<< (::xercesc::DOMAttr& a, const EventStatusEnumeratedType& i)
     {
-      a << static_cast< const ::xml_schema::token& > (i);
+      a << static_cast< const  ::xml_schema_test::token& > (i);
     }
 
     void
-    operator<< (::xml_schema::list_stream& l,
+    operator<< (::xml_schema_test::list_stream& l,
                 const EventStatusEnumeratedType& i)
     {
-      l << static_cast< const ::xml_schema::token& > (i);
+      l << static_cast< const  ::xml_schema_test::token& > (i);
     }
   }
 }

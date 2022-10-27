@@ -120,7 +120,7 @@ namespace oadr2b
     eiActivePeriodType::
     eiActivePeriodType (const properties_type& properties,
                         const components_type& components)
-    : ::xml_schema::type (),
+    : ::xml_schema_test::type (),
       properties_ (properties, this),
       components_ (components, this)
     {
@@ -129,7 +129,7 @@ namespace oadr2b
     eiActivePeriodType::
     eiActivePeriodType (::std::unique_ptr< properties_type > properties,
                         const components_type& components)
-    : ::xml_schema::type (),
+    : ::xml_schema_test::type (),
       properties_ (std::move (properties), this),
       components_ (components, this)
     {
@@ -137,9 +137,9 @@ namespace oadr2b
 
     eiActivePeriodType::
     eiActivePeriodType (const eiActivePeriodType& x,
-                        ::xml_schema::flags f,
-                        ::xml_schema::container* c)
-    : ::xml_schema::type (x, f, c),
+                   ::xml_schema_test::flags f,
+                   ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (x, f, c),
       properties_ (x.properties_, f, this),
       components_ (x.components_, f, this)
     {
@@ -147,13 +147,13 @@ namespace oadr2b
 
     eiActivePeriodType::
     eiActivePeriodType (const ::xercesc::DOMElement& e,
-                        ::xml_schema::flags f,
-                        ::xml_schema::container* c)
-    : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
+                   ::xml_schema_test::flags f,
+                   ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (e, f | ::xml_schema_test::flags::base, c),
       properties_ (this),
       components_ (this)
     {
-      if ((f & ::xml_schema::flags::base) == 0)
+      if ((f & ::xml_schema_test::flags::base) == 0)
       {
         ::xsd::cxx::xml::dom::parser< char > p (e, true, false, false);
         this->parse (p, f);
@@ -162,7 +162,7 @@ namespace oadr2b
 
     void eiActivePeriodType::
     parse (::xsd::cxx::xml::dom::parser< char >& p,
-           ::xml_schema::flags f)
+      ::xml_schema_test::flags f)
     {
       for (; p.more_content (); p.next_content (false))
       {
@@ -217,8 +217,8 @@ namespace oadr2b
     }
 
     eiActivePeriodType* eiActivePeriodType::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class eiActivePeriodType (*this, f, c);
     }
@@ -228,7 +228,7 @@ namespace oadr2b
     {
       if (this != &x)
       {
-        static_cast< ::xml_schema::type& > (*this) = x;
+        static_cast< ::xml_schema_test::type& > (*this) = x;
         this->properties_ = x.properties_;
         this->components_ = x.components_;
       }
@@ -274,7 +274,7 @@ namespace oadr2b
     void
     operator<< (::xercesc::DOMElement& e, const eiActivePeriodType& i)
     {
-      e << static_cast< const ::xml_schema::type& > (i);
+      e << static_cast< const  ::xml_schema_test::type& > (i);
 
       // properties
       //

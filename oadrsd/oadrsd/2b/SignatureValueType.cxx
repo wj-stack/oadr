@@ -99,35 +99,35 @@ namespace oadr2b
 
     SignatureValueType::
     SignatureValueType ()
-    : ::xml_schema::base64_binary (),
+    : ::xml_schema_test::base64_binary (),
       Id_ (this)
     {
     }
 
     SignatureValueType::
-    SignatureValueType (const ::xml_schema::base64_binary& _xsd_base64_binary_base)
-    : ::xml_schema::base64_binary (_xsd_base64_binary_base),
+    SignatureValueType (const  ::xml_schema_test::base64_binary& _xsd_base64_binary_base)
+    : ::xml_schema_test::base64_binary (_xsd_base64_binary_base),
       Id_ (this)
     {
     }
 
     SignatureValueType::
     SignatureValueType (const SignatureValueType& x,
-                        ::xml_schema::flags f,
-                        ::xml_schema::container* c)
-    : ::xml_schema::base64_binary (x, f, c),
+                   ::xml_schema_test::flags f,
+                   ::xml_schema_test::container* c)
+    : ::xml_schema_test::base64_binary (x, f, c),
       Id_ (x.Id_, f, this)
     {
     }
 
     SignatureValueType::
     SignatureValueType (const ::xercesc::DOMElement& e,
-                        ::xml_schema::flags f,
-                        ::xml_schema::container* c)
-    : ::xml_schema::base64_binary (e, f | ::xml_schema::flags::base, c),
+                   ::xml_schema_test::flags f,
+                   ::xml_schema_test::container* c)
+    : ::xml_schema_test::base64_binary (e, f | ::xml_schema_test::flags::base, c),
       Id_ (this)
     {
-      if ((f & ::xml_schema::flags::base) == 0)
+      if ((f & ::xml_schema_test::flags::base) == 0)
       {
         ::xsd::cxx::xml::dom::parser< char > p (e, false, false, true);
         this->parse (p, f);
@@ -136,7 +136,7 @@ namespace oadr2b
 
     void SignatureValueType::
     parse (::xsd::cxx::xml::dom::parser< char >& p,
-           ::xml_schema::flags f)
+      ::xml_schema_test::flags f)
     {
       while (p.more_attributes ())
       {
@@ -153,8 +153,8 @@ namespace oadr2b
     }
 
     SignatureValueType* SignatureValueType::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class SignatureValueType (*this, f, c);
     }
@@ -164,7 +164,7 @@ namespace oadr2b
     {
       if (this != &x)
       {
-        static_cast< ::xml_schema::base64_binary& > (*this) = x;
+        static_cast< ::xml_schema_test::base64_binary& > (*this) = x;
         this->Id_ = x.Id_;
       }
 
@@ -209,7 +209,7 @@ namespace oadr2b
     void
     operator<< (::xercesc::DOMElement& e, const SignatureValueType& i)
     {
-      e << static_cast< const ::xml_schema::base64_binary& > (i);
+      e << static_cast< const  ::xml_schema_test::base64_binary& > (i);
 
       // Id
       //

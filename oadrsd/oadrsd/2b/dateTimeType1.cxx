@@ -123,8 +123,8 @@ namespace Atom
   //
 
   dateTimeType::
-  dateTimeType (const ::xml_schema::date_time& _xsd_date_time_base)
-  : ::xml_schema::date_time (_xsd_date_time_base),
+  dateTimeType (const  ::xml_schema_test::date_time& _xsd_date_time_base)
+  : ::xml_schema_test::date_time (_xsd_date_time_base),
     base_ (this),
     lang_ (this)
   {
@@ -132,9 +132,9 @@ namespace Atom
 
   dateTimeType::
   dateTimeType (const dateTimeType& x,
-                ::xml_schema::flags f,
-                ::xml_schema::container* c)
-  : ::xml_schema::date_time (x, f, c),
+           ::xml_schema_test::flags f,
+           ::xml_schema_test::container* c)
+  : ::xml_schema_test::date_time (x, f, c),
     base_ (x.base_, f, this),
     lang_ (x.lang_, f, this)
   {
@@ -142,13 +142,13 @@ namespace Atom
 
   dateTimeType::
   dateTimeType (const ::xercesc::DOMElement& e,
-                ::xml_schema::flags f,
-                ::xml_schema::container* c)
-  : ::xml_schema::date_time (e, f | ::xml_schema::flags::base, c),
+           ::xml_schema_test::flags f,
+           ::xml_schema_test::container* c)
+  : ::xml_schema_test::date_time (e, f | ::xml_schema_test::flags::base, c),
     base_ (this),
     lang_ (this)
   {
-    if ((f & ::xml_schema::flags::base) == 0)
+    if ((f & ::xml_schema_test::flags::base) == 0)
     {
       ::xsd::cxx::xml::dom::parser< char > p (e, false, false, true);
       this->parse (p, f);
@@ -157,7 +157,7 @@ namespace Atom
 
   void dateTimeType::
   parse (::xsd::cxx::xml::dom::parser< char >& p,
-         ::xml_schema::flags f)
+    ::xml_schema_test::flags f)
   {
     while (p.more_attributes ())
     {
@@ -180,8 +180,8 @@ namespace Atom
   }
 
   dateTimeType* dateTimeType::
-  _clone (::xml_schema::flags f,
-          ::xml_schema::container* c) const
+  _clone (::xml_schema_test::flags f,
+     ::xml_schema_test::container* c) const
   {
     return new class dateTimeType (*this, f, c);
   }
@@ -191,7 +191,7 @@ namespace Atom
   {
     if (this != &x)
     {
-      static_cast< ::xml_schema::date_time& > (*this) = x;
+      static_cast< ::xml_schema_test::date_time& > (*this) = x;
       this->base_ = x.base_;
       this->lang_ = x.lang_;
     }
@@ -231,7 +231,7 @@ namespace Atom
   void
   operator<< (::xercesc::DOMElement& e, const dateTimeType& i)
   {
-    e << static_cast< const ::xml_schema::date_time& > (i);
+    e << static_cast< const  ::xml_schema_test::date_time& > (i);
 
     // base
     //

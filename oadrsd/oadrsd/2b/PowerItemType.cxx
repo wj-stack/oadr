@@ -190,8 +190,8 @@ namespace power
 
   PowerItemType::
   PowerItemType (const PowerItemType& x,
-                 ::xml_schema::flags f,
-                 ::xml_schema::container* c)
+            ::xml_schema_test::flags f,
+            ::xml_schema_test::container* c)
   : ::oadr2b::emix::ItemBaseType (x, f, c),
     itemDescription_ (x.itemDescription_, f, this),
     itemUnits_ (x.itemUnits_, f, this),
@@ -202,15 +202,15 @@ namespace power
 
   PowerItemType::
   PowerItemType (const ::xercesc::DOMElement& e,
-                 ::xml_schema::flags f,
-                 ::xml_schema::container* c)
-  : ::oadr2b::emix::ItemBaseType (e, f | ::xml_schema::flags::base, c),
+            ::xml_schema_test::flags f,
+            ::xml_schema_test::container* c)
+  : ::oadr2b::emix::ItemBaseType (e, f | ::xml_schema_test::flags::base, c),
     itemDescription_ (this),
     itemUnits_ (this),
     siScaleCode_ (this),
     powerAttributes_ (this)
   {
-    if ((f & ::xml_schema::flags::base) == 0)
+    if ((f & ::xml_schema_test::flags::base) == 0)
     {
       ::xsd::cxx::xml::dom::parser< char > p (e, true, false, false);
       this->parse (p, f);
@@ -219,7 +219,7 @@ namespace power
 
   void PowerItemType::
   parse (::xsd::cxx::xml::dom::parser< char >& p,
-         ::xml_schema::flags f)
+    ::xml_schema_test::flags f)
   {
     for (; p.more_content (); p.next_content (false))
     {
@@ -316,8 +316,8 @@ namespace power
   }
 
   PowerItemType* PowerItemType::
-  _clone (::xml_schema::flags f,
-          ::xml_schema::container* c) const
+  _clone (::xml_schema_test::flags f,
+     ::xml_schema_test::container* c) const
   {
     return new class PowerItemType (*this, f, c);
   }

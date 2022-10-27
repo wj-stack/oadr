@@ -69,46 +69,46 @@ namespace oadr2b
 
     PayloadBaseType::
     PayloadBaseType ()
-    : ::xml_schema::type ()
+    : ::xml_schema_test::type ()
     {
     }
 
     PayloadBaseType::
     PayloadBaseType (const PayloadBaseType& x,
-                     ::xml_schema::flags f,
-                     ::xml_schema::container* c)
-    : ::xml_schema::type (x, f, c)
+                ::xml_schema_test::flags f,
+                ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (x, f, c)
     {
     }
 
     PayloadBaseType::
     PayloadBaseType (const ::xercesc::DOMElement& e,
-                     ::xml_schema::flags f,
-                     ::xml_schema::container* c)
-    : ::xml_schema::type (e, f, c)
+                ::xml_schema_test::flags f,
+                ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (e, f, c)
     {
     }
 
     PayloadBaseType::
     PayloadBaseType (const ::xercesc::DOMAttr& a,
-                     ::xml_schema::flags f,
-                     ::xml_schema::container* c)
-    : ::xml_schema::type (a, f, c)
+                ::xml_schema_test::flags f,
+                ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (a, f, c)
     {
     }
 
     PayloadBaseType::
     PayloadBaseType (const ::std::string& s,
                      const ::xercesc::DOMElement* e,
-                     ::xml_schema::flags f,
-                     ::xml_schema::container* c)
-    : ::xml_schema::type (s, e, f, c)
+                ::xml_schema_test::flags f,
+                ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (s, e, f, c)
     {
     }
 
     PayloadBaseType* PayloadBaseType::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class PayloadBaseType (*this, f, c);
     }
@@ -157,7 +157,7 @@ namespace oadr2b
     void
     operator<< (::xercesc::DOMElement& e, const PayloadBaseType& i)
     {
-      e << static_cast< const ::xml_schema::type& > (i);
+      e << static_cast< const  ::xml_schema_test::type& > (i);
     }
 
     void
@@ -166,7 +166,7 @@ namespace oadr2b
     }
 
     void
-    operator<< (::xml_schema::list_stream&,
+    operator<< (::xml_schema_test::list_stream&,
                 const PayloadBaseType&)
     {
     }

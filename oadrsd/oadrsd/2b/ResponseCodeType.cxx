@@ -69,64 +69,64 @@ namespace oadr2b
 
     ResponseCodeType::
     ResponseCodeType ()
-    : ::xml_schema::string ()
+    : ::xml_schema_test::string ()
     {
     }
 
     ResponseCodeType::
     ResponseCodeType (const char* _xsd_string_base)
-    : ::xml_schema::string (_xsd_string_base)
+    : ::xml_schema_test::string (_xsd_string_base)
     {
     }
 
     ResponseCodeType::
     ResponseCodeType (const ::std::string& _xsd_string_base)
-    : ::xml_schema::string (_xsd_string_base)
+    : ::xml_schema_test::string (_xsd_string_base)
     {
     }
 
     ResponseCodeType::
-    ResponseCodeType (const ::xml_schema::string& _xsd_string_base)
-    : ::xml_schema::string (_xsd_string_base)
+    ResponseCodeType (const  ::xml_schema_test::string& _xsd_string_base)
+    : ::xml_schema_test::string (_xsd_string_base)
     {
     }
 
     ResponseCodeType::
     ResponseCodeType (const ResponseCodeType& x,
-                      ::xml_schema::flags f,
-                      ::xml_schema::container* c)
-    : ::xml_schema::string (x, f, c)
+                 ::xml_schema_test::flags f,
+                 ::xml_schema_test::container* c)
+    : ::xml_schema_test::string (x, f, c)
     {
     }
 
     ResponseCodeType::
     ResponseCodeType (const ::xercesc::DOMElement& e,
-                      ::xml_schema::flags f,
-                      ::xml_schema::container* c)
-    : ::xml_schema::string (e, f, c)
+                 ::xml_schema_test::flags f,
+                 ::xml_schema_test::container* c)
+    : ::xml_schema_test::string (e, f, c)
     {
     }
 
     ResponseCodeType::
     ResponseCodeType (const ::xercesc::DOMAttr& a,
-                      ::xml_schema::flags f,
-                      ::xml_schema::container* c)
-    : ::xml_schema::string (a, f, c)
+                 ::xml_schema_test::flags f,
+                 ::xml_schema_test::container* c)
+    : ::xml_schema_test::string (a, f, c)
     {
     }
 
     ResponseCodeType::
     ResponseCodeType (const ::std::string& s,
                       const ::xercesc::DOMElement* e,
-                      ::xml_schema::flags f,
-                      ::xml_schema::container* c)
-    : ::xml_schema::string (s, e, f, c)
+                 ::xml_schema_test::flags f,
+                 ::xml_schema_test::container* c)
+    : ::xml_schema_test::string (s, e, f, c)
     {
     }
 
     ResponseCodeType* ResponseCodeType::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class ResponseCodeType (*this, f, c);
     }
@@ -169,20 +169,20 @@ namespace oadr2b
     void
     operator<< (::xercesc::DOMElement& e, const ResponseCodeType& i)
     {
-      e << static_cast< const ::xml_schema::string& > (i);
+      e << static_cast< const  ::xml_schema_test::string& > (i);
     }
 
     void
     operator<< (::xercesc::DOMAttr& a, const ResponseCodeType& i)
     {
-      a << static_cast< const ::xml_schema::string& > (i);
+      a << static_cast< const  ::xml_schema_test::string& > (i);
     }
 
     void
-    operator<< (::xml_schema::list_stream& l,
+    operator<< (::xml_schema_test::list_stream& l,
                 const ResponseCodeType& i)
     {
-      l << static_cast< const ::xml_schema::string& > (i);
+      l << static_cast< const  ::xml_schema_test::string& > (i);
     }
   }
 }

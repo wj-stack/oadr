@@ -319,7 +319,7 @@ namespace oadr2b
 
     EiTargetType::
     EiTargetType ()
-    : ::xml_schema::type (),
+    : ::xml_schema_test::type (),
       aggregatedPnode_ (this),
       endDeviceAsset_ (this),
       meterAsset_ (this),
@@ -338,9 +338,9 @@ namespace oadr2b
 
     EiTargetType::
     EiTargetType (const EiTargetType& x,
-                  ::xml_schema::flags f,
-                  ::xml_schema::container* c)
-    : ::xml_schema::type (x, f, c),
+             ::xml_schema_test::flags f,
+             ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (x, f, c),
       aggregatedPnode_ (x.aggregatedPnode_, f, this),
       endDeviceAsset_ (x.endDeviceAsset_, f, this),
       meterAsset_ (x.meterAsset_, f, this),
@@ -359,9 +359,9 @@ namespace oadr2b
 
     EiTargetType::
     EiTargetType (const ::xercesc::DOMElement& e,
-                  ::xml_schema::flags f,
-                  ::xml_schema::container* c)
-    : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
+             ::xml_schema_test::flags f,
+             ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (e, f | ::xml_schema_test::flags::base, c),
       aggregatedPnode_ (this),
       endDeviceAsset_ (this),
       meterAsset_ (this),
@@ -376,7 +376,7 @@ namespace oadr2b
       venID_ (this),
       partyID_ (this)
     {
-      if ((f & ::xml_schema::flags::base) == 0)
+      if ((f & ::xml_schema_test::flags::base) == 0)
       {
         ::xsd::cxx::xml::dom::parser< char > p (e, true, false, false);
         this->parse (p, f);
@@ -385,7 +385,7 @@ namespace oadr2b
 
     void EiTargetType::
     parse (::xsd::cxx::xml::dom::parser< char >& p,
-           ::xml_schema::flags f)
+      ::xml_schema_test::flags f)
     {
       for (; p.more_content (); p.next_content (false))
       {
@@ -541,8 +541,8 @@ namespace oadr2b
     }
 
     EiTargetType* EiTargetType::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class EiTargetType (*this, f, c);
     }
@@ -552,7 +552,7 @@ namespace oadr2b
     {
       if (this != &x)
       {
-        static_cast< ::xml_schema::type& > (*this) = x;
+        static_cast< ::xml_schema_test::type& > (*this) = x;
         this->aggregatedPnode_ = x.aggregatedPnode_;
         this->endDeviceAsset_ = x.endDeviceAsset_;
         this->meterAsset_ = x.meterAsset_;
@@ -609,7 +609,7 @@ namespace oadr2b
     void
     operator<< (::xercesc::DOMElement& e, const EiTargetType& i)
     {
-      e << static_cast< const ::xml_schema::type& > (i);
+      e << static_cast< const  ::xml_schema_test::type& > (i);
 
       // aggregatedPnode
       //

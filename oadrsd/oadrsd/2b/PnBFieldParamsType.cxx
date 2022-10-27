@@ -135,8 +135,8 @@ namespace oadr2b
 
     PnBFieldParamsType::
     PnBFieldParamsType (const PnBFieldParamsType& x,
-                        ::xml_schema::flags f,
-                        ::xml_schema::container* c)
+                   ::xml_schema_test::flags f,
+                   ::xml_schema_test::container* c)
     : ::oadr2b::dsig11::CharTwoFieldParamsType (x, f, c),
       K1_ (x.K1_, f, this),
       K2_ (x.K2_, f, this),
@@ -146,14 +146,14 @@ namespace oadr2b
 
     PnBFieldParamsType::
     PnBFieldParamsType (const ::xercesc::DOMElement& e,
-                        ::xml_schema::flags f,
-                        ::xml_schema::container* c)
-    : ::oadr2b::dsig11::CharTwoFieldParamsType (e, f | ::xml_schema::flags::base, c),
+                   ::xml_schema_test::flags f,
+                   ::xml_schema_test::container* c)
+    : ::oadr2b::dsig11::CharTwoFieldParamsType (e, f | ::xml_schema_test::flags::base, c),
       K1_ (this),
       K2_ (this),
       K3_ (this)
     {
-      if ((f & ::xml_schema::flags::base) == 0)
+      if ((f & ::xml_schema_test::flags::base) == 0)
       {
         ::xsd::cxx::xml::dom::parser< char > p (e, true, false, false);
         this->parse (p, f);
@@ -162,7 +162,7 @@ namespace oadr2b
 
     void PnBFieldParamsType::
     parse (::xsd::cxx::xml::dom::parser< char >& p,
-           ::xml_schema::flags f)
+      ::xml_schema_test::flags f)
     {
       this->::oadr2b::dsig11::CharTwoFieldParamsType::parse (p, f);
 
@@ -231,8 +231,8 @@ namespace oadr2b
     }
 
     PnBFieldParamsType* PnBFieldParamsType::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class PnBFieldParamsType (*this, f, c);
     }

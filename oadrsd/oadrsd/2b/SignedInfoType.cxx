@@ -172,7 +172,7 @@ namespace oadr2b
     SignedInfoType::
     SignedInfoType (const CanonicalizationMethod_type& CanonicalizationMethod,
                     const SignatureMethod_type& SignatureMethod)
-    : ::xml_schema::type (),
+    : ::xml_schema_test::type (),
       CanonicalizationMethod_ (CanonicalizationMethod, this),
       SignatureMethod_ (SignatureMethod, this),
       Reference_ (this),
@@ -183,7 +183,7 @@ namespace oadr2b
     SignedInfoType::
     SignedInfoType (::std::unique_ptr< CanonicalizationMethod_type > CanonicalizationMethod,
                     ::std::unique_ptr< SignatureMethod_type > SignatureMethod)
-    : ::xml_schema::type (),
+    : ::xml_schema_test::type (),
       CanonicalizationMethod_ (std::move (CanonicalizationMethod), this),
       SignatureMethod_ (std::move (SignatureMethod), this),
       Reference_ (this),
@@ -193,9 +193,9 @@ namespace oadr2b
 
     SignedInfoType::
     SignedInfoType (const SignedInfoType& x,
-                    ::xml_schema::flags f,
-                    ::xml_schema::container* c)
-    : ::xml_schema::type (x, f, c),
+               ::xml_schema_test::flags f,
+               ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (x, f, c),
       CanonicalizationMethod_ (x.CanonicalizationMethod_, f, this),
       SignatureMethod_ (x.SignatureMethod_, f, this),
       Reference_ (x.Reference_, f, this),
@@ -205,15 +205,15 @@ namespace oadr2b
 
     SignedInfoType::
     SignedInfoType (const ::xercesc::DOMElement& e,
-                    ::xml_schema::flags f,
-                    ::xml_schema::container* c)
-    : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
+               ::xml_schema_test::flags f,
+               ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (e, f | ::xml_schema_test::flags::base, c),
       CanonicalizationMethod_ (this),
       SignatureMethod_ (this),
       Reference_ (this),
       Id_ (this)
     {
-      if ((f & ::xml_schema::flags::base) == 0)
+      if ((f & ::xml_schema_test::flags::base) == 0)
       {
         ::xsd::cxx::xml::dom::parser< char > p (e, true, false, true);
         this->parse (p, f);
@@ -222,7 +222,7 @@ namespace oadr2b
 
     void SignedInfoType::
     parse (::xsd::cxx::xml::dom::parser< char >& p,
-           ::xml_schema::flags f)
+      ::xml_schema_test::flags f)
     {
       for (; p.more_content (); p.next_content (false))
       {
@@ -301,8 +301,8 @@ namespace oadr2b
     }
 
     SignedInfoType* SignedInfoType::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class SignedInfoType (*this, f, c);
     }
@@ -312,7 +312,7 @@ namespace oadr2b
     {
       if (this != &x)
       {
-        static_cast< ::xml_schema::type& > (*this) = x;
+        static_cast< ::xml_schema_test::type& > (*this) = x;
         this->CanonicalizationMethod_ = x.CanonicalizationMethod_;
         this->SignatureMethod_ = x.SignatureMethod_;
         this->Reference_ = x.Reference_;
@@ -360,7 +360,7 @@ namespace oadr2b
     void
     operator<< (::xercesc::DOMElement& e, const SignedInfoType& i)
     {
-      e << static_cast< const ::xml_schema::type& > (i);
+      e << static_cast< const  ::xml_schema_test::type& > (i);
 
       // CanonicalizationMethod
       //

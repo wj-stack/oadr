@@ -184,7 +184,7 @@ namespace Atom
 
   generatorType::
   generatorType ()
-  : ::xml_schema::string (),
+  : ::xml_schema_test::string (),
     uri_ (this),
     version_ (this),
     base_ (this),
@@ -194,7 +194,7 @@ namespace Atom
 
   generatorType::
   generatorType (const char* _xsd_string_base)
-  : ::xml_schema::string (_xsd_string_base),
+  : ::xml_schema_test::string (_xsd_string_base),
     uri_ (this),
     version_ (this),
     base_ (this),
@@ -204,7 +204,7 @@ namespace Atom
 
   generatorType::
   generatorType (const ::std::string& _xsd_string_base)
-  : ::xml_schema::string (_xsd_string_base),
+  : ::xml_schema_test::string (_xsd_string_base),
     uri_ (this),
     version_ (this),
     base_ (this),
@@ -213,8 +213,8 @@ namespace Atom
   }
 
   generatorType::
-  generatorType (const ::xml_schema::string& _xsd_string_base)
-  : ::xml_schema::string (_xsd_string_base),
+  generatorType (const  ::xml_schema_test::string& _xsd_string_base)
+  : ::xml_schema_test::string (_xsd_string_base),
     uri_ (this),
     version_ (this),
     base_ (this),
@@ -224,9 +224,9 @@ namespace Atom
 
   generatorType::
   generatorType (const generatorType& x,
-                 ::xml_schema::flags f,
-                 ::xml_schema::container* c)
-  : ::xml_schema::string (x, f, c),
+            ::xml_schema_test::flags f,
+            ::xml_schema_test::container* c)
+  : ::xml_schema_test::string (x, f, c),
     uri_ (x.uri_, f, this),
     version_ (x.version_, f, this),
     base_ (x.base_, f, this),
@@ -236,15 +236,15 @@ namespace Atom
 
   generatorType::
   generatorType (const ::xercesc::DOMElement& e,
-                 ::xml_schema::flags f,
-                 ::xml_schema::container* c)
-  : ::xml_schema::string (e, f | ::xml_schema::flags::base, c),
+            ::xml_schema_test::flags f,
+            ::xml_schema_test::container* c)
+  : ::xml_schema_test::string (e, f | ::xml_schema_test::flags::base, c),
     uri_ (this),
     version_ (this),
     base_ (this),
     lang_ (this)
   {
-    if ((f & ::xml_schema::flags::base) == 0)
+    if ((f & ::xml_schema_test::flags::base) == 0)
     {
       ::xsd::cxx::xml::dom::parser< char > p (e, false, false, true);
       this->parse (p, f);
@@ -253,7 +253,7 @@ namespace Atom
 
   void generatorType::
   parse (::xsd::cxx::xml::dom::parser< char >& p,
-         ::xml_schema::flags f)
+    ::xml_schema_test::flags f)
   {
     while (p.more_attributes ())
     {
@@ -288,8 +288,8 @@ namespace Atom
   }
 
   generatorType* generatorType::
-  _clone (::xml_schema::flags f,
-          ::xml_schema::container* c) const
+  _clone (::xml_schema_test::flags f,
+     ::xml_schema_test::container* c) const
   {
     return new class generatorType (*this, f, c);
   }
@@ -299,7 +299,7 @@ namespace Atom
   {
     if (this != &x)
     {
-      static_cast< ::xml_schema::string& > (*this) = x;
+      static_cast< ::xml_schema_test::string& > (*this) = x;
       this->uri_ = x.uri_;
       this->version_ = x.version_;
       this->base_ = x.base_;
@@ -341,7 +341,7 @@ namespace Atom
   void
   operator<< (::xercesc::DOMElement& e, const generatorType& i)
   {
-    e << static_cast< const ::xml_schema::string& > (i);
+    e << static_cast< const  ::xml_schema_test::string& > (i);
 
     // uri
     //

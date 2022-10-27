@@ -49,41 +49,41 @@ namespace oadr2b
 
     ResponseRequiredType::
     ResponseRequiredType (value v)
-    : ::xml_schema::string (_xsd_ResponseRequiredType_literals_[v])
+    : ::xml_schema_test::string (_xsd_ResponseRequiredType_literals_[v])
     {
     }
 
     ResponseRequiredType::
     ResponseRequiredType (const char* v)
-    : ::xml_schema::string (v)
+    : ::xml_schema_test::string (v)
     {
     }
 
     ResponseRequiredType::
     ResponseRequiredType (const ::std::string& v)
-    : ::xml_schema::string (v)
+    : ::xml_schema_test::string (v)
     {
     }
 
     ResponseRequiredType::
-    ResponseRequiredType (const ::xml_schema::string& v)
-    : ::xml_schema::string (v)
+    ResponseRequiredType (const  ::xml_schema_test::string& v)
+    : ::xml_schema_test::string (v)
     {
     }
 
     ResponseRequiredType::
     ResponseRequiredType (const ResponseRequiredType& v,
-                          ::xml_schema::flags f,
-                          ::xml_schema::container* c)
-    : ::xml_schema::string (v, f, c)
+                     ::xml_schema_test::flags f,
+                     ::xml_schema_test::container* c)
+    : ::xml_schema_test::string (v, f, c)
     {
     }
 
     ResponseRequiredType& ResponseRequiredType::
     operator= (value v)
     {
-      static_cast< ::xml_schema::string& > (*this) = 
-      ::xml_schema::string (_xsd_ResponseRequiredType_literals_[v]);
+      static_cast< ::xml_schema_test::string& > (*this) = 
+ ::xml_schema_test::string (_xsd_ResponseRequiredType_literals_[v]);
 
       return *this;
     }
@@ -110,18 +110,18 @@ namespace oadr2b
 
     ResponseRequiredType::
     ResponseRequiredType (const ::xercesc::DOMElement& e,
-                          ::xml_schema::flags f,
-                          ::xml_schema::container* c)
-    : ::xml_schema::string (e, f, c)
+                     ::xml_schema_test::flags f,
+                     ::xml_schema_test::container* c)
+    : ::xml_schema_test::string (e, f, c)
     {
       _xsd_ResponseRequiredType_convert ();
     }
 
     ResponseRequiredType::
     ResponseRequiredType (const ::xercesc::DOMAttr& a,
-                          ::xml_schema::flags f,
-                          ::xml_schema::container* c)
-    : ::xml_schema::string (a, f, c)
+                     ::xml_schema_test::flags f,
+                     ::xml_schema_test::container* c)
+    : ::xml_schema_test::string (a, f, c)
     {
       _xsd_ResponseRequiredType_convert ();
     }
@@ -129,16 +129,16 @@ namespace oadr2b
     ResponseRequiredType::
     ResponseRequiredType (const ::std::string& s,
                           const ::xercesc::DOMElement* e,
-                          ::xml_schema::flags f,
-                          ::xml_schema::container* c)
-    : ::xml_schema::string (s, e, f, c)
+                     ::xml_schema_test::flags f,
+                     ::xml_schema_test::container* c)
+    : ::xml_schema_test::string (s, e, f, c)
     {
       _xsd_ResponseRequiredType_convert ();
     }
 
     ResponseRequiredType* ResponseRequiredType::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class ResponseRequiredType (*this, f, c);
     }
@@ -208,20 +208,20 @@ namespace oadr2b
     void
     operator<< (::xercesc::DOMElement& e, const ResponseRequiredType& i)
     {
-      e << static_cast< const ::xml_schema::string& > (i);
+      e << static_cast< const  ::xml_schema_test::string& > (i);
     }
 
     void
     operator<< (::xercesc::DOMAttr& a, const ResponseRequiredType& i)
     {
-      a << static_cast< const ::xml_schema::string& > (i);
+      a << static_cast< const  ::xml_schema_test::string& > (i);
     }
 
     void
-    operator<< (::xml_schema::list_stream& l,
+    operator<< (::xml_schema_test::list_stream& l,
                 const ResponseRequiredType& i)
     {
-      l << static_cast< const ::xml_schema::string& > (i);
+      l << static_cast< const  ::xml_schema_test::string& > (i);
     }
   }
 }

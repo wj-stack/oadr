@@ -191,7 +191,7 @@ namespace oadr2b
 
     oadrLoadControlStateType::
     oadrLoadControlStateType ()
-    : ::xml_schema::type (),
+    : ::xml_schema_test::type (),
       oadrCapacity_ (this),
       oadrLevelOffset_ (this),
       oadrPercentOffset_ (this),
@@ -201,9 +201,9 @@ namespace oadr2b
 
     oadrLoadControlStateType::
     oadrLoadControlStateType (const oadrLoadControlStateType& x,
-                              ::xml_schema::flags f,
-                              ::xml_schema::container* c)
-    : ::xml_schema::type (x, f, c),
+                         ::xml_schema_test::flags f,
+                         ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (x, f, c),
       oadrCapacity_ (x.oadrCapacity_, f, this),
       oadrLevelOffset_ (x.oadrLevelOffset_, f, this),
       oadrPercentOffset_ (x.oadrPercentOffset_, f, this),
@@ -213,15 +213,15 @@ namespace oadr2b
 
     oadrLoadControlStateType::
     oadrLoadControlStateType (const ::xercesc::DOMElement& e,
-                              ::xml_schema::flags f,
-                              ::xml_schema::container* c)
-    : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
+                         ::xml_schema_test::flags f,
+                         ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (e, f | ::xml_schema_test::flags::base, c),
       oadrCapacity_ (this),
       oadrLevelOffset_ (this),
       oadrPercentOffset_ (this),
       oadrSetPoint_ (this)
     {
-      if ((f & ::xml_schema::flags::base) == 0)
+      if ((f & ::xml_schema_test::flags::base) == 0)
       {
         ::xsd::cxx::xml::dom::parser< char > p (e, true, false, false);
         this->parse (p, f);
@@ -230,7 +230,7 @@ namespace oadr2b
 
     void oadrLoadControlStateType::
     parse (::xsd::cxx::xml::dom::parser< char >& p,
-           ::xml_schema::flags f)
+      ::xml_schema_test::flags f)
     {
       for (; p.more_content (); p.next_content (false))
       {
@@ -299,8 +299,8 @@ namespace oadr2b
     }
 
     oadrLoadControlStateType* oadrLoadControlStateType::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class oadrLoadControlStateType (*this, f, c);
     }
@@ -310,7 +310,7 @@ namespace oadr2b
     {
       if (this != &x)
       {
-        static_cast< ::xml_schema::type& > (*this) = x;
+        static_cast< ::xml_schema_test::type& > (*this) = x;
         this->oadrCapacity_ = x.oadrCapacity_;
         this->oadrLevelOffset_ = x.oadrLevelOffset_;
         this->oadrPercentOffset_ = x.oadrPercentOffset_;
@@ -358,7 +358,7 @@ namespace oadr2b
     void
     operator<< (::xercesc::DOMElement& e, const oadrLoadControlStateType& i)
     {
-      e << static_cast< const ::xml_schema::type& > (i);
+      e << static_cast< const  ::xml_schema_test::type& > (i);
 
       // oadrCapacity
       //

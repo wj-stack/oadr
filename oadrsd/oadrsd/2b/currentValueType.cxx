@@ -95,35 +95,35 @@ namespace oadr2b
 
     currentValueType::
     currentValueType (const payloadFloat_type& payloadFloat)
-    : ::xml_schema::type (),
+    : ::xml_schema_test::type (),
       payloadFloat_ (payloadFloat, this)
     {
     }
 
     currentValueType::
     currentValueType (::std::unique_ptr< payloadFloat_type > payloadFloat)
-    : ::xml_schema::type (),
+    : ::xml_schema_test::type (),
       payloadFloat_ (std::move (payloadFloat), this)
     {
     }
 
     currentValueType::
     currentValueType (const currentValueType& x,
-                      ::xml_schema::flags f,
-                      ::xml_schema::container* c)
-    : ::xml_schema::type (x, f, c),
+                 ::xml_schema_test::flags f,
+                 ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (x, f, c),
       payloadFloat_ (x.payloadFloat_, f, this)
     {
     }
 
     currentValueType::
     currentValueType (const ::xercesc::DOMElement& e,
-                      ::xml_schema::flags f,
-                      ::xml_schema::container* c)
-    : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
+                 ::xml_schema_test::flags f,
+                 ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (e, f | ::xml_schema_test::flags::base, c),
       payloadFloat_ (this)
     {
-      if ((f & ::xml_schema::flags::base) == 0)
+      if ((f & ::xml_schema_test::flags::base) == 0)
       {
         ::xsd::cxx::xml::dom::parser< char > p (e, true, false, false);
         this->parse (p, f);
@@ -132,7 +132,7 @@ namespace oadr2b
 
     void currentValueType::
     parse (::xsd::cxx::xml::dom::parser< char >& p,
-           ::xml_schema::flags f)
+      ::xml_schema_test::flags f)
     {
       for (; p.more_content (); p.next_content (false))
       {
@@ -180,8 +180,8 @@ namespace oadr2b
     }
 
     currentValueType* currentValueType::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class currentValueType (*this, f, c);
     }
@@ -191,7 +191,7 @@ namespace oadr2b
     {
       if (this != &x)
       {
-        static_cast< ::xml_schema::type& > (*this) = x;
+        static_cast< ::xml_schema_test::type& > (*this) = x;
         this->payloadFloat_ = x.payloadFloat_;
       }
 
@@ -236,7 +236,7 @@ namespace oadr2b
     void
     operator<< (::xercesc::DOMElement& e, const currentValueType& i)
     {
-      e << static_cast< const ::xml_schema::type& > (i);
+      e << static_cast< const  ::xml_schema_test::type& > (i);
 
       // payloadFloat
       //

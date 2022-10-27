@@ -292,7 +292,7 @@ namespace Atom
 
   linkType::
   linkType (const href_type& href)
-  : ::xml_schema::type (),
+  : ::xml_schema_test::type (),
     href_ (href, this),
     rel_ (this),
     type_ (this),
@@ -306,9 +306,9 @@ namespace Atom
 
   linkType::
   linkType (const linkType& x,
-            ::xml_schema::flags f,
-            ::xml_schema::container* c)
-  : ::xml_schema::type (x, f, c),
+       ::xml_schema_test::flags f,
+       ::xml_schema_test::container* c)
+  : ::xml_schema_test::type (x, f, c),
     href_ (x.href_, f, this),
     rel_ (x.rel_, f, this),
     type_ (x.type_, f, this),
@@ -322,9 +322,9 @@ namespace Atom
 
   linkType::
   linkType (const ::xercesc::DOMElement& e,
-            ::xml_schema::flags f,
-            ::xml_schema::container* c)
-  : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
+       ::xml_schema_test::flags f,
+       ::xml_schema_test::container* c)
+  : ::xml_schema_test::type (e, f | ::xml_schema_test::flags::base, c),
     href_ (this),
     rel_ (this),
     type_ (this),
@@ -334,7 +334,7 @@ namespace Atom
     base_ (this),
     lang_ (this)
   {
-    if ((f & ::xml_schema::flags::base) == 0)
+    if ((f & ::xml_schema_test::flags::base) == 0)
     {
       ::xsd::cxx::xml::dom::parser< char > p (e, false, false, true);
       this->parse (p, f);
@@ -343,7 +343,7 @@ namespace Atom
 
   void linkType::
   parse (::xsd::cxx::xml::dom::parser< char >& p,
-         ::xml_schema::flags f)
+    ::xml_schema_test::flags f)
   {
     while (p.more_attributes ())
     {
@@ -409,8 +409,8 @@ namespace Atom
   }
 
   linkType* linkType::
-  _clone (::xml_schema::flags f,
-          ::xml_schema::container* c) const
+  _clone (::xml_schema_test::flags f,
+     ::xml_schema_test::container* c) const
   {
     return new class linkType (*this, f, c);
   }
@@ -420,7 +420,7 @@ namespace Atom
   {
     if (this != &x)
     {
-      static_cast< ::xml_schema::type& > (*this) = x;
+      static_cast< ::xml_schema_test::type& > (*this) = x;
       this->href_ = x.href_;
       this->rel_ = x.rel_;
       this->type_ = x.type_;
@@ -466,7 +466,7 @@ namespace Atom
   void
   operator<< (::xercesc::DOMElement& e, const linkType& i)
   {
-    e << static_cast< const ::xml_schema::type& > (i);
+    e << static_cast< const  ::xml_schema_test::type& > (i);
 
     // href
     //

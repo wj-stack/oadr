@@ -68,47 +68,47 @@ namespace oadr2b
     //
 
     HMACOutputLengthType::
-    HMACOutputLengthType (const ::xml_schema::integer& _xsd_integer_base)
-    : ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type > (_xsd_integer_base)
+    HMACOutputLengthType (const  ::xml_schema_test::integer& _xsd_integer_base)
+    : ::xsd::cxx::tree::fundamental_base< ::xml_schema_test::integer, char, ::xml_schema_test::simple_type > (_xsd_integer_base)
     {
     }
 
     HMACOutputLengthType::
     HMACOutputLengthType (const HMACOutputLengthType& x,
-                          ::xml_schema::flags f,
-                          ::xml_schema::container* c)
-    : ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type > (x, f, c)
+                     ::xml_schema_test::flags f,
+                     ::xml_schema_test::container* c)
+    : ::xsd::cxx::tree::fundamental_base< ::xml_schema_test::integer, char, ::xml_schema_test::simple_type > (x, f, c)
     {
     }
 
     HMACOutputLengthType::
     HMACOutputLengthType (const ::xercesc::DOMElement& e,
-                          ::xml_schema::flags f,
-                          ::xml_schema::container* c)
-    : ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type > (e, f, c)
+                     ::xml_schema_test::flags f,
+                     ::xml_schema_test::container* c)
+    : ::xsd::cxx::tree::fundamental_base< ::xml_schema_test::integer, char, ::xml_schema_test::simple_type > (e, f, c)
     {
     }
 
     HMACOutputLengthType::
     HMACOutputLengthType (const ::xercesc::DOMAttr& a,
-                          ::xml_schema::flags f,
-                          ::xml_schema::container* c)
-    : ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type > (a, f, c)
+                     ::xml_schema_test::flags f,
+                     ::xml_schema_test::container* c)
+    : ::xsd::cxx::tree::fundamental_base< ::xml_schema_test::integer, char, ::xml_schema_test::simple_type > (a, f, c)
     {
     }
 
     HMACOutputLengthType::
     HMACOutputLengthType (const ::std::string& s,
                           const ::xercesc::DOMElement* e,
-                          ::xml_schema::flags f,
-                          ::xml_schema::container* c)
-    : ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type > (s, e, f, c)
+                     ::xml_schema_test::flags f,
+                     ::xml_schema_test::container* c)
+    : ::xsd::cxx::tree::fundamental_base< ::xml_schema_test::integer, char, ::xml_schema_test::simple_type > (s, e, f, c)
     {
     }
 
     HMACOutputLengthType* HMACOutputLengthType::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class HMACOutputLengthType (*this, f, c);
     }
@@ -151,20 +151,20 @@ namespace oadr2b
     void
     operator<< (::xercesc::DOMElement& e, const HMACOutputLengthType& i)
     {
-      e << static_cast< const ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type >& > (i);
+      e << static_cast< const ::xsd::cxx::tree::fundamental_base< ::xml_schema_test::integer, char, ::xml_schema_test::simple_type >& > (i);
     }
 
     void
     operator<< (::xercesc::DOMAttr& a, const HMACOutputLengthType& i)
     {
-      a << static_cast< const ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type >& > (i);
+      a << static_cast< const ::xsd::cxx::tree::fundamental_base< ::xml_schema_test::integer, char, ::xml_schema_test::simple_type >& > (i);
     }
 
     void
-    operator<< (::xml_schema::list_stream& l,
+    operator<< (::xml_schema_test::list_stream& l,
                 const HMACOutputLengthType& i)
     {
-      l << static_cast< const ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type >& > (i);
+      l << static_cast< const ::xsd::cxx::tree::fundamental_base< ::xml_schema_test::integer, char, ::xml_schema_test::simple_type >& > (i);
     }
   }
 }

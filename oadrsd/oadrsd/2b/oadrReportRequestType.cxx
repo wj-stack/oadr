@@ -120,7 +120,7 @@ namespace oadr2b
     oadrReportRequestType::
     oadrReportRequestType (const reportRequestID_type& reportRequestID,
                            const reportSpecifier_type& reportSpecifier)
-    : ::xml_schema::type (),
+    : ::xml_schema_test::type (),
       reportRequestID_ (reportRequestID, this),
       reportSpecifier_ (reportSpecifier, this)
     {
@@ -129,7 +129,7 @@ namespace oadr2b
     oadrReportRequestType::
     oadrReportRequestType (const reportRequestID_type& reportRequestID,
                            ::std::unique_ptr< reportSpecifier_type > reportSpecifier)
-    : ::xml_schema::type (),
+    : ::xml_schema_test::type (),
       reportRequestID_ (reportRequestID, this),
       reportSpecifier_ (std::move (reportSpecifier), this)
     {
@@ -137,9 +137,9 @@ namespace oadr2b
 
     oadrReportRequestType::
     oadrReportRequestType (const oadrReportRequestType& x,
-                           ::xml_schema::flags f,
-                           ::xml_schema::container* c)
-    : ::xml_schema::type (x, f, c),
+                      ::xml_schema_test::flags f,
+                      ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (x, f, c),
       reportRequestID_ (x.reportRequestID_, f, this),
       reportSpecifier_ (x.reportSpecifier_, f, this)
     {
@@ -147,13 +147,13 @@ namespace oadr2b
 
     oadrReportRequestType::
     oadrReportRequestType (const ::xercesc::DOMElement& e,
-                           ::xml_schema::flags f,
-                           ::xml_schema::container* c)
-    : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
+                      ::xml_schema_test::flags f,
+                      ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (e, f | ::xml_schema_test::flags::base, c),
       reportRequestID_ (this),
       reportSpecifier_ (this)
     {
-      if ((f & ::xml_schema::flags::base) == 0)
+      if ((f & ::xml_schema_test::flags::base) == 0)
       {
         ::xsd::cxx::xml::dom::parser< char > p (e, true, false, false);
         this->parse (p, f);
@@ -162,7 +162,7 @@ namespace oadr2b
 
     void oadrReportRequestType::
     parse (::xsd::cxx::xml::dom::parser< char >& p,
-           ::xml_schema::flags f)
+      ::xml_schema_test::flags f)
     {
       for (; p.more_content (); p.next_content (false))
       {
@@ -217,8 +217,8 @@ namespace oadr2b
     }
 
     oadrReportRequestType* oadrReportRequestType::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class oadrReportRequestType (*this, f, c);
     }
@@ -228,7 +228,7 @@ namespace oadr2b
     {
       if (this != &x)
       {
-        static_cast< ::xml_schema::type& > (*this) = x;
+        static_cast< ::xml_schema_test::type& > (*this) = x;
         this->reportRequestID_ = x.reportRequestID_;
         this->reportSpecifier_ = x.reportSpecifier_;
       }
@@ -274,7 +274,7 @@ namespace oadr2b
     void
     operator<< (::xercesc::DOMElement& e, const oadrReportRequestType& i)
     {
-      e << static_cast< const ::xml_schema::type& > (i);
+      e << static_cast< const  ::xml_schema_test::type& > (i);
 
       // reportRequestID
       //

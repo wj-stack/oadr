@@ -84,28 +84,28 @@ namespace stream
 
   intervals::
   intervals ()
-  : ::xml_schema::type (),
+  : ::xml_schema_test::type (),
     interval_ (this)
   {
   }
 
   intervals::
   intervals (const intervals& x,
-             ::xml_schema::flags f,
-             ::xml_schema::container* c)
-  : ::xml_schema::type (x, f, c),
+        ::xml_schema_test::flags f,
+        ::xml_schema_test::container* c)
+  : ::xml_schema_test::type (x, f, c),
     interval_ (x.interval_, f, this)
   {
   }
 
   intervals::
   intervals (const ::xercesc::DOMElement& e,
-             ::xml_schema::flags f,
-             ::xml_schema::container* c)
-  : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
+        ::xml_schema_test::flags f,
+        ::xml_schema_test::container* c)
+  : ::xml_schema_test::type (e, f | ::xml_schema_test::flags::base, c),
     interval_ (this)
   {
-    if ((f & ::xml_schema::flags::base) == 0)
+    if ((f & ::xml_schema_test::flags::base) == 0)
     {
       ::xsd::cxx::xml::dom::parser< char > p (e, true, false, false);
       this->parse (p, f);
@@ -114,7 +114,7 @@ namespace stream
 
   void intervals::
   parse (::xsd::cxx::xml::dom::parser< char >& p,
-         ::xml_schema::flags f)
+    ::xml_schema_test::flags f)
   {
     for (; p.more_content (); p.next_content (false))
     {
@@ -138,8 +138,8 @@ namespace stream
   }
 
   intervals* intervals::
-  _clone (::xml_schema::flags f,
-          ::xml_schema::container* c) const
+  _clone (::xml_schema_test::flags f,
+     ::xml_schema_test::container* c) const
   {
     return new class intervals (*this, f, c);
   }
@@ -149,7 +149,7 @@ namespace stream
   {
     if (this != &x)
     {
-      static_cast< ::xml_schema::type& > (*this) = x;
+      static_cast< ::xml_schema_test::type& > (*this) = x;
       this->interval_ = x.interval_;
     }
 
@@ -188,7 +188,7 @@ namespace stream
   void
   operator<< (::xercesc::DOMElement& e, const intervals& i)
   {
-    e << static_cast< const ::xml_schema::type& > (i);
+    e << static_cast< const  ::xml_schema_test::type& > (i);
 
     // interval
     //

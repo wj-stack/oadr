@@ -90,28 +90,28 @@ namespace power
 
   EndDeviceAssetType::
   EndDeviceAssetType (const mrid_type& mrid)
-  : ::xml_schema::type (),
+  : ::xml_schema_test::type (),
     mrid_ (mrid, this)
   {
   }
 
   EndDeviceAssetType::
   EndDeviceAssetType (const EndDeviceAssetType& x,
-                      ::xml_schema::flags f,
-                      ::xml_schema::container* c)
-  : ::xml_schema::type (x, f, c),
+                 ::xml_schema_test::flags f,
+                 ::xml_schema_test::container* c)
+  : ::xml_schema_test::type (x, f, c),
     mrid_ (x.mrid_, f, this)
   {
   }
 
   EndDeviceAssetType::
   EndDeviceAssetType (const ::xercesc::DOMElement& e,
-                      ::xml_schema::flags f,
-                      ::xml_schema::container* c)
-  : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
+                 ::xml_schema_test::flags f,
+                 ::xml_schema_test::container* c)
+  : ::xml_schema_test::type (e, f | ::xml_schema_test::flags::base, c),
     mrid_ (this)
   {
-    if ((f & ::xml_schema::flags::base) == 0)
+    if ((f & ::xml_schema_test::flags::base) == 0)
     {
       ::xsd::cxx::xml::dom::parser< char > p (e, true, false, false);
       this->parse (p, f);
@@ -120,7 +120,7 @@ namespace power
 
   void EndDeviceAssetType::
   parse (::xsd::cxx::xml::dom::parser< char >& p,
-         ::xml_schema::flags f)
+    ::xml_schema_test::flags f)
   {
     for (; p.more_content (); p.next_content (false))
     {
@@ -154,8 +154,8 @@ namespace power
   }
 
   EndDeviceAssetType* EndDeviceAssetType::
-  _clone (::xml_schema::flags f,
-          ::xml_schema::container* c) const
+  _clone (::xml_schema_test::flags f,
+     ::xml_schema_test::container* c) const
   {
     return new class EndDeviceAssetType (*this, f, c);
   }
@@ -165,7 +165,7 @@ namespace power
   {
     if (this != &x)
     {
-      static_cast< ::xml_schema::type& > (*this) = x;
+      static_cast< ::xml_schema_test::type& > (*this) = x;
       this->mrid_ = x.mrid_;
     }
 
@@ -204,7 +204,7 @@ namespace power
   void
   operator<< (::xercesc::DOMElement& e, const EndDeviceAssetType& i)
   {
-    e << static_cast< const ::xml_schema::type& > (i);
+    e << static_cast< const  ::xml_schema_test::type& > (i);
 
     // mrid
     //

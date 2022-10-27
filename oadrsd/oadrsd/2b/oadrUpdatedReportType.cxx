@@ -189,7 +189,7 @@ namespace oadr2b
 
     oadrUpdatedReportType::
     oadrUpdatedReportType (const eiResponse_type& eiResponse)
-    : ::xml_schema::type (),
+    : ::xml_schema_test::type (),
       eiResponse_ (eiResponse, this),
       oadrCancelReport_ (this),
       venID_ (this),
@@ -199,7 +199,7 @@ namespace oadr2b
 
     oadrUpdatedReportType::
     oadrUpdatedReportType (::std::unique_ptr< eiResponse_type > eiResponse)
-    : ::xml_schema::type (),
+    : ::xml_schema_test::type (),
       eiResponse_ (std::move (eiResponse), this),
       oadrCancelReport_ (this),
       venID_ (this),
@@ -209,9 +209,9 @@ namespace oadr2b
 
     oadrUpdatedReportType::
     oadrUpdatedReportType (const oadrUpdatedReportType& x,
-                           ::xml_schema::flags f,
-                           ::xml_schema::container* c)
-    : ::xml_schema::type (x, f, c),
+                      ::xml_schema_test::flags f,
+                      ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (x, f, c),
       eiResponse_ (x.eiResponse_, f, this),
       oadrCancelReport_ (x.oadrCancelReport_, f, this),
       venID_ (x.venID_, f, this),
@@ -221,15 +221,15 @@ namespace oadr2b
 
     oadrUpdatedReportType::
     oadrUpdatedReportType (const ::xercesc::DOMElement& e,
-                           ::xml_schema::flags f,
-                           ::xml_schema::container* c)
-    : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
+                      ::xml_schema_test::flags f,
+                      ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (e, f | ::xml_schema_test::flags::base, c),
       eiResponse_ (this),
       oadrCancelReport_ (this),
       venID_ (this),
       schemaVersion_ (this)
     {
-      if ((f & ::xml_schema::flags::base) == 0)
+      if ((f & ::xml_schema_test::flags::base) == 0)
       {
         ::xsd::cxx::xml::dom::parser< char > p (e, true, false, true);
         this->parse (p, f);
@@ -238,7 +238,7 @@ namespace oadr2b
 
     void oadrUpdatedReportType::
     parse (::xsd::cxx::xml::dom::parser< char >& p,
-           ::xml_schema::flags f)
+      ::xml_schema_test::flags f)
     {
       for (; p.more_content (); p.next_content (false))
       {
@@ -313,8 +313,8 @@ namespace oadr2b
     }
 
     oadrUpdatedReportType* oadrUpdatedReportType::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class oadrUpdatedReportType (*this, f, c);
     }
@@ -324,7 +324,7 @@ namespace oadr2b
     {
       if (this != &x)
       {
-        static_cast< ::xml_schema::type& > (*this) = x;
+        static_cast< ::xml_schema_test::type& > (*this) = x;
         this->eiResponse_ = x.eiResponse_;
         this->oadrCancelReport_ = x.oadrCancelReport_;
         this->venID_ = x.venID_;
@@ -372,7 +372,7 @@ namespace oadr2b
     void
     operator<< (::xercesc::DOMElement& e, const oadrUpdatedReportType& i)
     {
-      e << static_cast< const ::xml_schema::type& > (i);
+      e << static_cast< const  ::xml_schema_test::type& > (i);
 
       // eiResponse
       //

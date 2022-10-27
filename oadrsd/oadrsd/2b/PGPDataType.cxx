@@ -129,7 +129,7 @@ namespace oadr2b
 
     PGPDataType::
     PGPDataType ()
-    : ::xml_schema::type (),
+    : ::xml_schema_test::type (),
       PGPKeyID_ (this),
       PGPKeyPacket_ (this)
     {
@@ -137,9 +137,9 @@ namespace oadr2b
 
     PGPDataType::
     PGPDataType (const PGPDataType& x,
-                 ::xml_schema::flags f,
-                 ::xml_schema::container* c)
-    : ::xml_schema::type (x, f, c),
+            ::xml_schema_test::flags f,
+            ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (x, f, c),
       PGPKeyID_ (x.PGPKeyID_, f, this),
       PGPKeyPacket_ (x.PGPKeyPacket_, f, this)
     {
@@ -147,13 +147,13 @@ namespace oadr2b
 
     PGPDataType::
     PGPDataType (const ::xercesc::DOMElement& e,
-                 ::xml_schema::flags f,
-                 ::xml_schema::container* c)
-    : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
+            ::xml_schema_test::flags f,
+            ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (e, f | ::xml_schema_test::flags::base, c),
       PGPKeyID_ (this),
       PGPKeyPacket_ (this)
     {
-      if ((f & ::xml_schema::flags::base) == 0)
+      if ((f & ::xml_schema_test::flags::base) == 0)
       {
         ::xsd::cxx::xml::dom::parser< char > p (e, true, false, false);
         this->parse (p, f);
@@ -162,7 +162,7 @@ namespace oadr2b
 
     void PGPDataType::
     parse (::xsd::cxx::xml::dom::parser< char >& p,
-           ::xml_schema::flags f)
+      ::xml_schema_test::flags f)
     {
       for (; p.more_content (); p.next_content (false))
       {
@@ -203,8 +203,8 @@ namespace oadr2b
     }
 
     PGPDataType* PGPDataType::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class PGPDataType (*this, f, c);
     }
@@ -214,7 +214,7 @@ namespace oadr2b
     {
       if (this != &x)
       {
-        static_cast< ::xml_schema::type& > (*this) = x;
+        static_cast< ::xml_schema_test::type& > (*this) = x;
         this->PGPKeyID_ = x.PGPKeyID_;
         this->PGPKeyPacket_ = x.PGPKeyPacket_;
       }
@@ -260,7 +260,7 @@ namespace oadr2b
     void
     operator<< (::xercesc::DOMElement& e, const PGPDataType& i)
     {
-      e << static_cast< const ::xml_schema::type& > (i);
+      e << static_cast< const  ::xml_schema_test::type& > (i);
 
       // PGPKeyID
       //

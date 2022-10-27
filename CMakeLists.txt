@@ -12,7 +12,7 @@ set(LIBOADR_VERSION
 # options off-by-default that you can enable
 option(WERROR "Set all warnings to errors" OFF)
 option(STATICLIBS "Builds static versions of all installed libraries" OFF)
-option(TEST "Build the test suite" OFF)
+option(TEST "Build the test suite" ON)
 option(SAMPLE "Build sample ven manager" ON)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)

@@ -98,7 +98,7 @@
 #include <xsd/cxx/tree/serialization/double.hxx>
 #include <xsd/cxx/tree/serialization/decimal.hxx>
 
-namespace xml_schema
+namespace xml_schema_test
 {
   // anyType and anySimpleType.
   //
@@ -146,20 +146,19 @@ namespace xml_schema
 
   // String types.
   //
-  typedef ::xsd::cxx::tree::string< char, simple_type > string;
-  typedef ::xsd::cxx::tree::normalized_string< char, string > normalized_string;
-  typedef ::xsd::cxx::tree::token< char, normalized_string > token;
-  typedef ::xsd::cxx::tree::name< char, token > name;
-  typedef ::xsd::cxx::tree::nmtoken< char, token > nmtoken;
-  typedef ::xsd::cxx::tree::nmtokens< char, simple_type, nmtoken > nmtokens;
-  typedef ::xsd::cxx::tree::ncname< char, name > ncname;
-  typedef ::xsd::cxx::tree::language< char, token > language;
-
+typedef ::xsd::cxx::tree::string<char, simple_type> string;
+typedef ::xsd::cxx::tree::string<char, simple_type> normalized_string;
+typedef ::xsd::cxx::tree::string<char, simple_type> token;
+typedef ::xsd::cxx::tree::string<char, simple_type> name;
+typedef ::xsd::cxx::tree::string<char, simple_type> nmtoken;
+typedef ::xsd::cxx::tree::string<char, simple_type> nmtokens;
+typedef ::xsd::cxx::tree::string<char, simple_type> ncname;
+typedef ::xsd::cxx::tree::string<char, simple_type> language;
   // ID/IDREF.
   //
-  typedef ::xsd::cxx::tree::id< char, ncname > id;
-  typedef ::xsd::cxx::tree::idref< char, ncname, type > idref;
-  typedef ::xsd::cxx::tree::idrefs< char, simple_type, idref > idrefs;
+  typedef ::xsd::cxx::tree::string< char, simple_type > id;
+  typedef ::xsd::cxx::tree::string< char, simple_type > idref;
+  typedef ::xsd::cxx::tree::string< char, simple_type > idrefs;
 
   // URI.
   //
@@ -281,12 +280,12 @@ namespace oadr2b
 {
   namespace oadr
   {
-    class oadrLoadControlStateTypeType: public ::xml_schema::type
+    class oadrLoadControlStateTypeType: public ::xml_schema_test::type
     {
       public:
       // oadrMin
       //
-      typedef ::xml_schema::float_ oadrMin_type;
+      typedef ::xml_schema_test::float_ oadrMin_type;
       typedef ::xsd::cxx::tree::optional< oadrMin_type > oadrMin_optional;
       typedef ::xsd::cxx::tree::traits< oadrMin_type, char > oadrMin_traits;
 
@@ -304,7 +303,7 @@ namespace oadr2b
 
       // oadrMax
       //
-      typedef ::xml_schema::float_ oadrMax_type;
+      typedef ::xml_schema_test::float_ oadrMax_type;
       typedef ::xsd::cxx::tree::optional< oadrMax_type > oadrMax_optional;
       typedef ::xsd::cxx::tree::traits< oadrMax_type, char > oadrMax_traits;
 
@@ -322,7 +321,7 @@ namespace oadr2b
 
       // oadrCurrent
       //
-      typedef ::xml_schema::float_ oadrCurrent_type;
+      typedef ::xml_schema_test::float_ oadrCurrent_type;
       typedef ::xsd::cxx::tree::traits< oadrCurrent_type, char > oadrCurrent_traits;
 
       const oadrCurrent_type&
@@ -336,7 +335,7 @@ namespace oadr2b
 
       // oadrNormal
       //
-      typedef ::xml_schema::float_ oadrNormal_type;
+      typedef ::xml_schema_test::float_ oadrNormal_type;
       typedef ::xsd::cxx::tree::optional< oadrNormal_type > oadrNormal_optional;
       typedef ::xsd::cxx::tree::traits< oadrNormal_type, char > oadrNormal_traits;
 
@@ -357,16 +356,16 @@ namespace oadr2b
       oadrLoadControlStateTypeType (const oadrCurrent_type&);
 
       oadrLoadControlStateTypeType (const ::xercesc::DOMElement& e,
-                                    ::xml_schema::flags f = 0,
-                                    ::xml_schema::container* c = 0);
+                               ::xml_schema_test::flags f = 0,
+                               ::xml_schema_test::container* c = 0);
 
       oadrLoadControlStateTypeType (const oadrLoadControlStateTypeType& x,
-                                    ::xml_schema::flags f = 0,
-                                    ::xml_schema::container* c = 0);
+                               ::xml_schema_test::flags f = 0,
+                               ::xml_schema_test::container* c = 0);
 
       virtual oadrLoadControlStateTypeType*
-      _clone (::xml_schema::flags f = 0,
-              ::xml_schema::container* c = 0) const;
+      _clone (::xml_schema_test::flags f = 0,
+         ::xml_schema_test::container* c = 0) const;
 
       oadrLoadControlStateTypeType&
       operator= (const oadrLoadControlStateTypeType& x);
@@ -379,7 +378,7 @@ namespace oadr2b
       protected:
       void
       parse (::xsd::cxx::xml::dom::parser< char >&,
-             ::xml_schema::flags);
+        ::xml_schema_test::flags);
 
       protected:
       oadrMin_optional oadrMin_;

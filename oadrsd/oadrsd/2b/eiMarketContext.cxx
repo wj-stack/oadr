@@ -95,28 +95,28 @@ namespace oadr2b
 
     eiMarketContext::
     eiMarketContext (const marketContext_type& marketContext)
-    : ::xml_schema::type (),
+    : ::xml_schema_test::type (),
       marketContext_ (marketContext, this)
     {
     }
 
     eiMarketContext::
     eiMarketContext (const eiMarketContext& x,
-                     ::xml_schema::flags f,
-                     ::xml_schema::container* c)
-    : ::xml_schema::type (x, f, c),
+                ::xml_schema_test::flags f,
+                ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (x, f, c),
       marketContext_ (x.marketContext_, f, this)
     {
     }
 
     eiMarketContext::
     eiMarketContext (const ::xercesc::DOMElement& e,
-                     ::xml_schema::flags f,
-                     ::xml_schema::container* c)
-    : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
+                ::xml_schema_test::flags f,
+                ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (e, f | ::xml_schema_test::flags::base, c),
       marketContext_ (this)
     {
-      if ((f & ::xml_schema::flags::base) == 0)
+      if ((f & ::xml_schema_test::flags::base) == 0)
       {
         ::xsd::cxx::xml::dom::parser< char > p (e, true, false, false);
         this->parse (p, f);
@@ -125,7 +125,7 @@ namespace oadr2b
 
     void eiMarketContext::
     parse (::xsd::cxx::xml::dom::parser< char >& p,
-           ::xml_schema::flags f)
+      ::xml_schema_test::flags f)
     {
       for (; p.more_content (); p.next_content (false))
       {
@@ -159,8 +159,8 @@ namespace oadr2b
     }
 
     eiMarketContext* eiMarketContext::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class eiMarketContext (*this, f, c);
     }
@@ -170,7 +170,7 @@ namespace oadr2b
     {
       if (this != &x)
       {
-        static_cast< ::xml_schema::type& > (*this) = x;
+        static_cast< ::xml_schema_test::type& > (*this) = x;
         this->marketContext_ = x.marketContext_;
       }
 
@@ -215,7 +215,7 @@ namespace oadr2b
     void
     operator<< (::xercesc::DOMElement& e, const eiMarketContext& i)
     {
-      e << static_cast< const ::xml_schema::type& > (i);
+      e << static_cast< const  ::xml_schema_test::type& > (i);
 
       // marketContext
       //

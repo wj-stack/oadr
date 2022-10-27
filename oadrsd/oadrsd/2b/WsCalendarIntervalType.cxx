@@ -90,35 +90,35 @@ namespace icalendar_2_0
 
   WsCalendarIntervalType::
   WsCalendarIntervalType (const properties_type& properties)
-  : ::xml_schema::type (),
+  : ::xml_schema_test::type (),
     properties_ (properties, this)
   {
   }
 
   WsCalendarIntervalType::
   WsCalendarIntervalType (::std::unique_ptr< properties_type > properties)
-  : ::xml_schema::type (),
+  : ::xml_schema_test::type (),
     properties_ (std::move (properties), this)
   {
   }
 
   WsCalendarIntervalType::
   WsCalendarIntervalType (const WsCalendarIntervalType& x,
-                          ::xml_schema::flags f,
-                          ::xml_schema::container* c)
-  : ::xml_schema::type (x, f, c),
+                     ::xml_schema_test::flags f,
+                     ::xml_schema_test::container* c)
+  : ::xml_schema_test::type (x, f, c),
     properties_ (x.properties_, f, this)
   {
   }
 
   WsCalendarIntervalType::
   WsCalendarIntervalType (const ::xercesc::DOMElement& e,
-                          ::xml_schema::flags f,
-                          ::xml_schema::container* c)
-  : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
+                     ::xml_schema_test::flags f,
+                     ::xml_schema_test::container* c)
+  : ::xml_schema_test::type (e, f | ::xml_schema_test::flags::base, c),
     properties_ (this)
   {
-    if ((f & ::xml_schema::flags::base) == 0)
+    if ((f & ::xml_schema_test::flags::base) == 0)
     {
       ::xsd::cxx::xml::dom::parser< char > p (e, true, false, false);
       this->parse (p, f);
@@ -127,7 +127,7 @@ namespace icalendar_2_0
 
   void WsCalendarIntervalType::
   parse (::xsd::cxx::xml::dom::parser< char >& p,
-         ::xml_schema::flags f)
+    ::xml_schema_test::flags f)
   {
     for (; p.more_content (); p.next_content (false))
     {
@@ -161,8 +161,8 @@ namespace icalendar_2_0
   }
 
   WsCalendarIntervalType* WsCalendarIntervalType::
-  _clone (::xml_schema::flags f,
-          ::xml_schema::container* c) const
+  _clone (::xml_schema_test::flags f,
+     ::xml_schema_test::container* c) const
   {
     return new class WsCalendarIntervalType (*this, f, c);
   }
@@ -172,7 +172,7 @@ namespace icalendar_2_0
   {
     if (this != &x)
     {
-      static_cast< ::xml_schema::type& > (*this) = x;
+      static_cast< ::xml_schema_test::type& > (*this) = x;
       this->properties_ = x.properties_;
     }
 
@@ -211,7 +211,7 @@ namespace icalendar_2_0
   void
   operator<< (::xercesc::DOMElement& e, const WsCalendarIntervalType& i)
   {
-    e << static_cast< const ::xml_schema::type& > (i);
+    e << static_cast< const  ::xml_schema_test::type& > (i);
 
     // properties
     //

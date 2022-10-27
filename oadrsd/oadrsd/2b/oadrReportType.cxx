@@ -239,8 +239,8 @@ namespace oadr2b
 
     oadrReportType::
     oadrReportType (const oadrReportType& x,
-                    ::xml_schema::flags f,
-                    ::xml_schema::container* c)
+               ::xml_schema_test::flags f,
+               ::xml_schema_test::container* c)
     : ::stream::StreamBaseType (x, f, c),
       eiReportID_ (x.eiReportID_, f, this),
       oadrReportDescription_ (x.oadrReportDescription_, f, this),
@@ -253,9 +253,9 @@ namespace oadr2b
 
     oadrReportType::
     oadrReportType (const ::xercesc::DOMElement& e,
-                    ::xml_schema::flags f,
-                    ::xml_schema::container* c)
-    : ::stream::StreamBaseType (e, f | ::xml_schema::flags::base, c),
+               ::xml_schema_test::flags f,
+               ::xml_schema_test::container* c)
+    : ::stream::StreamBaseType (e, f | ::xml_schema_test::flags::base, c),
       eiReportID_ (this),
       oadrReportDescription_ (this),
       reportRequestID_ (this),
@@ -263,7 +263,7 @@ namespace oadr2b
       reportName_ (this),
       createdDateTime_ (this)
     {
-      if ((f & ::xml_schema::flags::base) == 0)
+      if ((f & ::xml_schema_test::flags::base) == 0)
       {
         ::xsd::cxx::xml::dom::parser< char > p (e, true, false, false);
         this->parse (p, f);
@@ -272,7 +272,7 @@ namespace oadr2b
 
     void oadrReportType::
     parse (::xsd::cxx::xml::dom::parser< char >& p,
-           ::xml_schema::flags f)
+      ::xml_schema_test::flags f)
     {
       this->::stream::StreamBaseType::parse (p, f);
 
@@ -389,8 +389,8 @@ namespace oadr2b
     }
 
     oadrReportType* oadrReportType::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class oadrReportType (*this, f, c);
     }

@@ -49,41 +49,41 @@ namespace oadr2b
 
     schemaVersionEnumeratedType::
     schemaVersionEnumeratedType (value v)
-    : ::xml_schema::token (_xsd_schemaVersionEnumeratedType_literals_[v])
+    : ::xml_schema_test::token (_xsd_schemaVersionEnumeratedType_literals_[v])
     {
     }
 
     schemaVersionEnumeratedType::
     schemaVersionEnumeratedType (const char* v)
-    : ::xml_schema::token (v)
+    : ::xml_schema_test::token (v)
     {
     }
 
     schemaVersionEnumeratedType::
     schemaVersionEnumeratedType (const ::std::string& v)
-    : ::xml_schema::token (v)
+    : ::xml_schema_test::token (v)
     {
     }
 
     schemaVersionEnumeratedType::
-    schemaVersionEnumeratedType (const ::xml_schema::token& v)
-    : ::xml_schema::token (v)
+    schemaVersionEnumeratedType (const  ::xml_schema_test::token& v)
+    : ::xml_schema_test::token (v)
     {
     }
 
     schemaVersionEnumeratedType::
     schemaVersionEnumeratedType (const schemaVersionEnumeratedType& v,
-                                 ::xml_schema::flags f,
-                                 ::xml_schema::container* c)
-    : ::xml_schema::token (v, f, c)
+                            ::xml_schema_test::flags f,
+                            ::xml_schema_test::container* c)
+    : ::xml_schema_test::token (v, f, c)
     {
     }
 
     schemaVersionEnumeratedType& schemaVersionEnumeratedType::
     operator= (value v)
     {
-      static_cast< ::xml_schema::token& > (*this) = 
-      ::xml_schema::token (_xsd_schemaVersionEnumeratedType_literals_[v]);
+      static_cast< ::xml_schema_test::token& > (*this) = 
+ ::xml_schema_test::token (_xsd_schemaVersionEnumeratedType_literals_[v]);
 
       return *this;
     }
@@ -110,18 +110,18 @@ namespace oadr2b
 
     schemaVersionEnumeratedType::
     schemaVersionEnumeratedType (const ::xercesc::DOMElement& e,
-                                 ::xml_schema::flags f,
-                                 ::xml_schema::container* c)
-    : ::xml_schema::token (e, f, c)
+                            ::xml_schema_test::flags f,
+                            ::xml_schema_test::container* c)
+    : ::xml_schema_test::token (e, f, c)
     {
       _xsd_schemaVersionEnumeratedType_convert ();
     }
 
     schemaVersionEnumeratedType::
     schemaVersionEnumeratedType (const ::xercesc::DOMAttr& a,
-                                 ::xml_schema::flags f,
-                                 ::xml_schema::container* c)
-    : ::xml_schema::token (a, f, c)
+                            ::xml_schema_test::flags f,
+                            ::xml_schema_test::container* c)
+    : ::xml_schema_test::token (a, f, c)
     {
       _xsd_schemaVersionEnumeratedType_convert ();
     }
@@ -129,16 +129,16 @@ namespace oadr2b
     schemaVersionEnumeratedType::
     schemaVersionEnumeratedType (const ::std::string& s,
                                  const ::xercesc::DOMElement* e,
-                                 ::xml_schema::flags f,
-                                 ::xml_schema::container* c)
-    : ::xml_schema::token (s, e, f, c)
+                            ::xml_schema_test::flags f,
+                            ::xml_schema_test::container* c)
+    : ::xml_schema_test::token (s, e, f, c)
     {
       _xsd_schemaVersionEnumeratedType_convert ();
     }
 
     schemaVersionEnumeratedType* schemaVersionEnumeratedType::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class schemaVersionEnumeratedType (*this, f, c);
     }
@@ -208,20 +208,20 @@ namespace oadr2b
     void
     operator<< (::xercesc::DOMElement& e, const schemaVersionEnumeratedType& i)
     {
-      e << static_cast< const ::xml_schema::token& > (i);
+      e << static_cast< const  ::xml_schema_test::token& > (i);
     }
 
     void
     operator<< (::xercesc::DOMAttr& a, const schemaVersionEnumeratedType& i)
     {
-      a << static_cast< const ::xml_schema::token& > (i);
+      a << static_cast< const  ::xml_schema_test::token& > (i);
     }
 
     void
-    operator<< (::xml_schema::list_stream& l,
+    operator<< (::xml_schema_test::list_stream& l,
                 const schemaVersionEnumeratedType& i)
     {
-      l << static_cast< const ::xml_schema::token& > (i);
+      l << static_cast< const  ::xml_schema_test::token& > (i);
     }
   }
 }

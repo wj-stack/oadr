@@ -115,7 +115,7 @@ namespace power
   TransportInterfaceType::
   TransportInterfaceType (const pointOfReceipt_type& pointOfReceipt,
                           const pointOfDelivery_type& pointOfDelivery)
-  : ::xml_schema::type (),
+  : ::xml_schema_test::type (),
     pointOfReceipt_ (pointOfReceipt, this),
     pointOfDelivery_ (pointOfDelivery, this)
   {
@@ -123,9 +123,9 @@ namespace power
 
   TransportInterfaceType::
   TransportInterfaceType (const TransportInterfaceType& x,
-                          ::xml_schema::flags f,
-                          ::xml_schema::container* c)
-  : ::xml_schema::type (x, f, c),
+                     ::xml_schema_test::flags f,
+                     ::xml_schema_test::container* c)
+  : ::xml_schema_test::type (x, f, c),
     pointOfReceipt_ (x.pointOfReceipt_, f, this),
     pointOfDelivery_ (x.pointOfDelivery_, f, this)
   {
@@ -133,13 +133,13 @@ namespace power
 
   TransportInterfaceType::
   TransportInterfaceType (const ::xercesc::DOMElement& e,
-                          ::xml_schema::flags f,
-                          ::xml_schema::container* c)
-  : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
+                     ::xml_schema_test::flags f,
+                     ::xml_schema_test::container* c)
+  : ::xml_schema_test::type (e, f | ::xml_schema_test::flags::base, c),
     pointOfReceipt_ (this),
     pointOfDelivery_ (this)
   {
-    if ((f & ::xml_schema::flags::base) == 0)
+    if ((f & ::xml_schema_test::flags::base) == 0)
     {
       ::xsd::cxx::xml::dom::parser< char > p (e, true, false, false);
       this->parse (p, f);
@@ -148,7 +148,7 @@ namespace power
 
   void TransportInterfaceType::
   parse (::xsd::cxx::xml::dom::parser< char >& p,
-         ::xml_schema::flags f)
+    ::xml_schema_test::flags f)
   {
     for (; p.more_content (); p.next_content (false))
     {
@@ -203,8 +203,8 @@ namespace power
   }
 
   TransportInterfaceType* TransportInterfaceType::
-  _clone (::xml_schema::flags f,
-          ::xml_schema::container* c) const
+  _clone (::xml_schema_test::flags f,
+     ::xml_schema_test::container* c) const
   {
     return new class TransportInterfaceType (*this, f, c);
   }
@@ -214,7 +214,7 @@ namespace power
   {
     if (this != &x)
     {
-      static_cast< ::xml_schema::type& > (*this) = x;
+      static_cast< ::xml_schema_test::type& > (*this) = x;
       this->pointOfReceipt_ = x.pointOfReceipt_;
       this->pointOfDelivery_ = x.pointOfDelivery_;
     }
@@ -254,7 +254,7 @@ namespace power
   void
   operator<< (::xercesc::DOMElement& e, const TransportInterfaceType& i)
   {
-    e << static_cast< const ::xml_schema::type& > (i);
+    e << static_cast< const  ::xml_schema_test::type& > (i);
 
     // pointOfReceipt
     //

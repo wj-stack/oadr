@@ -69,64 +69,64 @@ namespace oadr2b
 
     EiExtensionTokenType::
     EiExtensionTokenType ()
-    : ::xml_schema::token ()
+    : ::xml_schema_test::token ()
     {
     }
 
     EiExtensionTokenType::
     EiExtensionTokenType (const char* _xsd_token_base)
-    : ::xml_schema::token (_xsd_token_base)
+    : ::xml_schema_test::token (_xsd_token_base)
     {
     }
 
     EiExtensionTokenType::
     EiExtensionTokenType (const ::std::string& _xsd_token_base)
-    : ::xml_schema::token (_xsd_token_base)
+    : ::xml_schema_test::token (_xsd_token_base)
     {
     }
 
     EiExtensionTokenType::
-    EiExtensionTokenType (const ::xml_schema::token& _xsd_token_base)
-    : ::xml_schema::token (_xsd_token_base)
+    EiExtensionTokenType (const  ::xml_schema_test::token& _xsd_token_base)
+    : ::xml_schema_test::token (_xsd_token_base)
     {
     }
 
     EiExtensionTokenType::
     EiExtensionTokenType (const EiExtensionTokenType& x,
-                          ::xml_schema::flags f,
-                          ::xml_schema::container* c)
-    : ::xml_schema::token (x, f, c)
+                     ::xml_schema_test::flags f,
+                     ::xml_schema_test::container* c)
+    : ::xml_schema_test::token (x, f, c)
     {
     }
 
     EiExtensionTokenType::
     EiExtensionTokenType (const ::xercesc::DOMElement& e,
-                          ::xml_schema::flags f,
-                          ::xml_schema::container* c)
-    : ::xml_schema::token (e, f, c)
+                     ::xml_schema_test::flags f,
+                     ::xml_schema_test::container* c)
+    : ::xml_schema_test::token (e, f, c)
     {
     }
 
     EiExtensionTokenType::
     EiExtensionTokenType (const ::xercesc::DOMAttr& a,
-                          ::xml_schema::flags f,
-                          ::xml_schema::container* c)
-    : ::xml_schema::token (a, f, c)
+                     ::xml_schema_test::flags f,
+                     ::xml_schema_test::container* c)
+    : ::xml_schema_test::token (a, f, c)
     {
     }
 
     EiExtensionTokenType::
     EiExtensionTokenType (const ::std::string& s,
                           const ::xercesc::DOMElement* e,
-                          ::xml_schema::flags f,
-                          ::xml_schema::container* c)
-    : ::xml_schema::token (s, e, f, c)
+                     ::xml_schema_test::flags f,
+                     ::xml_schema_test::container* c)
+    : ::xml_schema_test::token (s, e, f, c)
     {
     }
 
     EiExtensionTokenType* EiExtensionTokenType::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class EiExtensionTokenType (*this, f, c);
     }
@@ -169,20 +169,20 @@ namespace oadr2b
     void
     operator<< (::xercesc::DOMElement& e, const EiExtensionTokenType& i)
     {
-      e << static_cast< const ::xml_schema::token& > (i);
+      e << static_cast< const  ::xml_schema_test::token& > (i);
     }
 
     void
     operator<< (::xercesc::DOMAttr& a, const EiExtensionTokenType& i)
     {
-      a << static_cast< const ::xml_schema::token& > (i);
+      a << static_cast< const  ::xml_schema_test::token& > (i);
     }
 
     void
-    operator<< (::xml_schema::list_stream& l,
+    operator<< (::xml_schema_test::list_stream& l,
                 const EiExtensionTokenType& i)
     {
-      l << static_cast< const ::xml_schema::token& > (i);
+      l << static_cast< const  ::xml_schema_test::token& > (i);
     }
   }
 }

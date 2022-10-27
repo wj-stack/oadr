@@ -49,21 +49,21 @@ namespace oadr2b
 
     OptReasonType::
     OptReasonType (const char* s)
-    : ::xml_schema::string (s)
+    : ::xml_schema_test::string (s)
     {
     }
 
     OptReasonType::
     OptReasonType (const ::std::string& s)
-    : ::xml_schema::string (s)
+    : ::xml_schema_test::string (s)
     {
     }
 
     OptReasonType::
     OptReasonType (const OptReasonType& o,
-                   ::xml_schema::flags f,
-                   ::xml_schema::container* c)
-    : ::xml_schema::string (o, f, c)
+              ::xml_schema_test::flags f,
+              ::xml_schema_test::container* c)
+    : ::xml_schema_test::string (o, f, c)
     {
     }
   }
@@ -89,32 +89,32 @@ namespace oadr2b
 
     OptReasonType::
     OptReasonType (const ::xercesc::DOMElement& e,
-                   ::xml_schema::flags f,
-                   ::xml_schema::container* c)
-    : ::xml_schema::string (e, f, c)
+              ::xml_schema_test::flags f,
+              ::xml_schema_test::container* c)
+    : ::xml_schema_test::string (e, f, c)
     {
     }
 
     OptReasonType::
     OptReasonType (const ::xercesc::DOMAttr& a,
-                   ::xml_schema::flags f,
-                   ::xml_schema::container* c)
-    : ::xml_schema::string (a, f, c)
+              ::xml_schema_test::flags f,
+              ::xml_schema_test::container* c)
+    : ::xml_schema_test::string (a, f, c)
     {
     }
 
     OptReasonType::
     OptReasonType (const ::std::string& s,
                    const ::xercesc::DOMElement* e,
-                   ::xml_schema::flags f,
-                   ::xml_schema::container* c)
-    : ::xml_schema::string (s, e, f, c)
+              ::xml_schema_test::flags f,
+              ::xml_schema_test::container* c)
+    : ::xml_schema_test::string (s, e, f, c)
     {
     }
 
     OptReasonType* OptReasonType::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class OptReasonType (*this, f, c);
     }
@@ -152,20 +152,20 @@ namespace oadr2b
     void
     operator<< (::xercesc::DOMElement& e, const OptReasonType& i)
     {
-      e << static_cast< const ::xml_schema::string& > (i);
+      e << static_cast< const  ::xml_schema_test::string& > (i);
     }
 
     void
     operator<< (::xercesc::DOMAttr& a, const OptReasonType& i)
     {
-      a << static_cast< const ::xml_schema::string& > (i);
+      a << static_cast< const  ::xml_schema_test::string& > (i);
     }
 
     void
-    operator<< (::xml_schema::list_stream& l,
+    operator<< (::xml_schema_test::list_stream& l,
                 const OptReasonType& i)
     {
-      l << static_cast< const ::xml_schema::string& > (i);
+      l << static_cast< const  ::xml_schema_test::string& > (i);
     }
   }
 }

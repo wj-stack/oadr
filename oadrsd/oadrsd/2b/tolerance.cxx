@@ -90,35 +90,35 @@ namespace icalendar_2_0
 
   tolerance::
   tolerance (const tolerate_type& tolerate)
-  : ::xml_schema::type (),
+  : ::xml_schema_test::type (),
     tolerate_ (tolerate, this)
   {
   }
 
   tolerance::
   tolerance (::std::unique_ptr< tolerate_type > tolerate)
-  : ::xml_schema::type (),
+  : ::xml_schema_test::type (),
     tolerate_ (std::move (tolerate), this)
   {
   }
 
   tolerance::
   tolerance (const tolerance& x,
-             ::xml_schema::flags f,
-             ::xml_schema::container* c)
-  : ::xml_schema::type (x, f, c),
+        ::xml_schema_test::flags f,
+        ::xml_schema_test::container* c)
+  : ::xml_schema_test::type (x, f, c),
     tolerate_ (x.tolerate_, f, this)
   {
   }
 
   tolerance::
   tolerance (const ::xercesc::DOMElement& e,
-             ::xml_schema::flags f,
-             ::xml_schema::container* c)
-  : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
+        ::xml_schema_test::flags f,
+        ::xml_schema_test::container* c)
+  : ::xml_schema_test::type (e, f | ::xml_schema_test::flags::base, c),
     tolerate_ (this)
   {
-    if ((f & ::xml_schema::flags::base) == 0)
+    if ((f & ::xml_schema_test::flags::base) == 0)
     {
       ::xsd::cxx::xml::dom::parser< char > p (e, true, false, false);
       this->parse (p, f);
@@ -127,7 +127,7 @@ namespace icalendar_2_0
 
   void tolerance::
   parse (::xsd::cxx::xml::dom::parser< char >& p,
-         ::xml_schema::flags f)
+    ::xml_schema_test::flags f)
   {
     for (; p.more_content (); p.next_content (false))
     {
@@ -161,8 +161,8 @@ namespace icalendar_2_0
   }
 
   tolerance* tolerance::
-  _clone (::xml_schema::flags f,
-          ::xml_schema::container* c) const
+  _clone (::xml_schema_test::flags f,
+     ::xml_schema_test::container* c) const
   {
     return new class tolerance (*this, f, c);
   }
@@ -172,7 +172,7 @@ namespace icalendar_2_0
   {
     if (this != &x)
     {
-      static_cast< ::xml_schema::type& > (*this) = x;
+      static_cast< ::xml_schema_test::type& > (*this) = x;
       this->tolerate_ = x.tolerate_;
     }
 
@@ -211,7 +211,7 @@ namespace icalendar_2_0
   void
   operator<< (::xercesc::DOMElement& e, const tolerance& i)
   {
-    e << static_cast< const ::xml_schema::type& > (i);
+    e << static_cast< const  ::xml_schema_test::type& > (i);
 
     // tolerate
     //

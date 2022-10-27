@@ -49,41 +49,41 @@ namespace oadr2b
 
     oadrTransportType::
     oadrTransportType (value v)
-    : ::xml_schema::token (_xsd_oadrTransportType_literals_[v])
+    : ::xml_schema_test::token (_xsd_oadrTransportType_literals_[v])
     {
     }
 
     oadrTransportType::
     oadrTransportType (const char* v)
-    : ::xml_schema::token (v)
+    : ::xml_schema_test::token (v)
     {
     }
 
     oadrTransportType::
     oadrTransportType (const ::std::string& v)
-    : ::xml_schema::token (v)
+    : ::xml_schema_test::token (v)
     {
     }
 
     oadrTransportType::
-    oadrTransportType (const ::xml_schema::token& v)
-    : ::xml_schema::token (v)
+    oadrTransportType (const  ::xml_schema_test::token& v)
+    : ::xml_schema_test::token (v)
     {
     }
 
     oadrTransportType::
     oadrTransportType (const oadrTransportType& v,
-                       ::xml_schema::flags f,
-                       ::xml_schema::container* c)
-    : ::xml_schema::token (v, f, c)
+                  ::xml_schema_test::flags f,
+                  ::xml_schema_test::container* c)
+    : ::xml_schema_test::token (v, f, c)
     {
     }
 
     oadrTransportType& oadrTransportType::
     operator= (value v)
     {
-      static_cast< ::xml_schema::token& > (*this) = 
-      ::xml_schema::token (_xsd_oadrTransportType_literals_[v]);
+      static_cast< ::xml_schema_test::token& > (*this) = 
+ ::xml_schema_test::token (_xsd_oadrTransportType_literals_[v]);
 
       return *this;
     }
@@ -110,18 +110,18 @@ namespace oadr2b
 
     oadrTransportType::
     oadrTransportType (const ::xercesc::DOMElement& e,
-                       ::xml_schema::flags f,
-                       ::xml_schema::container* c)
-    : ::xml_schema::token (e, f, c)
+                  ::xml_schema_test::flags f,
+                  ::xml_schema_test::container* c)
+    : ::xml_schema_test::token (e, f, c)
     {
       _xsd_oadrTransportType_convert ();
     }
 
     oadrTransportType::
     oadrTransportType (const ::xercesc::DOMAttr& a,
-                       ::xml_schema::flags f,
-                       ::xml_schema::container* c)
-    : ::xml_schema::token (a, f, c)
+                  ::xml_schema_test::flags f,
+                  ::xml_schema_test::container* c)
+    : ::xml_schema_test::token (a, f, c)
     {
       _xsd_oadrTransportType_convert ();
     }
@@ -129,16 +129,16 @@ namespace oadr2b
     oadrTransportType::
     oadrTransportType (const ::std::string& s,
                        const ::xercesc::DOMElement* e,
-                       ::xml_schema::flags f,
-                       ::xml_schema::container* c)
-    : ::xml_schema::token (s, e, f, c)
+                  ::xml_schema_test::flags f,
+                  ::xml_schema_test::container* c)
+    : ::xml_schema_test::token (s, e, f, c)
     {
       _xsd_oadrTransportType_convert ();
     }
 
     oadrTransportType* oadrTransportType::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class oadrTransportType (*this, f, c);
     }
@@ -208,20 +208,20 @@ namespace oadr2b
     void
     operator<< (::xercesc::DOMElement& e, const oadrTransportType& i)
     {
-      e << static_cast< const ::xml_schema::token& > (i);
+      e << static_cast< const  ::xml_schema_test::token& > (i);
     }
 
     void
     operator<< (::xercesc::DOMAttr& a, const oadrTransportType& i)
     {
-      a << static_cast< const ::xml_schema::token& > (i);
+      a << static_cast< const  ::xml_schema_test::token& > (i);
     }
 
     void
-    operator<< (::xml_schema::list_stream& l,
+    operator<< (::xml_schema_test::list_stream& l,
                 const oadrTransportType& i)
     {
-      l << static_cast< const ::xml_schema::token& > (i);
+      l << static_cast< const  ::xml_schema_test::token& > (i);
     }
   }
 }

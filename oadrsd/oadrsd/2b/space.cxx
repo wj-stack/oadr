@@ -47,41 +47,41 @@ namespace namespace_
 
   space::
   space (value v)
-  : ::xml_schema::ncname (_xsd_space_literals_[v])
+  : ::xml_schema_test::ncname (_xsd_space_literals_[v])
   {
   }
 
   space::
   space (const char* v)
-  : ::xml_schema::ncname (v)
+  : ::xml_schema_test::ncname (v)
   {
   }
 
   space::
   space (const ::std::string& v)
-  : ::xml_schema::ncname (v)
+  : ::xml_schema_test::ncname (v)
   {
   }
 
   space::
-  space (const ::xml_schema::ncname& v)
-  : ::xml_schema::ncname (v)
+  space (const  ::xml_schema_test::ncname& v)
+  : ::xml_schema_test::ncname (v)
   {
   }
 
   space::
   space (const space& v,
-         ::xml_schema::flags f,
-         ::xml_schema::container* c)
-  : ::xml_schema::ncname (v, f, c)
+    ::xml_schema_test::flags f,
+    ::xml_schema_test::container* c)
+  : ::xml_schema_test::ncname (v, f, c)
   {
   }
 
   space& space::
   operator= (value v)
   {
-    static_cast< ::xml_schema::ncname& > (*this) = 
-    ::xml_schema::ncname (_xsd_space_literals_[v]);
+    static_cast< ::xml_schema_test::ncname& > (*this) = 
+    ::xml_schema_test::ncname (_xsd_space_literals_[v]);
 
     return *this;
   }
@@ -105,18 +105,18 @@ namespace namespace_
 
   space::
   space (const ::xercesc::DOMElement& e,
-         ::xml_schema::flags f,
-         ::xml_schema::container* c)
-  : ::xml_schema::ncname (e, f, c)
+    ::xml_schema_test::flags f,
+    ::xml_schema_test::container* c)
+  : ::xml_schema_test::ncname (e, f, c)
   {
     _xsd_space_convert ();
   }
 
   space::
   space (const ::xercesc::DOMAttr& a,
-         ::xml_schema::flags f,
-         ::xml_schema::container* c)
-  : ::xml_schema::ncname (a, f, c)
+    ::xml_schema_test::flags f,
+    ::xml_schema_test::container* c)
+  : ::xml_schema_test::ncname (a, f, c)
   {
     _xsd_space_convert ();
   }
@@ -124,16 +124,16 @@ namespace namespace_
   space::
   space (const ::std::string& s,
          const ::xercesc::DOMElement* e,
-         ::xml_schema::flags f,
-         ::xml_schema::container* c)
-  : ::xml_schema::ncname (s, e, f, c)
+    ::xml_schema_test::flags f,
+    ::xml_schema_test::container* c)
+  : ::xml_schema_test::ncname (s, e, f, c)
   {
     _xsd_space_convert ();
   }
 
   space* space::
-  _clone (::xml_schema::flags f,
-          ::xml_schema::container* c) const
+  _clone (::xml_schema_test::flags f,
+     ::xml_schema_test::container* c) const
   {
     return new class space (*this, f, c);
   }
@@ -197,20 +197,20 @@ namespace namespace_
   void
   operator<< (::xercesc::DOMElement& e, const space& i)
   {
-    e << static_cast< const ::xml_schema::ncname& > (i);
+    e << static_cast< const  ::xml_schema_test::ncname& > (i);
   }
 
   void
   operator<< (::xercesc::DOMAttr& a, const space& i)
   {
-    a << static_cast< const ::xml_schema::ncname& > (i);
+    a << static_cast< const  ::xml_schema_test::ncname& > (i);
   }
 
   void
-  operator<< (::xml_schema::list_stream& l,
+  operator<< (::xml_schema_test::list_stream& l,
               const space& i)
   {
-    l << static_cast< const ::xml_schema::ncname& > (i);
+    l << static_cast< const  ::xml_schema_test::ncname& > (i);
   }
 }
 

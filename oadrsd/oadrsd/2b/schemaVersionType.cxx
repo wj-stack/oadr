@@ -49,21 +49,21 @@ namespace oadr2b
 
     schemaVersionType::
     schemaVersionType (const char* s)
-    : ::xml_schema::string (s)
+    : ::xml_schema_test::string (s)
     {
     }
 
     schemaVersionType::
     schemaVersionType (const ::std::string& s)
-    : ::xml_schema::string (s)
+    : ::xml_schema_test::string (s)
     {
     }
 
     schemaVersionType::
     schemaVersionType (const schemaVersionType& o,
-                       ::xml_schema::flags f,
-                       ::xml_schema::container* c)
-    : ::xml_schema::string (o, f, c)
+                  ::xml_schema_test::flags f,
+                  ::xml_schema_test::container* c)
+    : ::xml_schema_test::string (o, f, c)
     {
     }
   }
@@ -89,32 +89,32 @@ namespace oadr2b
 
     schemaVersionType::
     schemaVersionType (const ::xercesc::DOMElement& e,
-                       ::xml_schema::flags f,
-                       ::xml_schema::container* c)
-    : ::xml_schema::string (e, f, c)
+                  ::xml_schema_test::flags f,
+                  ::xml_schema_test::container* c)
+    : ::xml_schema_test::string (e, f, c)
     {
     }
 
     schemaVersionType::
     schemaVersionType (const ::xercesc::DOMAttr& a,
-                       ::xml_schema::flags f,
-                       ::xml_schema::container* c)
-    : ::xml_schema::string (a, f, c)
+                  ::xml_schema_test::flags f,
+                  ::xml_schema_test::container* c)
+    : ::xml_schema_test::string (a, f, c)
     {
     }
 
     schemaVersionType::
     schemaVersionType (const ::std::string& s,
                        const ::xercesc::DOMElement* e,
-                       ::xml_schema::flags f,
-                       ::xml_schema::container* c)
-    : ::xml_schema::string (s, e, f, c)
+                  ::xml_schema_test::flags f,
+                  ::xml_schema_test::container* c)
+    : ::xml_schema_test::string (s, e, f, c)
     {
     }
 
     schemaVersionType* schemaVersionType::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class schemaVersionType (*this, f, c);
     }
@@ -152,20 +152,20 @@ namespace oadr2b
     void
     operator<< (::xercesc::DOMElement& e, const schemaVersionType& i)
     {
-      e << static_cast< const ::xml_schema::string& > (i);
+      e << static_cast< const  ::xml_schema_test::string& > (i);
     }
 
     void
     operator<< (::xercesc::DOMAttr& a, const schemaVersionType& i)
     {
-      a << static_cast< const ::xml_schema::string& > (i);
+      a << static_cast< const  ::xml_schema_test::string& > (i);
     }
 
     void
-    operator<< (::xml_schema::list_stream& l,
+    operator<< (::xml_schema_test::list_stream& l,
                 const schemaVersionType& i)
     {
-      l << static_cast< const ::xml_schema::string& > (i);
+      l << static_cast< const  ::xml_schema_test::string& > (i);
     }
   }
 }

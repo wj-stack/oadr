@@ -205,8 +205,8 @@ namespace oadr2b
 
     ReportPayloadType::
     ReportPayloadType (const ReportPayloadType& x,
-                       ::xml_schema::flags f,
-                       ::xml_schema::container* c)
+                  ::xml_schema_test::flags f,
+                  ::xml_schema_test::container* c)
     : ::stream::StreamPayloadBaseType (x, f, c),
       rID_ (x.rID_, f, this),
       confidence_ (x.confidence_, f, this),
@@ -217,15 +217,15 @@ namespace oadr2b
 
     ReportPayloadType::
     ReportPayloadType (const ::xercesc::DOMElement& e,
-                       ::xml_schema::flags f,
-                       ::xml_schema::container* c)
-    : ::stream::StreamPayloadBaseType (e, f | ::xml_schema::flags::base, c),
+                  ::xml_schema_test::flags f,
+                  ::xml_schema_test::container* c)
+    : ::stream::StreamPayloadBaseType (e, f | ::xml_schema_test::flags::base, c),
       rID_ (this),
       confidence_ (this),
       accuracy_ (this),
       payloadBase_ (this)
     {
-      if ((f & ::xml_schema::flags::base) == 0)
+      if ((f & ::xml_schema_test::flags::base) == 0)
       {
         ::xsd::cxx::xml::dom::parser< char > p (e, true, false, false);
         this->parse (p, f);
@@ -234,7 +234,7 @@ namespace oadr2b
 
     void ReportPayloadType::
     parse (::xsd::cxx::xml::dom::parser< char >& p,
-           ::xml_schema::flags f)
+      ::xml_schema_test::flags f)
     {
       for (; p.more_content (); p.next_content (false))
       {
@@ -331,8 +331,8 @@ namespace oadr2b
     }
 
     ReportPayloadType* ReportPayloadType::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class ReportPayloadType (*this, f, c);
     }

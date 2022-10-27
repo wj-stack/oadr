@@ -120,7 +120,7 @@ namespace power
   PowerAttributesType (const hertz_type& hertz,
                        const voltage_type& voltage,
                        const ac_type& ac)
-  : ::xml_schema::type (),
+  : ::xml_schema_test::type (),
     hertz_ (hertz, this),
     voltage_ (voltage, this),
     ac_ (ac, this)
@@ -129,9 +129,9 @@ namespace power
 
   PowerAttributesType::
   PowerAttributesType (const PowerAttributesType& x,
-                       ::xml_schema::flags f,
-                       ::xml_schema::container* c)
-  : ::xml_schema::type (x, f, c),
+                  ::xml_schema_test::flags f,
+                  ::xml_schema_test::container* c)
+  : ::xml_schema_test::type (x, f, c),
     hertz_ (x.hertz_, f, this),
     voltage_ (x.voltage_, f, this),
     ac_ (x.ac_, f, this)
@@ -140,14 +140,14 @@ namespace power
 
   PowerAttributesType::
   PowerAttributesType (const ::xercesc::DOMElement& e,
-                       ::xml_schema::flags f,
-                       ::xml_schema::container* c)
-  : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
+                  ::xml_schema_test::flags f,
+                  ::xml_schema_test::container* c)
+  : ::xml_schema_test::type (e, f | ::xml_schema_test::flags::base, c),
     hertz_ (this),
     voltage_ (this),
     ac_ (this)
   {
-    if ((f & ::xml_schema::flags::base) == 0)
+    if ((f & ::xml_schema_test::flags::base) == 0)
     {
       ::xsd::cxx::xml::dom::parser< char > p (e, true, false, false);
       this->parse (p, f);
@@ -156,7 +156,7 @@ namespace power
 
   void PowerAttributesType::
   parse (::xsd::cxx::xml::dom::parser< char >& p,
-         ::xml_schema::flags f)
+    ::xml_schema_test::flags f)
   {
     for (; p.more_content (); p.next_content (false))
     {
@@ -223,8 +223,8 @@ namespace power
   }
 
   PowerAttributesType* PowerAttributesType::
-  _clone (::xml_schema::flags f,
-          ::xml_schema::container* c) const
+  _clone (::xml_schema_test::flags f,
+     ::xml_schema_test::container* c) const
   {
     return new class PowerAttributesType (*this, f, c);
   }
@@ -234,7 +234,7 @@ namespace power
   {
     if (this != &x)
     {
-      static_cast< ::xml_schema::type& > (*this) = x;
+      static_cast< ::xml_schema_test::type& > (*this) = x;
       this->hertz_ = x.hertz_;
       this->voltage_ = x.voltage_;
       this->ac_ = x.ac_;
@@ -275,7 +275,7 @@ namespace power
   void
   operator<< (::xercesc::DOMElement& e, const PowerAttributesType& i)
   {
-    e << static_cast< const ::xml_schema::type& > (i);
+    e << static_cast< const  ::xml_schema_test::type& > (i);
 
     // hertz
     //
@@ -286,7 +286,7 @@ namespace power
           "http://docs.oasis-open.org/ns/emix/2011/06/power",
           e));
 
-      s << ::xml_schema::as_decimal(i.hertz ());
+      s << ::xml_schema_test::as_decimal(i.hertz ());
     }
 
     // voltage
@@ -298,7 +298,7 @@ namespace power
           "http://docs.oasis-open.org/ns/emix/2011/06/power",
           e));
 
-      s << ::xml_schema::as_decimal(i.voltage ());
+      s << ::xml_schema_test::as_decimal(i.voltage ());
     }
 
     // ac

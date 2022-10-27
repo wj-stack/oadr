@@ -88,23 +88,23 @@ namespace power
 
   PowerReactiveType::
   PowerReactiveType (const PowerReactiveType& x,
-                     ::xml_schema::flags f,
-                     ::xml_schema::container* c)
+                ::xml_schema_test::flags f,
+                ::xml_schema_test::container* c)
   : ::power::PowerItemType (x, f, c)
   {
   }
 
   PowerReactiveType::
   PowerReactiveType (const ::xercesc::DOMElement& e,
-                     ::xml_schema::flags f,
-                     ::xml_schema::container* c)
+                ::xml_schema_test::flags f,
+                ::xml_schema_test::container* c)
   : ::power::PowerItemType (e, f, c)
   {
   }
 
   PowerReactiveType* PowerReactiveType::
-  _clone (::xml_schema::flags f,
-          ::xml_schema::container* c) const
+  _clone (::xml_schema_test::flags f,
+     ::xml_schema_test::container* c) const
   {
     return new class PowerReactiveType (*this, f, c);
   }

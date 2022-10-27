@@ -221,8 +221,8 @@ namespace oadr2b
 
     oadrCreateOptType::
     oadrCreateOptType (const oadrCreateOptType& x,
-                       ::xml_schema::flags f,
-                       ::xml_schema::container* c)
+                  ::xml_schema_test::flags f,
+                  ::xml_schema_test::container* c)
     : ::oadr2b::ei::EiOptType (x, f, c),
       requestID_ (x.requestID_, f, this),
       qualifiedEventID_ (x.qualifiedEventID_, f, this),
@@ -233,15 +233,15 @@ namespace oadr2b
 
     oadrCreateOptType::
     oadrCreateOptType (const ::xercesc::DOMElement& e,
-                       ::xml_schema::flags f,
-                       ::xml_schema::container* c)
-    : ::oadr2b::ei::EiOptType (e, f | ::xml_schema::flags::base, c),
+                  ::xml_schema_test::flags f,
+                  ::xml_schema_test::container* c)
+    : ::oadr2b::ei::EiOptType (e, f | ::xml_schema_test::flags::base, c),
       requestID_ (this),
       qualifiedEventID_ (this),
       eiTarget_ (this),
       oadrDeviceClass_ (this)
     {
-      if ((f & ::xml_schema::flags::base) == 0)
+      if ((f & ::xml_schema_test::flags::base) == 0)
       {
         ::xsd::cxx::xml::dom::parser< char > p (e, true, false, true);
         this->parse (p, f);
@@ -250,7 +250,7 @@ namespace oadr2b
 
     void oadrCreateOptType::
     parse (::xsd::cxx::xml::dom::parser< char >& p,
-           ::xml_schema::flags f)
+      ::xml_schema_test::flags f)
     {
       this->::oadr2b::ei::EiOptType::parse (p, f);
 
@@ -335,8 +335,8 @@ namespace oadr2b
     }
 
     oadrCreateOptType* oadrCreateOptType::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class oadrCreateOptType (*this, f, c);
     }

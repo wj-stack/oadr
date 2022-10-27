@@ -61,8 +61,8 @@
 
 #include <xsd/cxx/xml/char-utf8.hxx>
 
-#include <xsd/cxx/tree/exceptions.hxx>
 #include <xsd/cxx/tree/elements.hxx>
+#include <xsd/cxx/tree/exceptions.hxx>
 #include <xsd/cxx/tree/types.hxx>
 
 #include <xsd/cxx/xml/error-handler.hxx>
@@ -70,363 +70,337 @@
 #include <xsd/cxx/xml/dom/auto-ptr.hxx>
 
 #include <xsd/cxx/tree/parsing.hxx>
-#include <xsd/cxx/tree/parsing/byte.hxx>
-#include <xsd/cxx/tree/parsing/unsigned-byte.hxx>
-#include <xsd/cxx/tree/parsing/short.hxx>
-#include <xsd/cxx/tree/parsing/unsigned-short.hxx>
-#include <xsd/cxx/tree/parsing/int.hxx>
-#include <xsd/cxx/tree/parsing/unsigned-int.hxx>
-#include <xsd/cxx/tree/parsing/long.hxx>
-#include <xsd/cxx/tree/parsing/unsigned-long.hxx>
 #include <xsd/cxx/tree/parsing/boolean.hxx>
-#include <xsd/cxx/tree/parsing/float.hxx>
-#include <xsd/cxx/tree/parsing/double.hxx>
+#include <xsd/cxx/tree/parsing/byte.hxx>
 #include <xsd/cxx/tree/parsing/decimal.hxx>
+#include <xsd/cxx/tree/parsing/double.hxx>
+#include <xsd/cxx/tree/parsing/float.hxx>
+#include <xsd/cxx/tree/parsing/int.hxx>
+#include <xsd/cxx/tree/parsing/long.hxx>
+#include <xsd/cxx/tree/parsing/short.hxx>
+#include <xsd/cxx/tree/parsing/unsigned-byte.hxx>
+#include <xsd/cxx/tree/parsing/unsigned-int.hxx>
+#include <xsd/cxx/tree/parsing/unsigned-long.hxx>
+#include <xsd/cxx/tree/parsing/unsigned-short.hxx>
 
-#include <xsd/cxx/xml/dom/serialization-header.hxx>
 #include <xsd/cxx/tree/serialization.hxx>
-#include <xsd/cxx/tree/serialization/byte.hxx>
-#include <xsd/cxx/tree/serialization/unsigned-byte.hxx>
-#include <xsd/cxx/tree/serialization/short.hxx>
-#include <xsd/cxx/tree/serialization/unsigned-short.hxx>
-#include <xsd/cxx/tree/serialization/int.hxx>
-#include <xsd/cxx/tree/serialization/unsigned-int.hxx>
-#include <xsd/cxx/tree/serialization/long.hxx>
-#include <xsd/cxx/tree/serialization/unsigned-long.hxx>
 #include <xsd/cxx/tree/serialization/boolean.hxx>
-#include <xsd/cxx/tree/serialization/float.hxx>
-#include <xsd/cxx/tree/serialization/double.hxx>
+#include <xsd/cxx/tree/serialization/byte.hxx>
 #include <xsd/cxx/tree/serialization/decimal.hxx>
+#include <xsd/cxx/tree/serialization/double.hxx>
+#include <xsd/cxx/tree/serialization/float.hxx>
+#include <xsd/cxx/tree/serialization/int.hxx>
+#include <xsd/cxx/tree/serialization/long.hxx>
+#include <xsd/cxx/tree/serialization/short.hxx>
+#include <xsd/cxx/tree/serialization/unsigned-byte.hxx>
+#include <xsd/cxx/tree/serialization/unsigned-int.hxx>
+#include <xsd/cxx/tree/serialization/unsigned-long.hxx>
+#include <xsd/cxx/tree/serialization/unsigned-short.hxx>
+#include <xsd/cxx/xml/dom/serialization-header.hxx>
 
-namespace xml_schema
-{
-  // anyType and anySimpleType.
-  //
-  typedef ::xsd::cxx::tree::type type;
-  typedef ::xsd::cxx::tree::simple_type< char, type > simple_type;
-  typedef ::xsd::cxx::tree::type container;
+namespace xml_schema_test {
+// anyType and anySimpleType.
+//
+typedef ::xsd::cxx::tree::type type;
+typedef ::xsd::cxx::tree::simple_type<char, type> simple_type;
+typedef ::xsd::cxx::tree::type container;
 
-  // 8-bit
-  //
-  typedef signed char byte;
-  typedef unsigned char unsigned_byte;
+// 8-bit
+//
+typedef signed char byte;
+typedef unsigned char unsigned_byte;
 
-  // 16-bit
-  //
-  typedef short short_;
-  typedef unsigned short unsigned_short;
+// 16-bit
+//
+typedef short short_;
+typedef unsigned short unsigned_short;
 
-  // 32-bit
-  //
-  typedef int int_;
-  typedef unsigned int unsigned_int;
+// 32-bit
+//
+typedef int int_;
+typedef unsigned int unsigned_int;
 
-  // 64-bit
-  //
-  typedef long long long_;
-  typedef unsigned long long unsigned_long;
+// 64-bit
+//
+typedef long long long_;
+typedef unsigned long long unsigned_long;
 
-  // Supposed to be arbitrary-length integral types.
-  //
-  typedef long long integer;
-  typedef long long non_positive_integer;
-  typedef unsigned long long non_negative_integer;
-  typedef unsigned long long positive_integer;
-  typedef long long negative_integer;
+// Supposed to be arbitrary-length integral types.
+//
+typedef long long integer;
+typedef long long non_positive_integer;
+typedef unsigned long long non_negative_integer;
+typedef unsigned long long positive_integer;
+typedef long long negative_integer;
 
-  // Boolean.
-  //
-  typedef bool boolean;
+// Boolean.
+//
+typedef bool boolean;
 
-  // Floating-point types.
-  //
-  typedef float float_;
-  typedef double double_;
-  typedef double decimal;
+// Floating-point types.
+//
+typedef float float_;
+typedef double double_;
+typedef double decimal;
 
-  // String types.
-  //
-  typedef ::xsd::cxx::tree::string< char, simple_type > string;
-  typedef ::xsd::cxx::tree::normalized_string< char, string > normalized_string;
-  typedef ::xsd::cxx::tree::token< char, normalized_string > token;
-  typedef ::xsd::cxx::tree::name< char, token > name;
-  typedef ::xsd::cxx::tree::nmtoken< char, token > nmtoken;
-  typedef ::xsd::cxx::tree::nmtokens< char, simple_type, nmtoken > nmtokens;
-  typedef ::xsd::cxx::tree::ncname< char, name > ncname;
-  typedef ::xsd::cxx::tree::language< char, token > language;
+// String types.
+//
 
-  // ID/IDREF.
-  //
-  typedef ::xsd::cxx::tree::id< char, ncname > id;
-  typedef ::xsd::cxx::tree::idref< char, ncname, type > idref;
-  typedef ::xsd::cxx::tree::idrefs< char, simple_type, idref > idrefs;
+typedef ::xsd::cxx::tree::string<char, simple_type> string;
+typedef ::xsd::cxx::tree::string<char, simple_type> normalized_string;
+typedef ::xsd::cxx::tree::string<char, simple_type> token;
+typedef ::xsd::cxx::tree::string<char, simple_type> name;
+typedef ::xsd::cxx::tree::string<char, simple_type> nmtoken;
+typedef ::xsd::cxx::tree::string<char, simple_type> nmtokens;
+typedef ::xsd::cxx::tree::string<char, simple_type> ncname;
+typedef ::xsd::cxx::tree::string<char, simple_type> language;
 
-  // URI.
-  //
-  typedef ::xsd::cxx::tree::uri< char, simple_type > uri;
+// typedef ::xsd::cxx::tree::string< char, simple_type > string;
+// typedef ::xsd::cxx::tree::normalized_string< char, string >
+// normalized_string; typedef ::xsd::cxx::tree::token< char, normalized_string >
+// token; typedef ::xsd::cxx::tree::name< char, token > name; typedef
+// ::xsd::cxx::tree::nmtoken< char, token > nmtoken; typedef
+// ::xsd::cxx::tree::nmtokens< char, simple_type, nmtoken > nmtokens; typedef
+// ::xsd::cxx::tree::ncname< char, name > ncname; typedef
+// ::xsd::cxx::tree::language< char, token > language;
 
-  // Qualified name.
-  //
-  typedef ::xsd::cxx::tree::qname< char, simple_type, uri, ncname > qname;
+// ID/IDREF.
+//
+// typedef ::xsd::cxx::tree::id<char, ncname> id;
+// typedef ::xsd::cxx::tree::idref<char, ncname, type> idref;
+// typedef ::xsd::cxx::tree::idrefs<char, simple_type, idref> idrefs;
 
-  // Binary.
-  //
-  typedef ::xsd::cxx::tree::buffer< char > buffer;
-  typedef ::xsd::cxx::tree::base64_binary< char, simple_type > base64_binary;
-  typedef ::xsd::cxx::tree::hex_binary< char, simple_type > hex_binary;
+typedef ::xsd::cxx::tree::string<char, simple_type> id;
+typedef ::xsd::cxx::tree::string<char, simple_type> idref;
+typedef ::xsd::cxx::tree::string<char, simple_type> idrefs;
+// URI.
+//
+typedef ::xsd::cxx::tree::uri<char, simple_type> uri;
+// typedef ::xsd::cxx::tree::string<char, simple_type> uri;
+// Qualified name.
+//
+typedef ::xsd::cxx::tree::qname<char, simple_type, uri, ncname> qname;
+// typedef ::xsd::cxx::tree::string<char, simple_type> qname;
+//  Binary.
+//
+typedef ::xsd::cxx::tree::buffer<char> buffer;
+typedef ::xsd::cxx::tree::base64_binary<char, simple_type> base64_binary;
+typedef ::xsd::cxx::tree::hex_binary<char, simple_type> hex_binary;
 
-  // Date/time.
-  //
-  typedef ::xsd::cxx::tree::time_zone time_zone;
-  typedef ::xsd::cxx::tree::date< char, simple_type > date;
-  typedef ::xsd::cxx::tree::date_time< char, simple_type > date_time;
-  typedef ::xsd::cxx::tree::duration< char, simple_type > duration;
-  typedef ::xsd::cxx::tree::gday< char, simple_type > gday;
-  typedef ::xsd::cxx::tree::gmonth< char, simple_type > gmonth;
-  typedef ::xsd::cxx::tree::gmonth_day< char, simple_type > gmonth_day;
-  typedef ::xsd::cxx::tree::gyear< char, simple_type > gyear;
-  typedef ::xsd::cxx::tree::gyear_month< char, simple_type > gyear_month;
-  typedef ::xsd::cxx::tree::time< char, simple_type > time;
+// Date/time.
+//
+typedef ::xsd::cxx::tree::time_zone time_zone;
+typedef ::xsd::cxx::tree::date<char, simple_type> date;
+typedef ::xsd::cxx::tree::date_time<char, simple_type> date_time;
+typedef ::xsd::cxx::tree::duration<char, simple_type> duration;
+typedef ::xsd::cxx::tree::gday<char, simple_type> gday;
+typedef ::xsd::cxx::tree::gmonth<char, simple_type> gmonth;
+typedef ::xsd::cxx::tree::gmonth_day<char, simple_type> gmonth_day;
+typedef ::xsd::cxx::tree::gyear<char, simple_type> gyear;
+typedef ::xsd::cxx::tree::gyear_month<char, simple_type> gyear_month;
+typedef ::xsd::cxx::tree::time<char, simple_type> time;
 
-  // Entity.
-  //
-  typedef ::xsd::cxx::tree::entity< char, ncname > entity;
-  typedef ::xsd::cxx::tree::entities< char, simple_type, entity > entities;
+// Entity.
+//
+typedef ::xsd::cxx::tree::entity<char, ncname> entity;
+typedef ::xsd::cxx::tree::entities<char, simple_type, entity> entities;
 
-  typedef ::xsd::cxx::tree::content_order content_order;
-  // Namespace information and list stream. Used in
-  // serialization functions.
-  //
-  typedef ::xsd::cxx::xml::dom::namespace_info< char > namespace_info;
-  typedef ::xsd::cxx::xml::dom::namespace_infomap< char > namespace_infomap;
-  typedef ::xsd::cxx::tree::list_stream< char > list_stream;
-  typedef ::xsd::cxx::tree::as_double< double_ > as_double;
-  typedef ::xsd::cxx::tree::as_decimal< decimal > as_decimal;
-  typedef ::xsd::cxx::tree::facet facet;
+typedef ::xsd::cxx::tree::content_order content_order;
+// Namespace information and list stream. Used in
+// serialization functions.
+//
+typedef ::xsd::cxx::xml::dom::namespace_info<char> namespace_info;
+typedef ::xsd::cxx::xml::dom::namespace_infomap<char> namespace_infomap;
+typedef ::xsd::cxx::tree::list_stream<char> list_stream;
+typedef ::xsd::cxx::tree::as_double<double_> as_double;
+typedef ::xsd::cxx::tree::as_decimal<decimal> as_decimal;
+typedef ::xsd::cxx::tree::facet facet;
 
-  // Flags and properties.
-  //
-  typedef ::xsd::cxx::tree::flags flags;
-  typedef ::xsd::cxx::tree::properties< char > properties;
+// Flags and properties.
+//
+typedef ::xsd::cxx::tree::flags flags;
+typedef ::xsd::cxx::tree::properties<char> properties;
 
-  // Parsing/serialization diagnostics.
-  //
-  typedef ::xsd::cxx::tree::severity severity;
-  typedef ::xsd::cxx::tree::error< char > error;
-  typedef ::xsd::cxx::tree::diagnostics< char > diagnostics;
+// Parsing/serialization diagnostics.
+//
+typedef ::xsd::cxx::tree::severity severity;
+typedef ::xsd::cxx::tree::error<char> error;
+typedef ::xsd::cxx::tree::diagnostics<char> diagnostics;
 
-  // Exceptions.
-  //
-  typedef ::xsd::cxx::tree::exception< char > exception;
-  typedef ::xsd::cxx::tree::bounds< char > bounds;
-  typedef ::xsd::cxx::tree::duplicate_id< char > duplicate_id;
-  typedef ::xsd::cxx::tree::parsing< char > parsing;
-  typedef ::xsd::cxx::tree::expected_element< char > expected_element;
-  typedef ::xsd::cxx::tree::unexpected_element< char > unexpected_element;
-  typedef ::xsd::cxx::tree::expected_attribute< char > expected_attribute;
-  typedef ::xsd::cxx::tree::unexpected_enumerator< char > unexpected_enumerator;
-  typedef ::xsd::cxx::tree::expected_text_content< char > expected_text_content;
-  typedef ::xsd::cxx::tree::no_prefix_mapping< char > no_prefix_mapping;
-  typedef ::xsd::cxx::tree::no_type_info< char > no_type_info;
-  typedef ::xsd::cxx::tree::not_derived< char > not_derived;
-  typedef ::xsd::cxx::tree::serialization< char > serialization;
+// Exceptions.
+//
+typedef ::xsd::cxx::tree::exception<char> exception;
+typedef ::xsd::cxx::tree::bounds<char> bounds;
+typedef ::xsd::cxx::tree::duplicate_id<char> duplicate_id;
+typedef ::xsd::cxx::tree::parsing<char> parsing;
+typedef ::xsd::cxx::tree::expected_element<char> expected_element;
+typedef ::xsd::cxx::tree::unexpected_element<char> unexpected_element;
+typedef ::xsd::cxx::tree::expected_attribute<char> expected_attribute;
+typedef ::xsd::cxx::tree::unexpected_enumerator<char> unexpected_enumerator;
+typedef ::xsd::cxx::tree::expected_text_content<char> expected_text_content;
+typedef ::xsd::cxx::tree::no_prefix_mapping<char> no_prefix_mapping;
+typedef ::xsd::cxx::tree::no_type_info<char> no_type_info;
+typedef ::xsd::cxx::tree::not_derived<char> not_derived;
+typedef ::xsd::cxx::tree::serialization<char> serialization;
 
-  // Error handler callback interface.
-  //
-  typedef ::xsd::cxx::xml::error_handler< char > error_handler;
+// Error handler callback interface.
+//
+typedef ::xsd::cxx::xml::error_handler<char> error_handler;
 
-  // DOM interaction.
-  //
-  namespace dom
-  {
-    // Automatic pointer for DOMDocument.
-    //
-    using ::xsd::cxx::xml::dom::unique_ptr;
+// DOM interaction.
+//
+namespace dom {
+// Automatic pointer for DOMDocument.
+//
+using ::xsd::cxx::xml::dom::unique_ptr;
 
 #ifndef XSD_CXX_TREE_TREE_NODE_KEY__XML_SCHEMA
 #define XSD_CXX_TREE_TREE_NODE_KEY__XML_SCHEMA
-    // DOM user data key for back pointers to tree nodes.
-    //
-    const XMLCh* const tree_node_key = ::xsd::cxx::tree::user_data_keys::node;
+// DOM user data key for back pointers to tree nodes.
+//
+const XMLCh *const tree_node_key = ::xsd::cxx::tree::user_data_keys::node;
 #endif
-  }
-}
+} // namespace dom
+} // namespace xml_schema_test
 
 // Forward declarations.
 //
-namespace Atom
-{
-  class categoryType;
+namespace Atom {
+class categoryType;
 }
 
-
-#include <memory>    // ::std::unique_ptr
-#include <limits>    // std::numeric_limits
 #include <algorithm> // std::binary_search
+#include <limits>    // std::numeric_limits
+#include <memory>    // ::std::unique_ptr
 #include <utility>   // std::move
 
 #include <xsd/cxx/xml/char-utf8.hxx>
 
-#include <xsd/cxx/tree/exceptions.hxx>
-#include <xsd/cxx/tree/elements.hxx>
 #include <xsd/cxx/tree/containers.hxx>
+#include <xsd/cxx/tree/elements.hxx>
+#include <xsd/cxx/tree/exceptions.hxx>
 #include <xsd/cxx/tree/list.hxx>
 
 #include <xsd/cxx/xml/dom/parsing-header.hxx>
 
-namespace Atom
-{
-  class categoryType: public ::xml_schema::type
-  {
-    public:
-    // term
-    //
-    typedef ::xml_schema::string term_type;
-    typedef ::xsd::cxx::tree::traits< term_type, char > term_traits;
+namespace Atom {
+class categoryType : public ::xml_schema_test::type {
+public:
+  // term
+  //
+  typedef ::xml_schema_test::string term_type;
+  typedef ::xsd::cxx::tree::traits<term_type, char> term_traits;
 
-    const term_type&
-    term () const;
+  const term_type &term() const;
 
-    term_type&
-    term ();
+  term_type &term();
 
-    void
-    term (const term_type& x);
+  void term(const term_type &x);
 
-    void
-    term (::std::unique_ptr< term_type > p);
+  void term(::std::unique_ptr<term_type> p);
 
-    // scheme
-    //
-    typedef ::xml_schema::uri scheme_type;
-    typedef ::xsd::cxx::tree::optional< scheme_type > scheme_optional;
-    typedef ::xsd::cxx::tree::traits< scheme_type, char > scheme_traits;
+  // scheme
+  //
+  typedef ::xml_schema_test::uri scheme_type;
+  typedef ::xsd::cxx::tree::optional<scheme_type> scheme_optional;
+  typedef ::xsd::cxx::tree::traits<scheme_type, char> scheme_traits;
 
-    const scheme_optional&
-    scheme () const;
+  const scheme_optional &scheme() const;
 
-    scheme_optional&
-    scheme ();
+  scheme_optional &scheme();
 
-    void
-    scheme (const scheme_type& x);
+  void scheme(const scheme_type &x);
 
-    void
-    scheme (const scheme_optional& x);
+  void scheme(const scheme_optional &x);
 
-    void
-    scheme (::std::unique_ptr< scheme_type > p);
+  void scheme(::std::unique_ptr<scheme_type> p);
 
-    // label
-    //
-    typedef ::xml_schema::string label_type;
-    typedef ::xsd::cxx::tree::optional< label_type > label_optional;
-    typedef ::xsd::cxx::tree::traits< label_type, char > label_traits;
+  // label
+  //
+  typedef ::xml_schema_test::string label_type;
+  typedef ::xsd::cxx::tree::optional<label_type> label_optional;
+  typedef ::xsd::cxx::tree::traits<label_type, char> label_traits;
 
-    const label_optional&
-    label () const;
+  const label_optional &label() const;
 
-    label_optional&
-    label ();
+  label_optional &label();
 
-    void
-    label (const label_type& x);
+  void label(const label_type &x);
 
-    void
-    label (const label_optional& x);
+  void label(const label_optional &x);
 
-    void
-    label (::std::unique_ptr< label_type > p);
+  void label(::std::unique_ptr<label_type> p);
 
-    // base
-    //
-    typedef ::xml_schema::uri base_type;
-    typedef ::xsd::cxx::tree::optional< base_type > base_optional;
-    typedef ::xsd::cxx::tree::traits< base_type, char > base_traits;
+  // base
+  //
+  typedef ::xml_schema_test::uri base_type;
+  typedef ::xsd::cxx::tree::optional<base_type> base_optional;
+  typedef ::xsd::cxx::tree::traits<base_type, char> base_traits;
 
-    const base_optional&
-    base () const;
+  const base_optional &base() const;
 
-    base_optional&
-    base ();
+  base_optional &base();
 
-    void
-    base (const base_type& x);
+  void base(const base_type &x);
 
-    void
-    base (const base_optional& x);
+  void base(const base_optional &x);
 
-    void
-    base (::std::unique_ptr< base_type > p);
+  void base(::std::unique_ptr<base_type> p);
 
-    // lang
-    //
-    typedef ::xml_schema::language lang_type;
-    typedef ::xsd::cxx::tree::optional< lang_type > lang_optional;
-    typedef ::xsd::cxx::tree::traits< lang_type, char > lang_traits;
+  // lang
+  //
+  typedef ::xml_schema_test::language lang_type;
+  typedef ::xsd::cxx::tree::optional<lang_type> lang_optional;
+  typedef ::xsd::cxx::tree::traits<lang_type, char> lang_traits;
 
-    const lang_optional&
-    lang () const;
+  const lang_optional &lang() const;
 
-    lang_optional&
-    lang ();
+  lang_optional &lang();
 
-    void
-    lang (const lang_type& x);
+  void lang(const lang_type &x);
 
-    void
-    lang (const lang_optional& x);
+  void lang(const lang_optional &x);
 
-    void
-    lang (::std::unique_ptr< lang_type > p);
+  void lang(::std::unique_ptr<lang_type> p);
 
-    // Constructors.
-    //
-    categoryType (const term_type&);
+  // Constructors.
+  //
+  categoryType(const term_type &);
 
-    categoryType (const ::xercesc::DOMElement& e,
-                  ::xml_schema::flags f = 0,
-                  ::xml_schema::container* c = 0);
+  categoryType(const ::xercesc::DOMElement &e, ::xml_schema_test::flags f = 0,
+               ::xml_schema_test::container *c = 0);
 
-    categoryType (const categoryType& x,
-                  ::xml_schema::flags f = 0,
-                  ::xml_schema::container* c = 0);
+  categoryType(const categoryType &x, ::xml_schema_test::flags f = 0,
+               ::xml_schema_test::container *c = 0);
 
-    virtual categoryType*
-    _clone (::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0) const;
+  virtual categoryType *_clone(::xml_schema_test::flags f = 0,
+                               ::xml_schema_test::container *c = 0) const;
 
-    categoryType&
-    operator= (const categoryType& x);
+  categoryType &operator=(const categoryType &x);
 
-    virtual 
-    ~categoryType ();
+  virtual ~categoryType();
 
-    // Implementation.
-    //
-    protected:
-    void
-    parse (::xsd::cxx::xml::dom::parser< char >&,
-           ::xml_schema::flags);
+  // Implementation.
+  //
+protected:
+  void parse(::xsd::cxx::xml::dom::parser<char> &, ::xml_schema_test::flags);
 
-    protected:
-    ::xsd::cxx::tree::one< term_type > term_;
-    scheme_optional scheme_;
-    label_optional label_;
-    base_optional base_;
-    lang_optional lang_;
-  };
-}
+protected:
+  ::xsd::cxx::tree::one<term_type> term_;
+  scheme_optional scheme_;
+  label_optional label_;
+  base_optional base_;
+  lang_optional lang_;
+};
+} // namespace Atom
 
 #include <iosfwd>
 
-#include <xercesc/sax/InputSource.hpp>
 #include <xercesc/dom/DOMDocument.hpp>
 #include <xercesc/dom/DOMErrorHandler.hpp>
+#include <xercesc/sax/InputSource.hpp>
 
-namespace Atom
-{
-}
+namespace Atom {}
 
 #include <iosfwd>
 
@@ -436,10 +410,8 @@ namespace Atom
 
 #include <xsd/cxx/xml/dom/auto-ptr.hxx>
 
-namespace Atom
-{
-  void
-  operator<< (::xercesc::DOMElement&, const categoryType&);
+namespace Atom {
+void operator<<(::xercesc::DOMElement &, const categoryType &);
 }
 
 #include <xsd/cxx/post.hxx>

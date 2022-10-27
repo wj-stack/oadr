@@ -112,7 +112,7 @@ namespace oadr2b
     X509IssuerSerialType::
     X509IssuerSerialType (const X509IssuerName_type& X509IssuerName,
                           const X509SerialNumber_type& X509SerialNumber)
-    : ::xml_schema::type (),
+    : ::xml_schema_test::type (),
       X509IssuerName_ (X509IssuerName, this),
       X509SerialNumber_ (X509SerialNumber, this)
     {
@@ -120,9 +120,9 @@ namespace oadr2b
 
     X509IssuerSerialType::
     X509IssuerSerialType (const X509IssuerSerialType& x,
-                          ::xml_schema::flags f,
-                          ::xml_schema::container* c)
-    : ::xml_schema::type (x, f, c),
+                     ::xml_schema_test::flags f,
+                     ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (x, f, c),
       X509IssuerName_ (x.X509IssuerName_, f, this),
       X509SerialNumber_ (x.X509SerialNumber_, f, this)
     {
@@ -130,13 +130,13 @@ namespace oadr2b
 
     X509IssuerSerialType::
     X509IssuerSerialType (const ::xercesc::DOMElement& e,
-                          ::xml_schema::flags f,
-                          ::xml_schema::container* c)
-    : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
+                     ::xml_schema_test::flags f,
+                     ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (e, f | ::xml_schema_test::flags::base, c),
       X509IssuerName_ (this),
       X509SerialNumber_ (this)
     {
-      if ((f & ::xml_schema::flags::base) == 0)
+      if ((f & ::xml_schema_test::flags::base) == 0)
       {
         ::xsd::cxx::xml::dom::parser< char > p (e, true, false, false);
         this->parse (p, f);
@@ -145,7 +145,7 @@ namespace oadr2b
 
     void X509IssuerSerialType::
     parse (::xsd::cxx::xml::dom::parser< char >& p,
-           ::xml_schema::flags f)
+      ::xml_schema_test::flags f)
     {
       for (; p.more_content (); p.next_content (false))
       {
@@ -197,8 +197,8 @@ namespace oadr2b
     }
 
     X509IssuerSerialType* X509IssuerSerialType::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class X509IssuerSerialType (*this, f, c);
     }
@@ -208,7 +208,7 @@ namespace oadr2b
     {
       if (this != &x)
       {
-        static_cast< ::xml_schema::type& > (*this) = x;
+        static_cast< ::xml_schema_test::type& > (*this) = x;
         this->X509IssuerName_ = x.X509IssuerName_;
         this->X509SerialNumber_ = x.X509SerialNumber_;
       }
@@ -254,7 +254,7 @@ namespace oadr2b
     void
     operator<< (::xercesc::DOMElement& e, const X509IssuerSerialType& i)
     {
-      e << static_cast< const ::xml_schema::type& > (i);
+      e << static_cast< const  ::xml_schema_test::type& > (i);
 
       // X509IssuerName
       //

@@ -40,430 +40,336 @@
 
 #include "oadr_20b.hxx"
 
-namespace oadr2b
-{
-  namespace oadr
-  {
-  }
-}
+namespace oadr2b {
+namespace oadr {}
+} // namespace oadr2b
 
 #include <xsd/cxx/xml/dom/parsing-source.hxx>
 
 #include <xsd/cxx/tree/type-factory-map.hxx>
 
-namespace _xsd
-{
-  static
-  const ::xsd::cxx::tree::type_factory_plate< 0, char >
-  type_factory_plate_init;
+namespace _xsd {
+static const ::xsd::cxx::tree::type_factory_plate<0, char>
+    type_factory_plate_init;
 }
 
-namespace oadr2b
-{
-  namespace oadr
-  {
-    static
-    const ::xsd::cxx::tree::element_factory_initializer< 0, char, ::oadr2b::oadr::BaseUnitType >
-    _xsd_customUnit_element_factory_init (
-      "itemBase",
-      "http://docs.oasis-open.org/ns/emix/2011/06",
-      "customUnit",
-      "http://openadr.org/oadr-2.0b/2012/07");
+namespace oadr2b {
+namespace oadr {
+static const ::xsd::cxx::tree::element_factory_initializer<
+    0, char, ::oadr2b::oadr::BaseUnitType>
+    _xsd_customUnit_element_factory_init(
+        "itemBase", "http://docs.oasis-open.org/ns/emix/2011/06", "customUnit",
+        "http://openadr.org/oadr-2.0b/2012/07");
 
+static const ::xsd::cxx::tree::element_factory_initializer<
+    0, char, ::oadr2b::oadr::CurrentType>
+    _xsd_current_element_factory_init(
+        "itemBase", "http://docs.oasis-open.org/ns/emix/2011/06", "current",
+        "http://openadr.org/oadr-2.0b/2012/07");
 
-    static
-    const ::xsd::cxx::tree::element_factory_initializer< 0, char, ::oadr2b::oadr::CurrentType >
-    _xsd_current_element_factory_init (
-      "itemBase",
-      "http://docs.oasis-open.org/ns/emix/2011/06",
-      "current",
-      "http://openadr.org/oadr-2.0b/2012/07");
+static const ::xsd::cxx::tree::element_factory_initializer<
+    0, char, ::oadr2b::oadr::currencyType>
+    _xsd_currency_element_factory_init(
+        "itemBase", "http://docs.oasis-open.org/ns/emix/2011/06", "currency",
+        "http://openadr.org/oadr-2.0b/2012/07");
 
+static const ::xsd::cxx::tree::element_factory_initializer<
+    0, char, ::oadr2b::oadr::currencyType>
+    _xsd_currencyPerKWh_element_factory_init(
+        "itemBase", "http://docs.oasis-open.org/ns/emix/2011/06",
+        "currencyPerKWh", "http://openadr.org/oadr-2.0b/2012/07");
 
-    static
-    const ::xsd::cxx::tree::element_factory_initializer< 0, char, ::oadr2b::oadr::currencyType >
-    _xsd_currency_element_factory_init (
-      "itemBase",
-      "http://docs.oasis-open.org/ns/emix/2011/06",
-      "currency",
-      "http://openadr.org/oadr-2.0b/2012/07");
+static const ::xsd::cxx::tree::element_factory_initializer<
+    0, char, ::oadr2b::oadr::currencyType>
+    _xsd_currencyPerKW_element_factory_init(
+        "itemBase", "http://docs.oasis-open.org/ns/emix/2011/06",
+        "currencyPerKW", "http://openadr.org/oadr-2.0b/2012/07");
 
+static const ::xsd::cxx::tree::element_factory_initializer<
+    0, char, ::oadr2b::oadr::currencyType>
+    _xsd_currencyPerThm_element_factory_init(
+        "itemBase", "http://docs.oasis-open.org/ns/emix/2011/06",
+        "currencyPerThm", "http://openadr.org/oadr-2.0b/2012/07");
 
-    static
-    const ::xsd::cxx::tree::element_factory_initializer< 0, char, ::oadr2b::oadr::currencyType >
-    _xsd_currencyPerKWh_element_factory_init (
-      "itemBase",
-      "http://docs.oasis-open.org/ns/emix/2011/06",
-      "currencyPerKWh",
-      "http://openadr.org/oadr-2.0b/2012/07");
+static const ::xsd::cxx::tree::element_factory_initializer<
+    0, char, ::oadr2b::oadr::FrequencyType>
+    _xsd_frequency_element_factory_init(
+        "itemBase", "http://docs.oasis-open.org/ns/emix/2011/06", "frequency",
+        "http://openadr.org/oadr-2.0b/2012/07");
 
+static const ::xsd::cxx::tree::element_factory_initializer<
+    0, char, ::oadr2b::oadr::ThermType>
+    _xsd_Therm_element_factory_init(
+        "itemBase", "http://docs.oasis-open.org/ns/emix/2011/06", "Therm",
+        "http://openadr.org/oadr-2.0b/2012/07");
 
-    static
-    const ::xsd::cxx::tree::element_factory_initializer< 0, char, ::oadr2b::oadr::currencyType >
-    _xsd_currencyPerKW_element_factory_init (
-      "itemBase",
-      "http://docs.oasis-open.org/ns/emix/2011/06",
-      "currencyPerKW",
-      "http://openadr.org/oadr-2.0b/2012/07");
+static const ::xsd::cxx::tree::element_factory_initializer<
+    0, char, ::oadr2b::oadr::temperatureType>
+    _xsd_temperature_element_factory_init(
+        "itemBase", "http://docs.oasis-open.org/ns/emix/2011/06", "temperature",
+        "http://openadr.org/oadr-2.0b/2012/07");
 
+static const ::xsd::cxx::tree::element_factory_initializer<
+    0, char, ::oadr2b::oadr::pulseCountType>
+    _xsd_pulseCount_element_factory_init(
+        "itemBase", "http://docs.oasis-open.org/ns/emix/2011/06", "pulseCount",
+        "http://openadr.org/oadr-2.0b/2012/07");
 
-    static
-    const ::xsd::cxx::tree::element_factory_initializer< 0, char, ::oadr2b::oadr::currencyType >
-    _xsd_currencyPerThm_element_factory_init (
-      "itemBase",
-      "http://docs.oasis-open.org/ns/emix/2011/06",
-      "currencyPerThm",
-      "http://openadr.org/oadr-2.0b/2012/07");
+static const ::xsd::cxx::tree::element_factory_initializer<
+    0, char, ::oadr2b::oadr::oadrPayloadResourceStatusType>
+    _xsd_oadrPayloadResourceStatus_element_factory_init(
+        "payloadBase", "http://docs.oasis-open.org/ns/energyinterop/201110",
+        "oadrPayloadResourceStatus", "http://openadr.org/oadr-2.0b/2012/07");
 
+static const ::xsd::cxx::tree::element_factory_initializer<
+    0, char, ::oadr2b::oadr::oadrGBStreamPayloadBase>
+    _xsd_oadrGBPayload_element_factory_init(
+        "streamPayloadBase", "urn:ietf:params:xml:ns:icalendar-2.0:stream",
+        "oadrGBPayload", "http://openadr.org/oadr-2.0b/2012/07");
 
-    static
-    const ::xsd::cxx::tree::element_factory_initializer< 0, char, ::oadr2b::oadr::FrequencyType >
-    _xsd_frequency_element_factory_init (
-      "itemBase",
-      "http://docs.oasis-open.org/ns/emix/2011/06",
-      "frequency",
-      "http://openadr.org/oadr-2.0b/2012/07");
+static const ::xsd::cxx::tree::element_factory_initializer<
+    0, char, ::oadr2b::oadr::oadrGBItemBase>
+    _xsd_oadrGBDataDescription_element_factory_init(
+        "itemBase", "http://docs.oasis-open.org/ns/emix/2011/06",
+        "oadrGBDataDescription", "http://openadr.org/oadr-2.0b/2012/07");
 
-
-    static
-    const ::xsd::cxx::tree::element_factory_initializer< 0, char, ::oadr2b::oadr::ThermType >
-    _xsd_Therm_element_factory_init (
-      "itemBase",
-      "http://docs.oasis-open.org/ns/emix/2011/06",
-      "Therm",
-      "http://openadr.org/oadr-2.0b/2012/07");
-
-
-    static
-    const ::xsd::cxx::tree::element_factory_initializer< 0, char, ::oadr2b::oadr::temperatureType >
-    _xsd_temperature_element_factory_init (
-      "itemBase",
-      "http://docs.oasis-open.org/ns/emix/2011/06",
-      "temperature",
-      "http://openadr.org/oadr-2.0b/2012/07");
-
-
-    static
-    const ::xsd::cxx::tree::element_factory_initializer< 0, char, ::oadr2b::oadr::pulseCountType >
-    _xsd_pulseCount_element_factory_init (
-      "itemBase",
-      "http://docs.oasis-open.org/ns/emix/2011/06",
-      "pulseCount",
-      "http://openadr.org/oadr-2.0b/2012/07");
-
-
-    static
-    const ::xsd::cxx::tree::element_factory_initializer< 0, char, ::oadr2b::oadr::oadrPayloadResourceStatusType >
-    _xsd_oadrPayloadResourceStatus_element_factory_init (
-      "payloadBase",
-      "http://docs.oasis-open.org/ns/energyinterop/201110",
-      "oadrPayloadResourceStatus",
-      "http://openadr.org/oadr-2.0b/2012/07");
-
-
-    static
-    const ::xsd::cxx::tree::element_factory_initializer< 0, char, ::oadr2b::oadr::oadrGBStreamPayloadBase >
-    _xsd_oadrGBPayload_element_factory_init (
-      "streamPayloadBase",
-      "urn:ietf:params:xml:ns:icalendar-2.0:stream",
-      "oadrGBPayload",
-      "http://openadr.org/oadr-2.0b/2012/07");
-
-
-    static
-    const ::xsd::cxx::tree::element_factory_initializer< 0, char, ::oadr2b::oadr::oadrGBItemBase >
-    _xsd_oadrGBDataDescription_element_factory_init (
-      "itemBase",
-      "http://docs.oasis-open.org/ns/emix/2011/06",
-      "oadrGBDataDescription",
-      "http://openadr.org/oadr-2.0b/2012/07");
-
-
-    static
-    const ::xsd::cxx::tree::element_factory_initializer< 0, char, ::oadr2b::oadr::oadrReportPayloadType >
-    _xsd_oadrReportPayload_element_factory_init (
-      "streamPayloadBase",
-      "urn:ietf:params:xml:ns:icalendar-2.0:stream",
-      "oadrReportPayload",
-      "http://openadr.org/oadr-2.0b/2012/07");
-  }
-}
+static const ::xsd::cxx::tree::element_factory_initializer<
+    0, char, ::oadr2b::oadr::oadrReportPayloadType>
+    _xsd_oadrReportPayload_element_factory_init(
+        "streamPayloadBase", "urn:ietf:params:xml:ns:icalendar-2.0:stream",
+        "oadrReportPayload", "http://openadr.org/oadr-2.0b/2012/07");
+} // namespace oadr
+} // namespace oadr2b
 
 #include <istream>
-#include <xsd/cxx/xml/sax/std-input-source.hxx>
 #include <xsd/cxx/tree/error-handler.hxx>
+#include <xsd/cxx/xml/sax/std-input-source.hxx>
 
-namespace oadr2b
-{
-  namespace oadr
-  {
-    ::std::unique_ptr< ::oadr2b::oadr::oadrPayload >
-    oadrPayload_ (const ::std::string& u,
-                  ::xml_schema::flags f,
-                  const ::xml_schema::properties& p)
-    {
-      ::xsd::cxx::xml::auto_initializer i (
-        (f & ::xml_schema::flags::dont_initialize) == 0,
-        (f & ::xml_schema::flags::keep_dom) == 0);
+namespace oadr2b {
+namespace oadr {
+::std::unique_ptr<::oadr2b::oadr::oadrPayload>
+oadrPayload_(const ::std::string &u, ::xml_schema_test::flags f,
+             const ::xml_schema_test::properties &p) {
+  ::xsd::cxx::xml::auto_initializer i(
+      (f & ::xml_schema_test::flags::dont_initialize) == 0,
+      (f & ::xml_schema_test::flags::keep_dom) == 0);
 
-      ::xsd::cxx::tree::error_handler< char > h;
+  ::xsd::cxx::tree::error_handler<char> h;
 
-      ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
-        ::xsd::cxx::xml::dom::parse< char > (
-          u, h, p, f));
+  ::xml_schema_test::dom::unique_ptr<::xercesc::DOMDocument> d(
+      ::xsd::cxx::xml::dom::parse<char>(u, h, p, f));
 
-      h.throw_if_failed< ::xsd::cxx::tree::parsing< char > > ();
+  h.throw_if_failed<::xsd::cxx::tree::parsing<char>>();
 
-      return ::std::unique_ptr< ::oadr2b::oadr::oadrPayload > (
-        ::oadr2b::oadr::oadrPayload_ (
-          std::move (d), f | ::xml_schema::flags::own_dom, p));
-    }
-
-    ::std::unique_ptr< ::oadr2b::oadr::oadrPayload >
-    oadrPayload_ (const ::std::string& u,
-                  ::xml_schema::error_handler& h,
-                  ::xml_schema::flags f,
-                  const ::xml_schema::properties& p)
-    {
-      ::xsd::cxx::xml::auto_initializer i (
-        (f & ::xml_schema::flags::dont_initialize) == 0,
-        (f & ::xml_schema::flags::keep_dom) == 0);
-
-      ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
-        ::xsd::cxx::xml::dom::parse< char > (
-          u, h, p, f));
-
-      if (!d.get ())
-        throw ::xsd::cxx::tree::parsing< char > ();
-
-      return ::std::unique_ptr< ::oadr2b::oadr::oadrPayload > (
-        ::oadr2b::oadr::oadrPayload_ (
-          std::move (d), f | ::xml_schema::flags::own_dom, p));
-    }
-
-    ::std::unique_ptr< ::oadr2b::oadr::oadrPayload >
-    oadrPayload_ (const ::std::string& u,
-                  ::xercesc::DOMErrorHandler& h,
-                  ::xml_schema::flags f,
-                  const ::xml_schema::properties& p)
-    {
-      ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
-        ::xsd::cxx::xml::dom::parse< char > (
-          u, h, p, f));
-
-      if (!d.get ())
-        throw ::xsd::cxx::tree::parsing< char > ();
-
-      return ::std::unique_ptr< ::oadr2b::oadr::oadrPayload > (
-        ::oadr2b::oadr::oadrPayload_ (
-          std::move (d), f | ::xml_schema::flags::own_dom, p));
-    }
-
-    ::std::unique_ptr< ::oadr2b::oadr::oadrPayload >
-    oadrPayload_ (::std::istream& is,
-                  ::xml_schema::flags f,
-                  const ::xml_schema::properties& p)
-    {
-      ::xsd::cxx::xml::auto_initializer i (
-        (f & ::xml_schema::flags::dont_initialize) == 0,
-        (f & ::xml_schema::flags::keep_dom) == 0);
-
-      ::xsd::cxx::xml::sax::std_input_source isrc (is);
-      return ::oadr2b::oadr::oadrPayload_ (isrc, f, p);
-    }
-
-    ::std::unique_ptr< ::oadr2b::oadr::oadrPayload >
-    oadrPayload_ (::std::istream& is,
-                  ::xml_schema::error_handler& h,
-                  ::xml_schema::flags f,
-                  const ::xml_schema::properties& p)
-    {
-      ::xsd::cxx::xml::auto_initializer i (
-        (f & ::xml_schema::flags::dont_initialize) == 0,
-        (f & ::xml_schema::flags::keep_dom) == 0);
-
-      ::xsd::cxx::xml::sax::std_input_source isrc (is);
-      return ::oadr2b::oadr::oadrPayload_ (isrc, h, f, p);
-    }
-
-    ::std::unique_ptr< ::oadr2b::oadr::oadrPayload >
-    oadrPayload_ (::std::istream& is,
-                  ::xercesc::DOMErrorHandler& h,
-                  ::xml_schema::flags f,
-                  const ::xml_schema::properties& p)
-    {
-      ::xsd::cxx::xml::sax::std_input_source isrc (is);
-      return ::oadr2b::oadr::oadrPayload_ (isrc, h, f, p);
-    }
-
-    ::std::unique_ptr< ::oadr2b::oadr::oadrPayload >
-    oadrPayload_ (::std::istream& is,
-                  const ::std::string& sid,
-                  ::xml_schema::flags f,
-                  const ::xml_schema::properties& p)
-    {
-      ::xsd::cxx::xml::auto_initializer i (
-        (f & ::xml_schema::flags::dont_initialize) == 0,
-        (f & ::xml_schema::flags::keep_dom) == 0);
-
-      ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
-      return ::oadr2b::oadr::oadrPayload_ (isrc, f, p);
-    }
-
-    ::std::unique_ptr< ::oadr2b::oadr::oadrPayload >
-    oadrPayload_ (::std::istream& is,
-                  const ::std::string& sid,
-                  ::xml_schema::error_handler& h,
-                  ::xml_schema::flags f,
-                  const ::xml_schema::properties& p)
-    {
-      ::xsd::cxx::xml::auto_initializer i (
-        (f & ::xml_schema::flags::dont_initialize) == 0,
-        (f & ::xml_schema::flags::keep_dom) == 0);
-
-      ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
-      return ::oadr2b::oadr::oadrPayload_ (isrc, h, f, p);
-    }
-
-    ::std::unique_ptr< ::oadr2b::oadr::oadrPayload >
-    oadrPayload_ (::std::istream& is,
-                  const ::std::string& sid,
-                  ::xercesc::DOMErrorHandler& h,
-                  ::xml_schema::flags f,
-                  const ::xml_schema::properties& p)
-    {
-      ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
-      return ::oadr2b::oadr::oadrPayload_ (isrc, h, f, p);
-    }
-
-    ::std::unique_ptr< ::oadr2b::oadr::oadrPayload >
-    oadrPayload_ (::xercesc::InputSource& i,
-                  ::xml_schema::flags f,
-                  const ::xml_schema::properties& p)
-    {
-      ::xsd::cxx::tree::error_handler< char > h;
-
-      ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
-        ::xsd::cxx::xml::dom::parse< char > (
-          i, h, p, f));
-
-      h.throw_if_failed< ::xsd::cxx::tree::parsing< char > > ();
-
-      return ::std::unique_ptr< ::oadr2b::oadr::oadrPayload > (
-        ::oadr2b::oadr::oadrPayload_ (
-          std::move (d), f | ::xml_schema::flags::own_dom, p));
-    }
-
-    ::std::unique_ptr< ::oadr2b::oadr::oadrPayload >
-    oadrPayload_ (::xercesc::InputSource& i,
-                  ::xml_schema::error_handler& h,
-                  ::xml_schema::flags f,
-                  const ::xml_schema::properties& p)
-    {
-      ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
-        ::xsd::cxx::xml::dom::parse< char > (
-          i, h, p, f));
-
-      if (!d.get ())
-        throw ::xsd::cxx::tree::parsing< char > ();
-
-      return ::std::unique_ptr< ::oadr2b::oadr::oadrPayload > (
-        ::oadr2b::oadr::oadrPayload_ (
-          std::move (d), f | ::xml_schema::flags::own_dom, p));
-    }
-
-    ::std::unique_ptr< ::oadr2b::oadr::oadrPayload >
-    oadrPayload_ (::xercesc::InputSource& i,
-                  ::xercesc::DOMErrorHandler& h,
-                  ::xml_schema::flags f,
-                  const ::xml_schema::properties& p)
-    {
-      ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
-        ::xsd::cxx::xml::dom::parse< char > (
-          i, h, p, f));
-
-      if (!d.get ())
-        throw ::xsd::cxx::tree::parsing< char > ();
-
-      return ::std::unique_ptr< ::oadr2b::oadr::oadrPayload > (
-        ::oadr2b::oadr::oadrPayload_ (
-          std::move (d), f | ::xml_schema::flags::own_dom, p));
-    }
-
-    ::std::unique_ptr< ::oadr2b::oadr::oadrPayload >
-    oadrPayload_ (const ::xercesc::DOMDocument& doc,
-                  ::xml_schema::flags f,
-                  const ::xml_schema::properties& p)
-    {
-      if (f & ::xml_schema::flags::keep_dom)
-      {
-        ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
-          static_cast< ::xercesc::DOMDocument* > (doc.cloneNode (true)));
-
-        return ::std::unique_ptr< ::oadr2b::oadr::oadrPayload > (
-          ::oadr2b::oadr::oadrPayload_ (
-            std::move (d), f | ::xml_schema::flags::own_dom, p));
-      }
-
-      const ::xercesc::DOMElement& e (*doc.getDocumentElement ());
-      const ::xsd::cxx::xml::qualified_name< char > n (
-        ::xsd::cxx::xml::dom::name< char > (e));
-
-      if (n.name () == "oadrPayload" &&
-          n.namespace_ () == "http://openadr.org/oadr-2.0b/2012/07")
-      {
-        ::std::unique_ptr< ::oadr2b::oadr::oadrPayload > r (
-          ::xsd::cxx::tree::traits< ::oadr2b::oadr::oadrPayload, char >::create (
-            e, f, 0));
-        return r;
-      }
-
-      throw ::xsd::cxx::tree::unexpected_element < char > (
-        n.name (),
-        n.namespace_ (),
-        "oadrPayload",
-        "http://openadr.org/oadr-2.0b/2012/07");
-    }
-
-    ::std::unique_ptr< ::oadr2b::oadr::oadrPayload >
-    oadrPayload_ (::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d,
-                  ::xml_schema::flags f,
-                  const ::xml_schema::properties&)
-    {
-      ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > c (
-        ((f & ::xml_schema::flags::keep_dom) &&
-         !(f & ::xml_schema::flags::own_dom))
-        ? static_cast< ::xercesc::DOMDocument* > (d->cloneNode (true))
-        : 0);
-
-      ::xercesc::DOMDocument& doc (c.get () ? *c : *d);
-      const ::xercesc::DOMElement& e (*doc.getDocumentElement ());
-
-      const ::xsd::cxx::xml::qualified_name< char > n (
-        ::xsd::cxx::xml::dom::name< char > (e));
-
-      if (f & ::xml_schema::flags::keep_dom)
-        doc.setUserData (::xml_schema::dom::tree_node_key,
-                         (c.get () ? &c : &d),
-                         0);
-
-      if (n.name () == "oadrPayload" &&
-          n.namespace_ () == "http://openadr.org/oadr-2.0b/2012/07")
-      {
-        ::std::unique_ptr< ::oadr2b::oadr::oadrPayload > r (
-          ::xsd::cxx::tree::traits< ::oadr2b::oadr::oadrPayload, char >::create (
-            e, f, 0));
-        return r;
-      }
-
-      throw ::xsd::cxx::tree::unexpected_element < char > (
-        n.name (),
-        n.namespace_ (),
-        "oadrPayload",
-        "http://openadr.org/oadr-2.0b/2012/07");
-    }
-  }
+  return ::std::unique_ptr<::oadr2b::oadr::oadrPayload>(
+      ::oadr2b::oadr::oadrPayload_(std::move(d),
+                                   f | ::xml_schema_test::flags::own_dom, p));
 }
+
+::std::unique_ptr<::oadr2b::oadr::oadrPayload>
+oadrPayload_(const ::std::string &u, ::xml_schema_test::error_handler &h,
+             ::xml_schema_test::flags f,
+             const ::xml_schema_test::properties &p) {
+  ::xsd::cxx::xml::auto_initializer i(
+      (f & ::xml_schema_test::flags::dont_initialize) == 0,
+      (f & ::xml_schema_test::flags::keep_dom) == 0);
+
+  ::xml_schema_test::dom::unique_ptr<::xercesc::DOMDocument> d(
+      ::xsd::cxx::xml::dom::parse<char>(u, h, p, f));
+
+  if (!d.get())
+    throw ::xsd::cxx::tree::parsing<char>();
+
+  return ::std::unique_ptr<::oadr2b::oadr::oadrPayload>(
+      ::oadr2b::oadr::oadrPayload_(std::move(d),
+                                   f | ::xml_schema_test::flags::own_dom, p));
+}
+
+::std::unique_ptr<::oadr2b::oadr::oadrPayload>
+oadrPayload_(const ::std::string &u, ::xercesc::DOMErrorHandler &h,
+             ::xml_schema_test::flags f,
+             const ::xml_schema_test::properties &p) {
+  ::xml_schema_test::dom::unique_ptr<::xercesc::DOMDocument> d(
+      ::xsd::cxx::xml::dom::parse<char>(u, h, p, f));
+
+  if (!d.get())
+    throw ::xsd::cxx::tree::parsing<char>();
+
+  return ::std::unique_ptr<::oadr2b::oadr::oadrPayload>(
+      ::oadr2b::oadr::oadrPayload_(std::move(d),
+                                   f | ::xml_schema_test::flags::own_dom, p));
+}
+
+::std::unique_ptr<::oadr2b::oadr::oadrPayload>
+oadrPayload_(::std::istream &is, ::xml_schema_test::flags f,
+             const ::xml_schema_test::properties &p) {
+  ::xsd::cxx::xml::auto_initializer i(
+      (f & ::xml_schema_test::flags::dont_initialize) == 0,
+      (f & ::xml_schema_test::flags::keep_dom) == 0);
+
+  ::xsd::cxx::xml::sax::std_input_source isrc(is);
+  return ::oadr2b::oadr::oadrPayload_(isrc, f, p);
+}
+
+::std::unique_ptr<::oadr2b::oadr::oadrPayload>
+oadrPayload_(::std::istream &is, ::xml_schema_test::error_handler &h,
+             ::xml_schema_test::flags f,
+             const ::xml_schema_test::properties &p) {
+  ::xsd::cxx::xml::auto_initializer i(
+      (f & ::xml_schema_test::flags::dont_initialize) == 0,
+      (f & ::xml_schema_test::flags::keep_dom) == 0);
+
+  ::xsd::cxx::xml::sax::std_input_source isrc(is);
+  return ::oadr2b::oadr::oadrPayload_(isrc, h, f, p);
+}
+
+::std::unique_ptr<::oadr2b::oadr::oadrPayload>
+oadrPayload_(::std::istream &is, ::xercesc::DOMErrorHandler &h,
+             ::xml_schema_test::flags f,
+             const ::xml_schema_test::properties &p) {
+  ::xsd::cxx::xml::sax::std_input_source isrc(is);
+  return ::oadr2b::oadr::oadrPayload_(isrc, h, f, p);
+}
+
+::std::unique_ptr<::oadr2b::oadr::oadrPayload>
+oadrPayload_(::std::istream &is, const ::std::string &sid,
+             ::xml_schema_test::flags f,
+             const ::xml_schema_test::properties &p) {
+  ::xsd::cxx::xml::auto_initializer i(
+      (f & ::xml_schema_test::flags::dont_initialize) == 0,
+      (f & ::xml_schema_test::flags::keep_dom) == 0);
+
+  ::xsd::cxx::xml::sax::std_input_source isrc(is, sid);
+  return ::oadr2b::oadr::oadrPayload_(isrc, f, p);
+}
+
+::std::unique_ptr<::oadr2b::oadr::oadrPayload>
+oadrPayload_(::std::istream &is, const ::std::string &sid,
+             ::xml_schema_test::error_handler &h, ::xml_schema_test::flags f,
+             const ::xml_schema_test::properties &p) {
+  ::xsd::cxx::xml::auto_initializer i(
+      (f & ::xml_schema_test::flags::dont_initialize) == 0,
+      (f & ::xml_schema_test::flags::keep_dom) == 0);
+
+  ::xsd::cxx::xml::sax::std_input_source isrc(is, sid);
+  return ::oadr2b::oadr::oadrPayload_(isrc, h, f, p);
+}
+
+::std::unique_ptr<::oadr2b::oadr::oadrPayload>
+oadrPayload_(::std::istream &is, const ::std::string &sid,
+             ::xercesc::DOMErrorHandler &h, ::xml_schema_test::flags f,
+             const ::xml_schema_test::properties &p) {
+  ::xsd::cxx::xml::sax::std_input_source isrc(is, sid);
+  return ::oadr2b::oadr::oadrPayload_(isrc, h, f, p);
+}
+
+::std::unique_ptr<::oadr2b::oadr::oadrPayload>
+oadrPayload_(::xercesc::InputSource &i, ::xml_schema_test::flags f,
+             const ::xml_schema_test::properties &p) {
+  ::xsd::cxx::tree::error_handler<char> h;
+
+  ::xml_schema_test::dom::unique_ptr<::xercesc::DOMDocument> d(
+      ::xsd::cxx::xml::dom::parse<char>(i, h, p, f));
+
+  h.throw_if_failed<::xsd::cxx::tree::parsing<char>>();
+
+  return ::std::unique_ptr<::oadr2b::oadr::oadrPayload>(
+      ::oadr2b::oadr::oadrPayload_(std::move(d),
+                                   f | ::xml_schema_test::flags::own_dom, p));
+}
+
+::std::unique_ptr<::oadr2b::oadr::oadrPayload>
+oadrPayload_(::xercesc::InputSource &i, ::xml_schema_test::error_handler &h,
+             ::xml_schema_test::flags f,
+             const ::xml_schema_test::properties &p) {
+  ::xml_schema_test::dom::unique_ptr<::xercesc::DOMDocument> d(
+      ::xsd::cxx::xml::dom::parse<char>(i, h, p, f));
+
+  if (!d.get())
+    throw ::xsd::cxx::tree::parsing<char>();
+
+  return ::std::unique_ptr<::oadr2b::oadr::oadrPayload>(
+      ::oadr2b::oadr::oadrPayload_(std::move(d),
+                                   f | ::xml_schema_test::flags::own_dom, p));
+}
+
+::std::unique_ptr<::oadr2b::oadr::oadrPayload>
+oadrPayload_(::xercesc::InputSource &i, ::xercesc::DOMErrorHandler &h,
+             ::xml_schema_test::flags f,
+             const ::xml_schema_test::properties &p) {
+  ::xml_schema_test::dom::unique_ptr<::xercesc::DOMDocument> d(
+      ::xsd::cxx::xml::dom::parse<char>(i, h, p, f));
+
+  if (!d.get())
+    throw ::xsd::cxx::tree::parsing<char>();
+
+  return ::std::unique_ptr<::oadr2b::oadr::oadrPayload>(
+      ::oadr2b::oadr::oadrPayload_(std::move(d),
+                                   f | ::xml_schema_test::flags::own_dom, p));
+}
+
+::std::unique_ptr<::oadr2b::oadr::oadrPayload>
+oadrPayload_(const ::xercesc::DOMDocument &doc, ::xml_schema_test::flags f,
+             const ::xml_schema_test::properties &p) {
+  if (f & ::xml_schema_test::flags::keep_dom) {
+    ::xml_schema_test::dom::unique_ptr<::xercesc::DOMDocument> d(
+        static_cast<::xercesc::DOMDocument *>(doc.cloneNode(true)));
+
+    return ::std::unique_ptr<::oadr2b::oadr::oadrPayload>(
+        ::oadr2b::oadr::oadrPayload_(std::move(d),
+                                     f | ::xml_schema_test::flags::own_dom, p));
+  }
+
+  const ::xercesc::DOMElement &e(*doc.getDocumentElement());
+  const ::xsd::cxx::xml::qualified_name<char> n(
+      ::xsd::cxx::xml::dom::name<char>(e));
+
+  if (n.name() == "oadrPayload" &&
+      n.namespace_() == "http://openadr.org/oadr-2.0b/2012/07") {
+    ::std::unique_ptr<::oadr2b::oadr::oadrPayload> r(
+        ::xsd::cxx::tree::traits<::oadr2b::oadr::oadrPayload, char>::create(
+            e, f, 0));
+    return r;
+  }
+
+  throw ::xsd::cxx::tree::unexpected_element<char>(
+      n.name(), n.namespace_(), "oadrPayload",
+      "http://openadr.org/oadr-2.0b/2012/07");
+}
+
+::std::unique_ptr<::oadr2b::oadr::oadrPayload>
+oadrPayload_(::xml_schema_test::dom::unique_ptr<::xercesc::DOMDocument> d,
+             ::xml_schema_test::flags f,
+             const ::xml_schema_test::properties &) {
+  ::xml_schema_test::dom::unique_ptr<::xercesc::DOMDocument> c(
+      ((f & ::xml_schema_test::flags::keep_dom) &&
+       !(f & ::xml_schema_test::flags::own_dom))
+          ? static_cast<::xercesc::DOMDocument *>(d->cloneNode(true))
+          : 0);
+
+  ::xercesc::DOMDocument &doc(c.get() ? *c : *d);
+  const ::xercesc::DOMElement &e(*doc.getDocumentElement());
+
+  const ::xsd::cxx::xml::qualified_name<char> n(
+      ::xsd::cxx::xml::dom::name<char>(e));
+
+  if (f & ::xml_schema_test::flags::keep_dom)
+    doc.setUserData(::xml_schema::dom::tree_node_key, (c.get() ? &c : &d), 0);
+
+  if (n.name() == "oadrPayload" &&
+      n.namespace_() == "http://openadr.org/oadr-2.0b/2012/07") {
+    ::std::unique_ptr<::oadr2b::oadr::oadrPayload> r(
+        ::xsd::cxx::tree::traits<::oadr2b::oadr::oadrPayload, char>::create(
+            e, f, 0));
+    return r;
+  }
+
+  throw ::xsd::cxx::tree::unexpected_element<char>(
+      n.name(), n.namespace_(), "oadrPayload",
+      "http://openadr.org/oadr-2.0b/2012/07");
+}
+} // namespace oadr
+} // namespace oadr2b
 
 #include <ostream>
 #include <xsd/cxx/tree/error-handler.hxx>
@@ -471,291 +377,209 @@ namespace oadr2b
 
 #include <xsd/cxx/tree/type-serializer-map.hxx>
 
-namespace _xsd
-{
-  static
-  const ::xsd::cxx::tree::type_serializer_plate< 0, char >
-  type_serializer_plate_init;
+namespace _xsd {
+static const ::xsd::cxx::tree::type_serializer_plate<0, char>
+    type_serializer_plate_init;
 }
 
-namespace oadr2b
-{
-  namespace oadr
-  {
-    void
-    oadrPayload_ (::std::ostream& o,
-                  const ::oadr2b::oadr::oadrPayload& s,
-                  const ::xml_schema::namespace_infomap& m,
-                  const ::std::string& e,
-                  ::xml_schema::flags f)
-    {
-      ::xsd::cxx::xml::auto_initializer i (
-        (f & ::xml_schema::flags::dont_initialize) == 0);
+namespace oadr2b {
+namespace oadr {
+void oadrPayload_(::std::ostream &o, const ::oadr2b::oadr::oadrPayload &s,
+                  const ::xml_schema_test::namespace_infomap &m,
+                  const ::std::string &e, ::xml_schema_test::flags f) {
+  ::xsd::cxx::xml::auto_initializer i(
+      (f & ::xml_schema_test::flags::dont_initialize) == 0);
 
-      ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
-        ::oadr2b::oadr::oadrPayload_ (s, m, f));
+  ::xml_schema_test::dom::unique_ptr<::xercesc::DOMDocument> d(
+      ::oadr2b::oadr::oadrPayload_(s, m, f));
 
-      ::xsd::cxx::tree::error_handler< char > h;
+  ::xsd::cxx::tree::error_handler<char> h;
 
-      ::xsd::cxx::xml::dom::ostream_format_target t (o);
-      if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
-      {
-        h.throw_if_failed< ::xsd::cxx::tree::serialization< char > > ();
-      }
-    }
-
-    void
-    oadrPayload_ (::std::ostream& o,
-                  const ::oadr2b::oadr::oadrPayload& s,
-                  ::xml_schema::error_handler& h,
-                  const ::xml_schema::namespace_infomap& m,
-                  const ::std::string& e,
-                  ::xml_schema::flags f)
-    {
-      ::xsd::cxx::xml::auto_initializer i (
-        (f & ::xml_schema::flags::dont_initialize) == 0);
-
-      ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
-        ::oadr2b::oadr::oadrPayload_ (s, m, f));
-      ::xsd::cxx::xml::dom::ostream_format_target t (o);
-      if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
-      {
-        throw ::xsd::cxx::tree::serialization< char > ();
-      }
-    }
-
-    void
-    oadrPayload_ (::std::ostream& o,
-                  const ::oadr2b::oadr::oadrPayload& s,
-                  ::xercesc::DOMErrorHandler& h,
-                  const ::xml_schema::namespace_infomap& m,
-                  const ::std::string& e,
-                  ::xml_schema::flags f)
-    {
-      ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
-        ::oadr2b::oadr::oadrPayload_ (s, m, f));
-      ::xsd::cxx::xml::dom::ostream_format_target t (o);
-      if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
-      {
-        throw ::xsd::cxx::tree::serialization< char > ();
-      }
-    }
-
-    void
-    oadrPayload_ (::xercesc::XMLFormatTarget& t,
-                  const ::oadr2b::oadr::oadrPayload& s,
-                  const ::xml_schema::namespace_infomap& m,
-                  const ::std::string& e,
-                  ::xml_schema::flags f)
-    {
-      ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
-        ::oadr2b::oadr::oadrPayload_ (s, m, f));
-
-      ::xsd::cxx::tree::error_handler< char > h;
-
-      if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
-      {
-        h.throw_if_failed< ::xsd::cxx::tree::serialization< char > > ();
-      }
-    }
-
-    void
-    oadrPayload_ (::xercesc::XMLFormatTarget& t,
-                  const ::oadr2b::oadr::oadrPayload& s,
-                  ::xml_schema::error_handler& h,
-                  const ::xml_schema::namespace_infomap& m,
-                  const ::std::string& e,
-                  ::xml_schema::flags f)
-    {
-      ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
-        ::oadr2b::oadr::oadrPayload_ (s, m, f));
-      if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
-      {
-        throw ::xsd::cxx::tree::serialization< char > ();
-      }
-    }
-
-    void
-    oadrPayload_ (::xercesc::XMLFormatTarget& t,
-                  const ::oadr2b::oadr::oadrPayload& s,
-                  ::xercesc::DOMErrorHandler& h,
-                  const ::xml_schema::namespace_infomap& m,
-                  const ::std::string& e,
-                  ::xml_schema::flags f)
-    {
-      ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
-        ::oadr2b::oadr::oadrPayload_ (s, m, f));
-      if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
-      {
-        throw ::xsd::cxx::tree::serialization< char > ();
-      }
-    }
-
-    void
-    oadrPayload_ (::xercesc::DOMDocument& d,
-                  const ::oadr2b::oadr::oadrPayload& s,
-                  ::xml_schema::flags)
-    {
-      ::xercesc::DOMElement& e (*d.getDocumentElement ());
-      const ::xsd::cxx::xml::qualified_name< char > n (
-        ::xsd::cxx::xml::dom::name< char > (e));
-
-      if (n.name () == "oadrPayload" &&
-          n.namespace_ () == "http://openadr.org/oadr-2.0b/2012/07")
-      {
-        e << s;
-      }
-      else
-      {
-        throw ::xsd::cxx::tree::unexpected_element < char > (
-          n.name (),
-          n.namespace_ (),
-          "oadrPayload",
-          "http://openadr.org/oadr-2.0b/2012/07");
-      }
-    }
-
-    ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument >
-    oadrPayload_ (const ::oadr2b::oadr::oadrPayload& s,
-                  const ::xml_schema::namespace_infomap& m,
-                  ::xml_schema::flags f)
-    {
-      ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d (
-        ::xsd::cxx::xml::dom::serialize< char > (
-          "oadrPayload",
-          "http://openadr.org/oadr-2.0b/2012/07",
-          m, f));
-
-      ::oadr2b::oadr::oadrPayload_ (*d, s, f);
-      return d;
-    }
-
-    static
-    const ::xsd::cxx::tree::element_serializer_initializer< 0, char, ::oadr2b::oadr::BaseUnitType >
-    _xsd_customUnit_element_serializer_init (
-      "itemBase",
-      "http://docs.oasis-open.org/ns/emix/2011/06",
-      "customUnit",
-      "http://openadr.org/oadr-2.0b/2012/07");
-
-
-    static
-    const ::xsd::cxx::tree::element_serializer_initializer< 0, char, ::oadr2b::oadr::CurrentType >
-    _xsd_current_element_serializer_init (
-      "itemBase",
-      "http://docs.oasis-open.org/ns/emix/2011/06",
-      "current",
-      "http://openadr.org/oadr-2.0b/2012/07");
-
-
-    static
-    const ::xsd::cxx::tree::element_serializer_initializer< 0, char, ::oadr2b::oadr::currencyType >
-    _xsd_currency_element_serializer_init (
-      "itemBase",
-      "http://docs.oasis-open.org/ns/emix/2011/06",
-      "currency",
-      "http://openadr.org/oadr-2.0b/2012/07");
-
-
-    static
-    const ::xsd::cxx::tree::element_serializer_initializer< 0, char, ::oadr2b::oadr::currencyType >
-    _xsd_currencyPerKWh_element_serializer_init (
-      "itemBase",
-      "http://docs.oasis-open.org/ns/emix/2011/06",
-      "currencyPerKWh",
-      "http://openadr.org/oadr-2.0b/2012/07");
-
-
-    static
-    const ::xsd::cxx::tree::element_serializer_initializer< 0, char, ::oadr2b::oadr::currencyType >
-    _xsd_currencyPerKW_element_serializer_init (
-      "itemBase",
-      "http://docs.oasis-open.org/ns/emix/2011/06",
-      "currencyPerKW",
-      "http://openadr.org/oadr-2.0b/2012/07");
-
-
-    static
-    const ::xsd::cxx::tree::element_serializer_initializer< 0, char, ::oadr2b::oadr::currencyType >
-    _xsd_currencyPerThm_element_serializer_init (
-      "itemBase",
-      "http://docs.oasis-open.org/ns/emix/2011/06",
-      "currencyPerThm",
-      "http://openadr.org/oadr-2.0b/2012/07");
-
-
-    static
-    const ::xsd::cxx::tree::element_serializer_initializer< 0, char, ::oadr2b::oadr::FrequencyType >
-    _xsd_frequency_element_serializer_init (
-      "itemBase",
-      "http://docs.oasis-open.org/ns/emix/2011/06",
-      "frequency",
-      "http://openadr.org/oadr-2.0b/2012/07");
-
-
-    static
-    const ::xsd::cxx::tree::element_serializer_initializer< 0, char, ::oadr2b::oadr::ThermType >
-    _xsd_Therm_element_serializer_init (
-      "itemBase",
-      "http://docs.oasis-open.org/ns/emix/2011/06",
-      "Therm",
-      "http://openadr.org/oadr-2.0b/2012/07");
-
-
-    static
-    const ::xsd::cxx::tree::element_serializer_initializer< 0, char, ::oadr2b::oadr::temperatureType >
-    _xsd_temperature_element_serializer_init (
-      "itemBase",
-      "http://docs.oasis-open.org/ns/emix/2011/06",
-      "temperature",
-      "http://openadr.org/oadr-2.0b/2012/07");
-
-
-    static
-    const ::xsd::cxx::tree::element_serializer_initializer< 0, char, ::oadr2b::oadr::pulseCountType >
-    _xsd_pulseCount_element_serializer_init (
-      "itemBase",
-      "http://docs.oasis-open.org/ns/emix/2011/06",
-      "pulseCount",
-      "http://openadr.org/oadr-2.0b/2012/07");
-
-
-    static
-    const ::xsd::cxx::tree::element_serializer_initializer< 0, char, ::oadr2b::oadr::oadrPayloadResourceStatusType >
-    _xsd_oadrPayloadResourceStatus_element_serializer_init (
-      "payloadBase",
-      "http://docs.oasis-open.org/ns/energyinterop/201110",
-      "oadrPayloadResourceStatus",
-      "http://openadr.org/oadr-2.0b/2012/07");
-
-
-    static
-    const ::xsd::cxx::tree::element_serializer_initializer< 0, char, ::oadr2b::oadr::oadrGBStreamPayloadBase >
-    _xsd_oadrGBPayload_element_serializer_init (
-      "streamPayloadBase",
-      "urn:ietf:params:xml:ns:icalendar-2.0:stream",
-      "oadrGBPayload",
-      "http://openadr.org/oadr-2.0b/2012/07");
-
-
-    static
-    const ::xsd::cxx::tree::element_serializer_initializer< 0, char, ::oadr2b::oadr::oadrGBItemBase >
-    _xsd_oadrGBDataDescription_element_serializer_init (
-      "itemBase",
-      "http://docs.oasis-open.org/ns/emix/2011/06",
-      "oadrGBDataDescription",
-      "http://openadr.org/oadr-2.0b/2012/07");
-
-
-    static
-    const ::xsd::cxx::tree::element_serializer_initializer< 0, char, ::oadr2b::oadr::oadrReportPayloadType >
-    _xsd_oadrReportPayload_element_serializer_init (
-      "streamPayloadBase",
-      "urn:ietf:params:xml:ns:icalendar-2.0:stream",
-      "oadrReportPayload",
-      "http://openadr.org/oadr-2.0b/2012/07");
+  ::xsd::cxx::xml::dom::ostream_format_target t(o);
+  if (!::xsd::cxx::xml::dom::serialize(t, *d, e, h, f)) {
+    h.throw_if_failed<::xsd::cxx::tree::serialization<char>>();
   }
 }
+
+void oadrPayload_(::std::ostream &o, const ::oadr2b::oadr::oadrPayload &s,
+                  ::xml_schema_test::error_handler &h,
+                  const ::xml_schema_test::namespace_infomap &m,
+                  const ::std::string &e, ::xml_schema_test::flags f) {
+  ::xsd::cxx::xml::auto_initializer i(
+      (f & ::xml_schema_test::flags::dont_initialize) == 0);
+
+  ::xml_schema_test::dom::unique_ptr<::xercesc::DOMDocument> d(
+      ::oadr2b::oadr::oadrPayload_(s, m, f));
+  ::xsd::cxx::xml::dom::ostream_format_target t(o);
+  if (!::xsd::cxx::xml::dom::serialize(t, *d, e, h, f)) {
+    throw ::xsd::cxx::tree::serialization<char>();
+  }
+}
+
+void oadrPayload_(::std::ostream &o, const ::oadr2b::oadr::oadrPayload &s,
+                  ::xercesc::DOMErrorHandler &h,
+                  const ::xml_schema_test::namespace_infomap &m,
+                  const ::std::string &e, ::xml_schema_test::flags f) {
+  ::xml_schema_test::dom::unique_ptr<::xercesc::DOMDocument> d(
+      ::oadr2b::oadr::oadrPayload_(s, m, f));
+  ::xsd::cxx::xml::dom::ostream_format_target t(o);
+  if (!::xsd::cxx::xml::dom::serialize(t, *d, e, h, f)) {
+    throw ::xsd::cxx::tree::serialization<char>();
+  }
+}
+
+void oadrPayload_(::xercesc::XMLFormatTarget &t,
+                  const ::oadr2b::oadr::oadrPayload &s,
+                  const ::xml_schema_test::namespace_infomap &m,
+                  const ::std::string &e, ::xml_schema_test::flags f) {
+  ::xml_schema_test::dom::unique_ptr<::xercesc::DOMDocument> d(
+      ::oadr2b::oadr::oadrPayload_(s, m, f));
+
+  ::xsd::cxx::tree::error_handler<char> h;
+
+  if (!::xsd::cxx::xml::dom::serialize(t, *d, e, h, f)) {
+    h.throw_if_failed<::xsd::cxx::tree::serialization<char>>();
+  }
+}
+
+void oadrPayload_(::xercesc::XMLFormatTarget &t,
+                  const ::oadr2b::oadr::oadrPayload &s,
+                  ::xml_schema_test::error_handler &h,
+                  const ::xml_schema_test::namespace_infomap &m,
+                  const ::std::string &e, ::xml_schema_test::flags f) {
+  ::xml_schema_test::dom::unique_ptr<::xercesc::DOMDocument> d(
+      ::oadr2b::oadr::oadrPayload_(s, m, f));
+  if (!::xsd::cxx::xml::dom::serialize(t, *d, e, h, f)) {
+    throw ::xsd::cxx::tree::serialization<char>();
+  }
+}
+
+void oadrPayload_(::xercesc::XMLFormatTarget &t,
+                  const ::oadr2b::oadr::oadrPayload &s,
+                  ::xercesc::DOMErrorHandler &h,
+                  const ::xml_schema_test::namespace_infomap &m,
+                  const ::std::string &e, ::xml_schema_test::flags f) {
+  ::xml_schema_test::dom::unique_ptr<::xercesc::DOMDocument> d(
+      ::oadr2b::oadr::oadrPayload_(s, m, f));
+  if (!::xsd::cxx::xml::dom::serialize(t, *d, e, h, f)) {
+    throw ::xsd::cxx::tree::serialization<char>();
+  }
+}
+
+void oadrPayload_(::xercesc::DOMDocument &d,
+                  const ::oadr2b::oadr::oadrPayload &s,
+                  ::xml_schema_test::flags) {
+  ::xercesc::DOMElement &e(*d.getDocumentElement());
+  const ::xsd::cxx::xml::qualified_name<char> n(
+      ::xsd::cxx::xml::dom::name<char>(e));
+
+  if (n.name() == "oadrPayload" &&
+      n.namespace_() == "http://openadr.org/oadr-2.0b/2012/07") {
+    e << s;
+  } else {
+    throw ::xsd::cxx::tree::unexpected_element<char>(
+        n.name(), n.namespace_(), "oadrPayload",
+        "http://openadr.org/oadr-2.0b/2012/07");
+  }
+}
+
+::xml_schema_test::dom::unique_ptr<::xercesc::DOMDocument>
+oadrPayload_(const ::oadr2b::oadr::oadrPayload &s,
+             const ::xml_schema_test::namespace_infomap &m,
+             ::xml_schema_test::flags f) {
+  ::xml_schema_test::dom::unique_ptr<::xercesc::DOMDocument> d(
+      ::xsd::cxx::xml::dom::serialize<char>(
+          "oadrPayload", "http://openadr.org/oadr-2.0b/2012/07", m, f));
+
+  ::oadr2b::oadr::oadrPayload_(*d, s, f);
+  return d;
+}
+
+static const ::xsd::cxx::tree::element_serializer_initializer<
+    0, char, ::oadr2b::oadr::BaseUnitType>
+    _xsd_customUnit_element_serializer_init(
+        "itemBase", "http://docs.oasis-open.org/ns/emix/2011/06", "customUnit",
+        "http://openadr.org/oadr-2.0b/2012/07");
+
+static const ::xsd::cxx::tree::element_serializer_initializer<
+    0, char, ::oadr2b::oadr::CurrentType>
+    _xsd_current_element_serializer_init(
+        "itemBase", "http://docs.oasis-open.org/ns/emix/2011/06", "current",
+        "http://openadr.org/oadr-2.0b/2012/07");
+
+static const ::xsd::cxx::tree::element_serializer_initializer<
+    0, char, ::oadr2b::oadr::currencyType>
+    _xsd_currency_element_serializer_init(
+        "itemBase", "http://docs.oasis-open.org/ns/emix/2011/06", "currency",
+        "http://openadr.org/oadr-2.0b/2012/07");
+
+static const ::xsd::cxx::tree::element_serializer_initializer<
+    0, char, ::oadr2b::oadr::currencyType>
+    _xsd_currencyPerKWh_element_serializer_init(
+        "itemBase", "http://docs.oasis-open.org/ns/emix/2011/06",
+        "currencyPerKWh", "http://openadr.org/oadr-2.0b/2012/07");
+
+static const ::xsd::cxx::tree::element_serializer_initializer<
+    0, char, ::oadr2b::oadr::currencyType>
+    _xsd_currencyPerKW_element_serializer_init(
+        "itemBase", "http://docs.oasis-open.org/ns/emix/2011/06",
+        "currencyPerKW", "http://openadr.org/oadr-2.0b/2012/07");
+
+static const ::xsd::cxx::tree::element_serializer_initializer<
+    0, char, ::oadr2b::oadr::currencyType>
+    _xsd_currencyPerThm_element_serializer_init(
+        "itemBase", "http://docs.oasis-open.org/ns/emix/2011/06",
+        "currencyPerThm", "http://openadr.org/oadr-2.0b/2012/07");
+
+static const ::xsd::cxx::tree::element_serializer_initializer<
+    0, char, ::oadr2b::oadr::FrequencyType>
+    _xsd_frequency_element_serializer_init(
+        "itemBase", "http://docs.oasis-open.org/ns/emix/2011/06", "frequency",
+        "http://openadr.org/oadr-2.0b/2012/07");
+
+static const ::xsd::cxx::tree::element_serializer_initializer<
+    0, char, ::oadr2b::oadr::ThermType>
+    _xsd_Therm_element_serializer_init(
+        "itemBase", "http://docs.oasis-open.org/ns/emix/2011/06", "Therm",
+        "http://openadr.org/oadr-2.0b/2012/07");
+
+static const ::xsd::cxx::tree::element_serializer_initializer<
+    0, char, ::oadr2b::oadr::temperatureType>
+    _xsd_temperature_element_serializer_init(
+        "itemBase", "http://docs.oasis-open.org/ns/emix/2011/06", "temperature",
+        "http://openadr.org/oadr-2.0b/2012/07");
+
+static const ::xsd::cxx::tree::element_serializer_initializer<
+    0, char, ::oadr2b::oadr::pulseCountType>
+    _xsd_pulseCount_element_serializer_init(
+        "itemBase", "http://docs.oasis-open.org/ns/emix/2011/06", "pulseCount",
+        "http://openadr.org/oadr-2.0b/2012/07");
+
+static const ::xsd::cxx::tree::element_serializer_initializer<
+    0, char, ::oadr2b::oadr::oadrPayloadResourceStatusType>
+    _xsd_oadrPayloadResourceStatus_element_serializer_init(
+        "payloadBase", "http://docs.oasis-open.org/ns/energyinterop/201110",
+        "oadrPayloadResourceStatus", "http://openadr.org/oadr-2.0b/2012/07");
+
+static const ::xsd::cxx::tree::element_serializer_initializer<
+    0, char, ::oadr2b::oadr::oadrGBStreamPayloadBase>
+    _xsd_oadrGBPayload_element_serializer_init(
+        "streamPayloadBase", "urn:ietf:params:xml:ns:icalendar-2.0:stream",
+        "oadrGBPayload", "http://openadr.org/oadr-2.0b/2012/07");
+
+static const ::xsd::cxx::tree::element_serializer_initializer<
+    0, char, ::oadr2b::oadr::oadrGBItemBase>
+    _xsd_oadrGBDataDescription_element_serializer_init(
+        "itemBase", "http://docs.oasis-open.org/ns/emix/2011/06",
+        "oadrGBDataDescription", "http://openadr.org/oadr-2.0b/2012/07");
+
+static const ::xsd::cxx::tree::element_serializer_initializer<
+    0, char, ::oadr2b::oadr::oadrReportPayloadType>
+    _xsd_oadrReportPayload_element_serializer_init(
+        "streamPayloadBase", "urn:ietf:params:xml:ns:icalendar-2.0:stream",
+        "oadrReportPayload", "http://openadr.org/oadr-2.0b/2012/07");
+} // namespace oadr
+} // namespace oadr2b
 
 #include <xsd/cxx/post.hxx>
 
@@ -763,4 +587,3 @@ namespace oadr2b
 //
 //
 // End epilogue.
-

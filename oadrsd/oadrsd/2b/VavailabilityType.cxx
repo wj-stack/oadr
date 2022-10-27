@@ -90,35 +90,35 @@ namespace icalendar_2_0
 
   VavailabilityType::
   VavailabilityType (const components_type& components)
-  : ::xml_schema::type (),
+  : ::xml_schema_test::type (),
     components_ (components, this)
   {
   }
 
   VavailabilityType::
   VavailabilityType (::std::unique_ptr< components_type > components)
-  : ::xml_schema::type (),
+  : ::xml_schema_test::type (),
     components_ (std::move (components), this)
   {
   }
 
   VavailabilityType::
   VavailabilityType (const VavailabilityType& x,
-                     ::xml_schema::flags f,
-                     ::xml_schema::container* c)
-  : ::xml_schema::type (x, f, c),
+                ::xml_schema_test::flags f,
+                ::xml_schema_test::container* c)
+  : ::xml_schema_test::type (x, f, c),
     components_ (x.components_, f, this)
   {
   }
 
   VavailabilityType::
   VavailabilityType (const ::xercesc::DOMElement& e,
-                     ::xml_schema::flags f,
-                     ::xml_schema::container* c)
-  : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
+                ::xml_schema_test::flags f,
+                ::xml_schema_test::container* c)
+  : ::xml_schema_test::type (e, f | ::xml_schema_test::flags::base, c),
     components_ (this)
   {
-    if ((f & ::xml_schema::flags::base) == 0)
+    if ((f & ::xml_schema_test::flags::base) == 0)
     {
       ::xsd::cxx::xml::dom::parser< char > p (e, true, false, false);
       this->parse (p, f);
@@ -127,7 +127,7 @@ namespace icalendar_2_0
 
   void VavailabilityType::
   parse (::xsd::cxx::xml::dom::parser< char >& p,
-         ::xml_schema::flags f)
+    ::xml_schema_test::flags f)
   {
     for (; p.more_content (); p.next_content (false))
     {
@@ -161,8 +161,8 @@ namespace icalendar_2_0
   }
 
   VavailabilityType* VavailabilityType::
-  _clone (::xml_schema::flags f,
-          ::xml_schema::container* c) const
+  _clone (::xml_schema_test::flags f,
+     ::xml_schema_test::container* c) const
   {
     return new class VavailabilityType (*this, f, c);
   }
@@ -172,7 +172,7 @@ namespace icalendar_2_0
   {
     if (this != &x)
     {
-      static_cast< ::xml_schema::type& > (*this) = x;
+      static_cast< ::xml_schema_test::type& > (*this) = x;
       this->components_ = x.components_;
     }
 
@@ -211,7 +211,7 @@ namespace icalendar_2_0
   void
   operator<< (::xercesc::DOMElement& e, const VavailabilityType& i)
   {
-    e << static_cast< const ::xml_schema::type& > (i);
+    e << static_cast< const  ::xml_schema_test::type& > (i);
 
     // components
     //

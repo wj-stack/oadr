@@ -239,7 +239,7 @@ namespace icalendar_2_0
   properties::
   properties (const dtstart_type& dtstart,
               const duration_type& duration)
-  : ::xml_schema::type (),
+  : ::xml_schema_test::type (),
     dtstart_ (dtstart, this),
     duration_ (duration, this),
     tolerance_ (this),
@@ -252,7 +252,7 @@ namespace icalendar_2_0
   properties::
   properties (::std::unique_ptr< dtstart_type > dtstart,
               ::std::unique_ptr< duration_type > duration)
-  : ::xml_schema::type (),
+  : ::xml_schema_test::type (),
     dtstart_ (std::move (dtstart), this),
     duration_ (std::move (duration), this),
     tolerance_ (this),
@@ -264,9 +264,9 @@ namespace icalendar_2_0
 
   properties::
   properties (const properties& x,
-              ::xml_schema::flags f,
-              ::xml_schema::container* c)
-  : ::xml_schema::type (x, f, c),
+         ::xml_schema_test::flags f,
+         ::xml_schema_test::container* c)
+  : ::xml_schema_test::type (x, f, c),
     dtstart_ (x.dtstart_, f, this),
     duration_ (x.duration_, f, this),
     tolerance_ (x.tolerance_, f, this),
@@ -278,9 +278,9 @@ namespace icalendar_2_0
 
   properties::
   properties (const ::xercesc::DOMElement& e,
-              ::xml_schema::flags f,
-              ::xml_schema::container* c)
-  : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
+         ::xml_schema_test::flags f,
+         ::xml_schema_test::container* c)
+  : ::xml_schema_test::type (e, f | ::xml_schema_test::flags::base, c),
     dtstart_ (this),
     duration_ (this),
     tolerance_ (this),
@@ -288,7 +288,7 @@ namespace icalendar_2_0
     x_eiRampUp_ (this),
     x_eiRecovery_ (this)
   {
-    if ((f & ::xml_schema::flags::base) == 0)
+    if ((f & ::xml_schema_test::flags::base) == 0)
     {
       ::xsd::cxx::xml::dom::parser< char > p (e, true, false, false);
       this->parse (p, f);
@@ -297,7 +297,7 @@ namespace icalendar_2_0
 
   void properties::
   parse (::xsd::cxx::xml::dom::parser< char >& p,
-         ::xml_schema::flags f)
+    ::xml_schema_test::flags f)
   {
     for (; p.more_content (); p.next_content (false))
     {
@@ -408,8 +408,8 @@ namespace icalendar_2_0
   }
 
   properties* properties::
-  _clone (::xml_schema::flags f,
-          ::xml_schema::container* c) const
+  _clone (::xml_schema_test::flags f,
+     ::xml_schema_test::container* c) const
   {
     return new class properties (*this, f, c);
   }
@@ -419,7 +419,7 @@ namespace icalendar_2_0
   {
     if (this != &x)
     {
-      static_cast< ::xml_schema::type& > (*this) = x;
+      static_cast< ::xml_schema_test::type& > (*this) = x;
       this->dtstart_ = x.dtstart_;
       this->duration_ = x.duration_;
       this->tolerance_ = x.tolerance_;
@@ -463,7 +463,7 @@ namespace icalendar_2_0
   void
   operator<< (::xercesc::DOMElement& e, const properties& i)
   {
-    e << static_cast< const ::xml_schema::type& > (i);
+    e << static_cast< const  ::xml_schema_test::type& > (i);
 
     // dtstart
     //

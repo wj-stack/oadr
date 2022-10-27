@@ -63,47 +63,47 @@ namespace icalendar_2_0
   //
 
   DateTimeType::
-  DateTimeType (const ::xml_schema::date_time& _xsd_date_time_base)
-  : ::xml_schema::date_time (_xsd_date_time_base)
+  DateTimeType (const  ::xml_schema_test::date_time& _xsd_date_time_base)
+  : ::xml_schema_test::date_time (_xsd_date_time_base)
   {
   }
 
   DateTimeType::
   DateTimeType (const DateTimeType& x,
-                ::xml_schema::flags f,
-                ::xml_schema::container* c)
-  : ::xml_schema::date_time (x, f, c)
+           ::xml_schema_test::flags f,
+           ::xml_schema_test::container* c)
+  : ::xml_schema_test::date_time (x, f, c)
   {
   }
 
   DateTimeType::
   DateTimeType (const ::xercesc::DOMElement& e,
-                ::xml_schema::flags f,
-                ::xml_schema::container* c)
-  : ::xml_schema::date_time (e, f, c)
+           ::xml_schema_test::flags f,
+           ::xml_schema_test::container* c)
+  : ::xml_schema_test::date_time (e, f, c)
   {
   }
 
   DateTimeType::
   DateTimeType (const ::xercesc::DOMAttr& a,
-                ::xml_schema::flags f,
-                ::xml_schema::container* c)
-  : ::xml_schema::date_time (a, f, c)
+           ::xml_schema_test::flags f,
+           ::xml_schema_test::container* c)
+  : ::xml_schema_test::date_time (a, f, c)
   {
   }
 
   DateTimeType::
   DateTimeType (const ::std::string& s,
                 const ::xercesc::DOMElement* e,
-                ::xml_schema::flags f,
-                ::xml_schema::container* c)
-  : ::xml_schema::date_time (s, e, f, c)
+           ::xml_schema_test::flags f,
+           ::xml_schema_test::container* c)
+  : ::xml_schema_test::date_time (s, e, f, c)
   {
   }
 
   DateTimeType* DateTimeType::
-  _clone (::xml_schema::flags f,
-          ::xml_schema::container* c) const
+  _clone (::xml_schema_test::flags f,
+     ::xml_schema_test::container* c) const
   {
     return new class DateTimeType (*this, f, c);
   }
@@ -140,20 +140,20 @@ namespace icalendar_2_0
   void
   operator<< (::xercesc::DOMElement& e, const DateTimeType& i)
   {
-    e << static_cast< const ::xml_schema::date_time& > (i);
+    e << static_cast< const  ::xml_schema_test::date_time& > (i);
   }
 
   void
   operator<< (::xercesc::DOMAttr& a, const DateTimeType& i)
   {
-    a << static_cast< const ::xml_schema::date_time& > (i);
+    a << static_cast< const  ::xml_schema_test::date_time& > (i);
   }
 
   void
-  operator<< (::xml_schema::list_stream& l,
+  operator<< (::xml_schema_test::list_stream& l,
               const DateTimeType& i)
   {
-    l << static_cast< const ::xml_schema::date_time& > (i);
+    l << static_cast< const  ::xml_schema_test::date_time& > (i);
   }
 }
 

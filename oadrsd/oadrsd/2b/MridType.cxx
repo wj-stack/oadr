@@ -64,64 +64,64 @@ namespace power
 
   MridType::
   MridType ()
-  : ::xml_schema::string ()
+  : ::xml_schema_test::string ()
   {
   }
 
   MridType::
   MridType (const char* _xsd_string_base)
-  : ::xml_schema::string (_xsd_string_base)
+  : ::xml_schema_test::string (_xsd_string_base)
   {
   }
 
   MridType::
   MridType (const ::std::string& _xsd_string_base)
-  : ::xml_schema::string (_xsd_string_base)
+  : ::xml_schema_test::string (_xsd_string_base)
   {
   }
 
   MridType::
-  MridType (const ::xml_schema::string& _xsd_string_base)
-  : ::xml_schema::string (_xsd_string_base)
+  MridType (const  ::xml_schema_test::string& _xsd_string_base)
+  : ::xml_schema_test::string (_xsd_string_base)
   {
   }
 
   MridType::
   MridType (const MridType& x,
-            ::xml_schema::flags f,
-            ::xml_schema::container* c)
-  : ::xml_schema::string (x, f, c)
+       ::xml_schema_test::flags f,
+       ::xml_schema_test::container* c)
+  : ::xml_schema_test::string (x, f, c)
   {
   }
 
   MridType::
   MridType (const ::xercesc::DOMElement& e,
-            ::xml_schema::flags f,
-            ::xml_schema::container* c)
-  : ::xml_schema::string (e, f, c)
+       ::xml_schema_test::flags f,
+       ::xml_schema_test::container* c)
+  : ::xml_schema_test::string (e, f, c)
   {
   }
 
   MridType::
   MridType (const ::xercesc::DOMAttr& a,
-            ::xml_schema::flags f,
-            ::xml_schema::container* c)
-  : ::xml_schema::string (a, f, c)
+       ::xml_schema_test::flags f,
+       ::xml_schema_test::container* c)
+  : ::xml_schema_test::string (a, f, c)
   {
   }
 
   MridType::
   MridType (const ::std::string& s,
             const ::xercesc::DOMElement* e,
-            ::xml_schema::flags f,
-            ::xml_schema::container* c)
-  : ::xml_schema::string (s, e, f, c)
+       ::xml_schema_test::flags f,
+       ::xml_schema_test::container* c)
+  : ::xml_schema_test::string (s, e, f, c)
   {
   }
 
   MridType* MridType::
-  _clone (::xml_schema::flags f,
-          ::xml_schema::container* c) const
+  _clone (::xml_schema_test::flags f,
+     ::xml_schema_test::container* c) const
   {
     return new class MridType (*this, f, c);
   }
@@ -158,20 +158,20 @@ namespace power
   void
   operator<< (::xercesc::DOMElement& e, const MridType& i)
   {
-    e << static_cast< const ::xml_schema::string& > (i);
+    e << static_cast< const  ::xml_schema_test::string& > (i);
   }
 
   void
   operator<< (::xercesc::DOMAttr& a, const MridType& i)
   {
-    a << static_cast< const ::xml_schema::string& > (i);
+    a << static_cast< const  ::xml_schema_test::string& > (i);
   }
 
   void
-  operator<< (::xml_schema::list_stream& l,
+  operator<< (::xml_schema_test::list_stream& l,
               const MridType& i)
   {
-    l << static_cast< const ::xml_schema::string& > (i);
+    l << static_cast< const  ::xml_schema_test::string& > (i);
   }
 }
 

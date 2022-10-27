@@ -152,7 +152,7 @@ namespace oadr2b
     SpecifierPayloadType::
     SpecifierPayloadType (const rID_type& rID,
                           const readingType_type& readingType)
-    : ::xml_schema::type (),
+    : ::xml_schema_test::type (),
       rID_ (rID, this),
       itemBase_ (this),
       readingType_ (readingType, this)
@@ -161,9 +161,9 @@ namespace oadr2b
 
     SpecifierPayloadType::
     SpecifierPayloadType (const SpecifierPayloadType& x,
-                          ::xml_schema::flags f,
-                          ::xml_schema::container* c)
-    : ::xml_schema::type (x, f, c),
+                     ::xml_schema_test::flags f,
+                     ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (x, f, c),
       rID_ (x.rID_, f, this),
       itemBase_ (x.itemBase_, f, this),
       readingType_ (x.readingType_, f, this)
@@ -172,14 +172,14 @@ namespace oadr2b
 
     SpecifierPayloadType::
     SpecifierPayloadType (const ::xercesc::DOMElement& e,
-                          ::xml_schema::flags f,
-                          ::xml_schema::container* c)
-    : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
+                     ::xml_schema_test::flags f,
+                     ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (e, f | ::xml_schema_test::flags::base, c),
       rID_ (this),
       itemBase_ (this),
       readingType_ (this)
     {
-      if ((f & ::xml_schema::flags::base) == 0)
+      if ((f & ::xml_schema_test::flags::base) == 0)
       {
         ::xsd::cxx::xml::dom::parser< char > p (e, true, false, false);
         this->parse (p, f);
@@ -188,7 +188,7 @@ namespace oadr2b
 
     void SpecifierPayloadType::
     parse (::xsd::cxx::xml::dom::parser< char >& p,
-           ::xml_schema::flags f)
+      ::xml_schema_test::flags f)
     {
       for (; p.more_content (); p.next_content (false))
       {
@@ -271,8 +271,8 @@ namespace oadr2b
     }
 
     SpecifierPayloadType* SpecifierPayloadType::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class SpecifierPayloadType (*this, f, c);
     }
@@ -282,7 +282,7 @@ namespace oadr2b
     {
       if (this != &x)
       {
-        static_cast< ::xml_schema::type& > (*this) = x;
+        static_cast< ::xml_schema_test::type& > (*this) = x;
         this->rID_ = x.rID_;
         this->itemBase_ = x.itemBase_;
         this->readingType_ = x.readingType_;
@@ -329,7 +329,7 @@ namespace oadr2b
     void
     operator<< (::xercesc::DOMElement& e, const SpecifierPayloadType& i)
     {
-      e << static_cast< const ::xml_schema::type& > (i);
+      e << static_cast< const  ::xml_schema_test::type& > (i);
 
       // rID
       //

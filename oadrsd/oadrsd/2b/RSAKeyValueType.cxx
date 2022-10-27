@@ -120,7 +120,7 @@ namespace oadr2b
     RSAKeyValueType::
     RSAKeyValueType (const Modulus_type& Modulus,
                      const Exponent_type& Exponent)
-    : ::xml_schema::type (),
+    : ::xml_schema_test::type (),
       Modulus_ (Modulus, this),
       Exponent_ (Exponent, this)
     {
@@ -128,9 +128,9 @@ namespace oadr2b
 
     RSAKeyValueType::
     RSAKeyValueType (const RSAKeyValueType& x,
-                     ::xml_schema::flags f,
-                     ::xml_schema::container* c)
-    : ::xml_schema::type (x, f, c),
+                ::xml_schema_test::flags f,
+                ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (x, f, c),
       Modulus_ (x.Modulus_, f, this),
       Exponent_ (x.Exponent_, f, this)
     {
@@ -138,13 +138,13 @@ namespace oadr2b
 
     RSAKeyValueType::
     RSAKeyValueType (const ::xercesc::DOMElement& e,
-                     ::xml_schema::flags f,
-                     ::xml_schema::container* c)
-    : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
+                ::xml_schema_test::flags f,
+                ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (e, f | ::xml_schema_test::flags::base, c),
       Modulus_ (this),
       Exponent_ (this)
     {
-      if ((f & ::xml_schema::flags::base) == 0)
+      if ((f & ::xml_schema_test::flags::base) == 0)
       {
         ::xsd::cxx::xml::dom::parser< char > p (e, true, false, false);
         this->parse (p, f);
@@ -153,7 +153,7 @@ namespace oadr2b
 
     void RSAKeyValueType::
     parse (::xsd::cxx::xml::dom::parser< char >& p,
-           ::xml_schema::flags f)
+      ::xml_schema_test::flags f)
     {
       for (; p.more_content (); p.next_content (false))
       {
@@ -208,8 +208,8 @@ namespace oadr2b
     }
 
     RSAKeyValueType* RSAKeyValueType::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class RSAKeyValueType (*this, f, c);
     }
@@ -219,7 +219,7 @@ namespace oadr2b
     {
       if (this != &x)
       {
-        static_cast< ::xml_schema::type& > (*this) = x;
+        static_cast< ::xml_schema_test::type& > (*this) = x;
         this->Modulus_ = x.Modulus_;
         this->Exponent_ = x.Exponent_;
       }
@@ -265,7 +265,7 @@ namespace oadr2b
     void
     operator<< (::xercesc::DOMElement& e, const RSAKeyValueType& i)
     {
-      e << static_cast< const ::xml_schema::type& > (i);
+      e << static_cast< const  ::xml_schema_test::type& > (i);
 
       // Modulus
       //

@@ -109,8 +109,8 @@ namespace oadr2b
 
     signalPayloadType::
     signalPayloadType (const signalPayloadType& x,
-                       ::xml_schema::flags f,
-                       ::xml_schema::container* c)
+                  ::xml_schema_test::flags f,
+                  ::xml_schema_test::container* c)
     : ::stream::StreamPayloadBaseType (x, f, c),
       payloadBase_ (x.payloadBase_, f, this)
     {
@@ -118,12 +118,12 @@ namespace oadr2b
 
     signalPayloadType::
     signalPayloadType (const ::xercesc::DOMElement& e,
-                       ::xml_schema::flags f,
-                       ::xml_schema::container* c)
-    : ::stream::StreamPayloadBaseType (e, f | ::xml_schema::flags::base, c),
+                  ::xml_schema_test::flags f,
+                  ::xml_schema_test::container* c)
+    : ::stream::StreamPayloadBaseType (e, f | ::xml_schema_test::flags::base, c),
       payloadBase_ (this)
     {
-      if ((f & ::xml_schema::flags::base) == 0)
+      if ((f & ::xml_schema_test::flags::base) == 0)
       {
         ::xsd::cxx::xml::dom::parser< char > p (e, true, false, false);
         this->parse (p, f);
@@ -132,7 +132,7 @@ namespace oadr2b
 
     void signalPayloadType::
     parse (::xsd::cxx::xml::dom::parser< char >& p,
-           ::xml_schema::flags f)
+      ::xml_schema_test::flags f)
     {
       for (; p.more_content (); p.next_content (false))
       {
@@ -180,8 +180,8 @@ namespace oadr2b
     }
 
     signalPayloadType* signalPayloadType::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class signalPayloadType (*this, f, c);
     }

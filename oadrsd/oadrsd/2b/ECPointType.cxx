@@ -74,31 +74,31 @@ namespace oadr2b
     }
 
     ECPointType::
-    ECPointType (const ::xml_schema::base64_binary& _xsd_base64_binary_base)
+    ECPointType (const  ::xml_schema_test::base64_binary& _xsd_base64_binary_base)
     : ::oadr2b::sig::CryptoBinary (_xsd_base64_binary_base)
     {
     }
 
     ECPointType::
     ECPointType (const ECPointType& x,
-                 ::xml_schema::flags f,
-                 ::xml_schema::container* c)
+            ::xml_schema_test::flags f,
+            ::xml_schema_test::container* c)
     : ::oadr2b::sig::CryptoBinary (x, f, c)
     {
     }
 
     ECPointType::
     ECPointType (const ::xercesc::DOMElement& e,
-                 ::xml_schema::flags f,
-                 ::xml_schema::container* c)
+            ::xml_schema_test::flags f,
+            ::xml_schema_test::container* c)
     : ::oadr2b::sig::CryptoBinary (e, f, c)
     {
     }
 
     ECPointType::
     ECPointType (const ::xercesc::DOMAttr& a,
-                 ::xml_schema::flags f,
-                 ::xml_schema::container* c)
+            ::xml_schema_test::flags f,
+            ::xml_schema_test::container* c)
     : ::oadr2b::sig::CryptoBinary (a, f, c)
     {
     }
@@ -106,15 +106,15 @@ namespace oadr2b
     ECPointType::
     ECPointType (const ::std::string& s,
                  const ::xercesc::DOMElement* e,
-                 ::xml_schema::flags f,
-                 ::xml_schema::container* c)
+            ::xml_schema_test::flags f,
+            ::xml_schema_test::container* c)
     : ::oadr2b::sig::CryptoBinary (s, e, f, c)
     {
     }
 
     ECPointType* ECPointType::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class ECPointType (*this, f, c);
     }
@@ -167,7 +167,7 @@ namespace oadr2b
     }
 
     void
-    operator<< (::xml_schema::list_stream& l,
+    operator<< (::xml_schema_test::list_stream& l,
                 const ECPointType& i)
     {
       l << static_cast< const ::oadr2b::sig::CryptoBinary& > (i);

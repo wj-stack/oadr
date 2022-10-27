@@ -47,41 +47,41 @@ namespace Atom
 
   type::
   type (value v)
-  : ::xml_schema::token (_xsd_type_literals_[v])
+  : ::xml_schema_test::token (_xsd_type_literals_[v])
   {
   }
 
   type::
   type (const char* v)
-  : ::xml_schema::token (v)
+  : ::xml_schema_test::token (v)
   {
   }
 
   type::
   type (const ::std::string& v)
-  : ::xml_schema::token (v)
+  : ::xml_schema_test::token (v)
   {
   }
 
   type::
-  type (const ::xml_schema::token& v)
-  : ::xml_schema::token (v)
+  type (const  ::xml_schema_test::token& v)
+  : ::xml_schema_test::token (v)
   {
   }
 
   type::
   type (const type& v,
-        ::xml_schema::flags f,
-        ::xml_schema::container* c)
-  : ::xml_schema::token (v, f, c)
+   ::xml_schema_test::flags f,
+   ::xml_schema_test::container* c)
+  : ::xml_schema_test::token (v, f, c)
   {
   }
 
   type& type::
   operator= (value v)
   {
-    static_cast< ::xml_schema::token& > (*this) = 
-    ::xml_schema::token (_xsd_type_literals_[v]);
+    static_cast< ::xml_schema_test::token& > (*this) = 
+    ::xml_schema_test::token (_xsd_type_literals_[v]);
 
     return *this;
   }
@@ -105,18 +105,18 @@ namespace Atom
 
   type::
   type (const ::xercesc::DOMElement& e,
-        ::xml_schema::flags f,
-        ::xml_schema::container* c)
-  : ::xml_schema::token (e, f, c)
+   ::xml_schema_test::flags f,
+   ::xml_schema_test::container* c)
+  : ::xml_schema_test::token (e, f, c)
   {
     _xsd_type_convert ();
   }
 
   type::
   type (const ::xercesc::DOMAttr& a,
-        ::xml_schema::flags f,
-        ::xml_schema::container* c)
-  : ::xml_schema::token (a, f, c)
+   ::xml_schema_test::flags f,
+   ::xml_schema_test::container* c)
+  : ::xml_schema_test::token (a, f, c)
   {
     _xsd_type_convert ();
   }
@@ -124,16 +124,16 @@ namespace Atom
   type::
   type (const ::std::string& s,
         const ::xercesc::DOMElement* e,
-        ::xml_schema::flags f,
-        ::xml_schema::container* c)
-  : ::xml_schema::token (s, e, f, c)
+   ::xml_schema_test::flags f,
+   ::xml_schema_test::container* c)
+  : ::xml_schema_test::token (s, e, f, c)
   {
     _xsd_type_convert ();
   }
 
   type* type::
-  _clone (::xml_schema::flags f,
-          ::xml_schema::container* c) const
+  _clone (::xml_schema_test::flags f,
+     ::xml_schema_test::container* c) const
   {
     return new class type (*this, f, c);
   }
@@ -199,20 +199,20 @@ namespace Atom
   void
   operator<< (::xercesc::DOMElement& e, const type& i)
   {
-    e << static_cast< const ::xml_schema::token& > (i);
+    e << static_cast< const  ::xml_schema_test::token& > (i);
   }
 
   void
   operator<< (::xercesc::DOMAttr& a, const type& i)
   {
-    a << static_cast< const ::xml_schema::token& > (i);
+    a << static_cast< const  ::xml_schema_test::token& > (i);
   }
 
   void
-  operator<< (::xml_schema::list_stream& l,
+  operator<< (::xml_schema_test::list_stream& l,
               const type& i)
   {
-    l << static_cast< const ::xml_schema::token& > (i);
+    l << static_cast< const  ::xml_schema_test::token& > (i);
   }
 }
 

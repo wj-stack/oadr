@@ -93,36 +93,36 @@ namespace oadr2b
 
     X509DigestType::
     X509DigestType (const Algorithm_type& Algorithm)
-    : ::xml_schema::base64_binary (),
+    : ::xml_schema_test::base64_binary (),
       Algorithm_ (Algorithm, this)
     {
     }
 
     X509DigestType::
-    X509DigestType (const ::xml_schema::base64_binary& _xsd_base64_binary_base,
+    X509DigestType (const  ::xml_schema_test::base64_binary& _xsd_base64_binary_base,
                     const Algorithm_type& Algorithm)
-    : ::xml_schema::base64_binary (_xsd_base64_binary_base),
+    : ::xml_schema_test::base64_binary (_xsd_base64_binary_base),
       Algorithm_ (Algorithm, this)
     {
     }
 
     X509DigestType::
     X509DigestType (const X509DigestType& x,
-                    ::xml_schema::flags f,
-                    ::xml_schema::container* c)
-    : ::xml_schema::base64_binary (x, f, c),
+               ::xml_schema_test::flags f,
+               ::xml_schema_test::container* c)
+    : ::xml_schema_test::base64_binary (x, f, c),
       Algorithm_ (x.Algorithm_, f, this)
     {
     }
 
     X509DigestType::
     X509DigestType (const ::xercesc::DOMElement& e,
-                    ::xml_schema::flags f,
-                    ::xml_schema::container* c)
-    : ::xml_schema::base64_binary (e, f | ::xml_schema::flags::base, c),
+               ::xml_schema_test::flags f,
+               ::xml_schema_test::container* c)
+    : ::xml_schema_test::base64_binary (e, f | ::xml_schema_test::flags::base, c),
       Algorithm_ (this)
     {
-      if ((f & ::xml_schema::flags::base) == 0)
+      if ((f & ::xml_schema_test::flags::base) == 0)
       {
         ::xsd::cxx::xml::dom::parser< char > p (e, false, false, true);
         this->parse (p, f);
@@ -131,7 +131,7 @@ namespace oadr2b
 
     void X509DigestType::
     parse (::xsd::cxx::xml::dom::parser< char >& p,
-           ::xml_schema::flags f)
+      ::xml_schema_test::flags f)
     {
       while (p.more_attributes ())
       {
@@ -155,8 +155,8 @@ namespace oadr2b
     }
 
     X509DigestType* X509DigestType::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class X509DigestType (*this, f, c);
     }
@@ -166,7 +166,7 @@ namespace oadr2b
     {
       if (this != &x)
       {
-        static_cast< ::xml_schema::base64_binary& > (*this) = x;
+        static_cast< ::xml_schema_test::base64_binary& > (*this) = x;
         this->Algorithm_ = x.Algorithm_;
       }
 
@@ -211,7 +211,7 @@ namespace oadr2b
     void
     operator<< (::xercesc::DOMElement& e, const X509DigestType& i)
     {
-      e << static_cast< const ::xml_schema::base64_binary& > (i);
+      e << static_cast< const  ::xml_schema_test::base64_binary& > (i);
 
       // Algorithm
       //

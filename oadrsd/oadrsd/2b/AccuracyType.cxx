@@ -68,47 +68,47 @@ namespace oadr2b
     //
 
     AccuracyType::
-    AccuracyType (const ::xml_schema::float_& _xsd_float__base)
-    : ::xsd::cxx::tree::fundamental_base< ::xml_schema::float_, char, ::xml_schema::simple_type > (_xsd_float__base)
+    AccuracyType (const  ::xml_schema_test::float_& _xsd_float__base)
+    : ::xsd::cxx::tree::fundamental_base< ::xml_schema_test::float_, char, ::xml_schema_test::simple_type > (_xsd_float__base)
     {
     }
 
     AccuracyType::
     AccuracyType (const AccuracyType& x,
-                  ::xml_schema::flags f,
-                  ::xml_schema::container* c)
-    : ::xsd::cxx::tree::fundamental_base< ::xml_schema::float_, char, ::xml_schema::simple_type > (x, f, c)
+             ::xml_schema_test::flags f,
+             ::xml_schema_test::container* c)
+    : ::xsd::cxx::tree::fundamental_base< ::xml_schema_test::float_, char, ::xml_schema_test::simple_type > (x, f, c)
     {
     }
 
     AccuracyType::
     AccuracyType (const ::xercesc::DOMElement& e,
-                  ::xml_schema::flags f,
-                  ::xml_schema::container* c)
-    : ::xsd::cxx::tree::fundamental_base< ::xml_schema::float_, char, ::xml_schema::simple_type > (e, f, c)
+             ::xml_schema_test::flags f,
+             ::xml_schema_test::container* c)
+    : ::xsd::cxx::tree::fundamental_base< ::xml_schema_test::float_, char, ::xml_schema_test::simple_type > (e, f, c)
     {
     }
 
     AccuracyType::
     AccuracyType (const ::xercesc::DOMAttr& a,
-                  ::xml_schema::flags f,
-                  ::xml_schema::container* c)
-    : ::xsd::cxx::tree::fundamental_base< ::xml_schema::float_, char, ::xml_schema::simple_type > (a, f, c)
+             ::xml_schema_test::flags f,
+             ::xml_schema_test::container* c)
+    : ::xsd::cxx::tree::fundamental_base< ::xml_schema_test::float_, char, ::xml_schema_test::simple_type > (a, f, c)
     {
     }
 
     AccuracyType::
     AccuracyType (const ::std::string& s,
                   const ::xercesc::DOMElement* e,
-                  ::xml_schema::flags f,
-                  ::xml_schema::container* c)
-    : ::xsd::cxx::tree::fundamental_base< ::xml_schema::float_, char, ::xml_schema::simple_type > (s, e, f, c)
+             ::xml_schema_test::flags f,
+             ::xml_schema_test::container* c)
+    : ::xsd::cxx::tree::fundamental_base< ::xml_schema_test::float_, char, ::xml_schema_test::simple_type > (s, e, f, c)
     {
     }
 
     AccuracyType* AccuracyType::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class AccuracyType (*this, f, c);
     }
@@ -151,20 +151,20 @@ namespace oadr2b
     void
     operator<< (::xercesc::DOMElement& e, const AccuracyType& i)
     {
-      e << static_cast< const ::xsd::cxx::tree::fundamental_base< ::xml_schema::float_, char, ::xml_schema::simple_type >& > (i);
+      e << static_cast< const ::xsd::cxx::tree::fundamental_base< ::xml_schema_test::float_, char, ::xml_schema_test::simple_type >& > (i);
     }
 
     void
     operator<< (::xercesc::DOMAttr& a, const AccuracyType& i)
     {
-      a << static_cast< const ::xsd::cxx::tree::fundamental_base< ::xml_schema::float_, char, ::xml_schema::simple_type >& > (i);
+      a << static_cast< const ::xsd::cxx::tree::fundamental_base< ::xml_schema_test::float_, char, ::xml_schema_test::simple_type >& > (i);
     }
 
     void
-    operator<< (::xml_schema::list_stream& l,
+    operator<< (::xml_schema_test::list_stream& l,
                 const AccuracyType& i)
     {
-      l << static_cast< const ::xsd::cxx::tree::fundamental_base< ::xml_schema::float_, char, ::xml_schema::simple_type >& > (i);
+      l << static_cast< const ::xsd::cxx::tree::fundamental_base< ::xml_schema_test::float_, char, ::xml_schema_test::simple_type >& > (i);
     }
   }
 }

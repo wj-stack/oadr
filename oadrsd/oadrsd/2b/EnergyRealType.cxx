@@ -74,23 +74,23 @@ namespace power
 
   EnergyRealType::
   EnergyRealType (const EnergyRealType& x,
-                  ::xml_schema::flags f,
-                  ::xml_schema::container* c)
+             ::xml_schema_test::flags f,
+             ::xml_schema_test::container* c)
   : ::power::EnergyItemType (x, f, c)
   {
   }
 
   EnergyRealType::
   EnergyRealType (const ::xercesc::DOMElement& e,
-                  ::xml_schema::flags f,
-                  ::xml_schema::container* c)
+             ::xml_schema_test::flags f,
+             ::xml_schema_test::container* c)
   : ::power::EnergyItemType (e, f, c)
   {
   }
 
   EnergyRealType* EnergyRealType::
-  _clone (::xml_schema::flags f,
-          ::xml_schema::container* c) const
+  _clone (::xml_schema_test::flags f,
+     ::xml_schema_test::container* c) const
   {
     return new class EnergyRealType (*this, f, c);
   }

@@ -95,8 +95,8 @@ namespace oadr2b
 
     TnBFieldParamsType::
     TnBFieldParamsType (const TnBFieldParamsType& x,
-                        ::xml_schema::flags f,
-                        ::xml_schema::container* c)
+                   ::xml_schema_test::flags f,
+                   ::xml_schema_test::container* c)
     : ::oadr2b::dsig11::CharTwoFieldParamsType (x, f, c),
       K_ (x.K_, f, this)
     {
@@ -104,12 +104,12 @@ namespace oadr2b
 
     TnBFieldParamsType::
     TnBFieldParamsType (const ::xercesc::DOMElement& e,
-                        ::xml_schema::flags f,
-                        ::xml_schema::container* c)
-    : ::oadr2b::dsig11::CharTwoFieldParamsType (e, f | ::xml_schema::flags::base, c),
+                   ::xml_schema_test::flags f,
+                   ::xml_schema_test::container* c)
+    : ::oadr2b::dsig11::CharTwoFieldParamsType (e, f | ::xml_schema_test::flags::base, c),
       K_ (this)
     {
-      if ((f & ::xml_schema::flags::base) == 0)
+      if ((f & ::xml_schema_test::flags::base) == 0)
       {
         ::xsd::cxx::xml::dom::parser< char > p (e, true, false, false);
         this->parse (p, f);
@@ -118,7 +118,7 @@ namespace oadr2b
 
     void TnBFieldParamsType::
     parse (::xsd::cxx::xml::dom::parser< char >& p,
-           ::xml_schema::flags f)
+      ::xml_schema_test::flags f)
     {
       this->::oadr2b::dsig11::CharTwoFieldParamsType::parse (p, f);
 
@@ -151,8 +151,8 @@ namespace oadr2b
     }
 
     TnBFieldParamsType* TnBFieldParamsType::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class TnBFieldParamsType (*this, f, c);
     }

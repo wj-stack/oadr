@@ -69,64 +69,64 @@ namespace oadr2b
 
     UidType::
     UidType ()
-    : ::xml_schema::string ()
+    : ::xml_schema_test::string ()
     {
     }
 
     UidType::
     UidType (const char* _xsd_string_base)
-    : ::xml_schema::string (_xsd_string_base)
+    : ::xml_schema_test::string (_xsd_string_base)
     {
     }
 
     UidType::
     UidType (const ::std::string& _xsd_string_base)
-    : ::xml_schema::string (_xsd_string_base)
+    : ::xml_schema_test::string (_xsd_string_base)
     {
     }
 
     UidType::
-    UidType (const ::xml_schema::string& _xsd_string_base)
-    : ::xml_schema::string (_xsd_string_base)
+    UidType (const  ::xml_schema_test::string& _xsd_string_base)
+    : ::xml_schema_test::string (_xsd_string_base)
     {
     }
 
     UidType::
     UidType (const UidType& x,
-             ::xml_schema::flags f,
-             ::xml_schema::container* c)
-    : ::xml_schema::string (x, f, c)
+        ::xml_schema_test::flags f,
+        ::xml_schema_test::container* c)
+    : ::xml_schema_test::string (x, f, c)
     {
     }
 
     UidType::
     UidType (const ::xercesc::DOMElement& e,
-             ::xml_schema::flags f,
-             ::xml_schema::container* c)
-    : ::xml_schema::string (e, f, c)
+        ::xml_schema_test::flags f,
+        ::xml_schema_test::container* c)
+    : ::xml_schema_test::string (e, f, c)
     {
     }
 
     UidType::
     UidType (const ::xercesc::DOMAttr& a,
-             ::xml_schema::flags f,
-             ::xml_schema::container* c)
-    : ::xml_schema::string (a, f, c)
+        ::xml_schema_test::flags f,
+        ::xml_schema_test::container* c)
+    : ::xml_schema_test::string (a, f, c)
     {
     }
 
     UidType::
     UidType (const ::std::string& s,
              const ::xercesc::DOMElement* e,
-             ::xml_schema::flags f,
-             ::xml_schema::container* c)
-    : ::xml_schema::string (s, e, f, c)
+        ::xml_schema_test::flags f,
+        ::xml_schema_test::container* c)
+    : ::xml_schema_test::string (s, e, f, c)
     {
     }
 
     UidType* UidType::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class UidType (*this, f, c);
     }
@@ -175,20 +175,20 @@ namespace oadr2b
     void
     operator<< (::xercesc::DOMElement& e, const UidType& i)
     {
-      e << static_cast< const ::xml_schema::string& > (i);
+      e << static_cast< const  ::xml_schema_test::string& > (i);
     }
 
     void
     operator<< (::xercesc::DOMAttr& a, const UidType& i)
     {
-      a << static_cast< const ::xml_schema::string& > (i);
+      a << static_cast< const  ::xml_schema_test::string& > (i);
     }
 
     void
-    operator<< (::xml_schema::list_stream& l,
+    operator<< (::xml_schema_test::list_stream& l,
                 const UidType& i)
     {
-      l << static_cast< const ::xml_schema::string& > (i);
+      l << static_cast< const  ::xml_schema_test::string& > (i);
     }
 
     static

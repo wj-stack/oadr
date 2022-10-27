@@ -47,41 +47,41 @@ namespace ISO42173A_2010_04_07
 
   ISO3AlphaCurrencyCodeContentType::
   ISO3AlphaCurrencyCodeContentType (value v)
-  : ::xml_schema::token (_xsd_ISO3AlphaCurrencyCodeContentType_literals_[v])
+  : ::xml_schema_test::token (_xsd_ISO3AlphaCurrencyCodeContentType_literals_[v])
   {
   }
 
   ISO3AlphaCurrencyCodeContentType::
   ISO3AlphaCurrencyCodeContentType (const char* v)
-  : ::xml_schema::token (v)
+  : ::xml_schema_test::token (v)
   {
   }
 
   ISO3AlphaCurrencyCodeContentType::
   ISO3AlphaCurrencyCodeContentType (const ::std::string& v)
-  : ::xml_schema::token (v)
+  : ::xml_schema_test::token (v)
   {
   }
 
   ISO3AlphaCurrencyCodeContentType::
-  ISO3AlphaCurrencyCodeContentType (const ::xml_schema::token& v)
-  : ::xml_schema::token (v)
+  ISO3AlphaCurrencyCodeContentType (const  ::xml_schema_test::token& v)
+  : ::xml_schema_test::token (v)
   {
   }
 
   ISO3AlphaCurrencyCodeContentType::
   ISO3AlphaCurrencyCodeContentType (const ISO3AlphaCurrencyCodeContentType& v,
-                                    ::xml_schema::flags f,
-                                    ::xml_schema::container* c)
-  : ::xml_schema::token (v, f, c)
+                               ::xml_schema_test::flags f,
+                               ::xml_schema_test::container* c)
+  : ::xml_schema_test::token (v, f, c)
   {
   }
 
   ISO3AlphaCurrencyCodeContentType& ISO3AlphaCurrencyCodeContentType::
   operator= (value v)
   {
-    static_cast< ::xml_schema::token& > (*this) = 
-    ::xml_schema::token (_xsd_ISO3AlphaCurrencyCodeContentType_literals_[v]);
+    static_cast< ::xml_schema_test::token& > (*this) = 
+    ::xml_schema_test::token (_xsd_ISO3AlphaCurrencyCodeContentType_literals_[v]);
 
     return *this;
   }
@@ -105,18 +105,18 @@ namespace ISO42173A_2010_04_07
 
   ISO3AlphaCurrencyCodeContentType::
   ISO3AlphaCurrencyCodeContentType (const ::xercesc::DOMElement& e,
-                                    ::xml_schema::flags f,
-                                    ::xml_schema::container* c)
-  : ::xml_schema::token (e, f, c)
+                               ::xml_schema_test::flags f,
+                               ::xml_schema_test::container* c)
+  : ::xml_schema_test::token (e, f, c)
   {
     _xsd_ISO3AlphaCurrencyCodeContentType_convert ();
   }
 
   ISO3AlphaCurrencyCodeContentType::
   ISO3AlphaCurrencyCodeContentType (const ::xercesc::DOMAttr& a,
-                                    ::xml_schema::flags f,
-                                    ::xml_schema::container* c)
-  : ::xml_schema::token (a, f, c)
+                               ::xml_schema_test::flags f,
+                               ::xml_schema_test::container* c)
+  : ::xml_schema_test::token (a, f, c)
   {
     _xsd_ISO3AlphaCurrencyCodeContentType_convert ();
   }
@@ -124,16 +124,16 @@ namespace ISO42173A_2010_04_07
   ISO3AlphaCurrencyCodeContentType::
   ISO3AlphaCurrencyCodeContentType (const ::std::string& s,
                                     const ::xercesc::DOMElement* e,
-                                    ::xml_schema::flags f,
-                                    ::xml_schema::container* c)
-  : ::xml_schema::token (s, e, f, c)
+                               ::xml_schema_test::flags f,
+                               ::xml_schema_test::container* c)
+  : ::xml_schema_test::token (s, e, f, c)
   {
     _xsd_ISO3AlphaCurrencyCodeContentType_convert ();
   }
 
   ISO3AlphaCurrencyCodeContentType* ISO3AlphaCurrencyCodeContentType::
-  _clone (::xml_schema::flags f,
-          ::xml_schema::container* c) const
+  _clone (::xml_schema_test::flags f,
+     ::xml_schema_test::container* c) const
   {
     return new class ISO3AlphaCurrencyCodeContentType (*this, f, c);
   }
@@ -561,20 +561,20 @@ namespace ISO42173A_2010_04_07
   void
   operator<< (::xercesc::DOMElement& e, const ISO3AlphaCurrencyCodeContentType& i)
   {
-    e << static_cast< const ::xml_schema::token& > (i);
+    e << static_cast< const  ::xml_schema_test::token& > (i);
   }
 
   void
   operator<< (::xercesc::DOMAttr& a, const ISO3AlphaCurrencyCodeContentType& i)
   {
-    a << static_cast< const ::xml_schema::token& > (i);
+    a << static_cast< const  ::xml_schema_test::token& > (i);
   }
 
   void
-  operator<< (::xml_schema::list_stream& l,
+  operator<< (::xml_schema_test::list_stream& l,
               const ISO3AlphaCurrencyCodeContentType& i)
   {
-    l << static_cast< const ::xml_schema::token& > (i);
+    l << static_cast< const  ::xml_schema_test::token& > (i);
   }
 }
 

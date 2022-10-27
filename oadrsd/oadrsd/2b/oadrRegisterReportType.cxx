@@ -205,7 +205,7 @@ namespace oadr2b
 
     oadrRegisterReportType::
     oadrRegisterReportType (const requestID_type& requestID)
-    : ::xml_schema::type (),
+    : ::xml_schema_test::type (),
       requestID_ (requestID, this),
       oadrReport_ (this),
       venID_ (this),
@@ -216,9 +216,9 @@ namespace oadr2b
 
     oadrRegisterReportType::
     oadrRegisterReportType (const oadrRegisterReportType& x,
-                            ::xml_schema::flags f,
-                            ::xml_schema::container* c)
-    : ::xml_schema::type (x, f, c),
+                       ::xml_schema_test::flags f,
+                       ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (x, f, c),
       requestID_ (x.requestID_, f, this),
       oadrReport_ (x.oadrReport_, f, this),
       venID_ (x.venID_, f, this),
@@ -229,16 +229,16 @@ namespace oadr2b
 
     oadrRegisterReportType::
     oadrRegisterReportType (const ::xercesc::DOMElement& e,
-                            ::xml_schema::flags f,
-                            ::xml_schema::container* c)
-    : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
+                       ::xml_schema_test::flags f,
+                       ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (e, f | ::xml_schema_test::flags::base, c),
       requestID_ (this),
       oadrReport_ (this),
       venID_ (this),
       reportRequestID_ (this),
       schemaVersion_ (this)
     {
-      if ((f & ::xml_schema::flags::base) == 0)
+      if ((f & ::xml_schema_test::flags::base) == 0)
       {
         ::xsd::cxx::xml::dom::parser< char > p (e, true, false, true);
         this->parse (p, f);
@@ -247,7 +247,7 @@ namespace oadr2b
 
     void oadrRegisterReportType::
     parse (::xsd::cxx::xml::dom::parser< char >& p,
-           ::xml_schema::flags f)
+      ::xml_schema_test::flags f)
     {
       for (; p.more_content (); p.next_content (false))
       {
@@ -333,8 +333,8 @@ namespace oadr2b
     }
 
     oadrRegisterReportType* oadrRegisterReportType::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class oadrRegisterReportType (*this, f, c);
     }
@@ -344,7 +344,7 @@ namespace oadr2b
     {
       if (this != &x)
       {
-        static_cast< ::xml_schema::type& > (*this) = x;
+        static_cast< ::xml_schema_test::type& > (*this) = x;
         this->requestID_ = x.requestID_;
         this->oadrReport_ = x.oadrReport_;
         this->venID_ = x.venID_;
@@ -393,7 +393,7 @@ namespace oadr2b
     void
     operator<< (::xercesc::DOMElement& e, const oadrRegisterReportType& i)
     {
-      e << static_cast< const ::xml_schema::type& > (i);
+      e << static_cast< const  ::xml_schema_test::type& > (i);
 
       // requestID
       //

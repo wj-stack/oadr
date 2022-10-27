@@ -74,23 +74,23 @@ namespace power
 
   EnergyReactiveType::
   EnergyReactiveType (const EnergyReactiveType& x,
-                      ::xml_schema::flags f,
-                      ::xml_schema::container* c)
+                 ::xml_schema_test::flags f,
+                 ::xml_schema_test::container* c)
   : ::power::EnergyItemType (x, f, c)
   {
   }
 
   EnergyReactiveType::
   EnergyReactiveType (const ::xercesc::DOMElement& e,
-                      ::xml_schema::flags f,
-                      ::xml_schema::container* c)
+                 ::xml_schema_test::flags f,
+                 ::xml_schema_test::container* c)
   : ::power::EnergyItemType (e, f, c)
   {
   }
 
   EnergyReactiveType* EnergyReactiveType::
-  _clone (::xml_schema::flags f,
-          ::xml_schema::container* c) const
+  _clone (::xml_schema_test::flags f,
+     ::xml_schema_test::container* c) const
   {
     return new class EnergyReactiveType (*this, f, c);
   }

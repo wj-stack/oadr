@@ -69,52 +69,52 @@ namespace oadr2b
 
     CryptoBinary::
     CryptoBinary ()
-    : ::xml_schema::base64_binary ()
+    : ::xml_schema_test::base64_binary ()
     {
     }
 
     CryptoBinary::
-    CryptoBinary (const ::xml_schema::base64_binary& _xsd_base64_binary_base)
-    : ::xml_schema::base64_binary (_xsd_base64_binary_base)
+    CryptoBinary (const  ::xml_schema_test::base64_binary& _xsd_base64_binary_base)
+    : ::xml_schema_test::base64_binary (_xsd_base64_binary_base)
     {
     }
 
     CryptoBinary::
     CryptoBinary (const CryptoBinary& x,
-                  ::xml_schema::flags f,
-                  ::xml_schema::container* c)
-    : ::xml_schema::base64_binary (x, f, c)
+             ::xml_schema_test::flags f,
+             ::xml_schema_test::container* c)
+    : ::xml_schema_test::base64_binary (x, f, c)
     {
     }
 
     CryptoBinary::
     CryptoBinary (const ::xercesc::DOMElement& e,
-                  ::xml_schema::flags f,
-                  ::xml_schema::container* c)
-    : ::xml_schema::base64_binary (e, f, c)
+             ::xml_schema_test::flags f,
+             ::xml_schema_test::container* c)
+    : ::xml_schema_test::base64_binary (e, f, c)
     {
     }
 
     CryptoBinary::
     CryptoBinary (const ::xercesc::DOMAttr& a,
-                  ::xml_schema::flags f,
-                  ::xml_schema::container* c)
-    : ::xml_schema::base64_binary (a, f, c)
+             ::xml_schema_test::flags f,
+             ::xml_schema_test::container* c)
+    : ::xml_schema_test::base64_binary (a, f, c)
     {
     }
 
     CryptoBinary::
     CryptoBinary (const ::std::string& s,
                   const ::xercesc::DOMElement* e,
-                  ::xml_schema::flags f,
-                  ::xml_schema::container* c)
-    : ::xml_schema::base64_binary (s, e, f, c)
+             ::xml_schema_test::flags f,
+             ::xml_schema_test::container* c)
+    : ::xml_schema_test::base64_binary (s, e, f, c)
     {
     }
 
     CryptoBinary* CryptoBinary::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class CryptoBinary (*this, f, c);
     }
@@ -157,20 +157,20 @@ namespace oadr2b
     void
     operator<< (::xercesc::DOMElement& e, const CryptoBinary& i)
     {
-      e << static_cast< const ::xml_schema::base64_binary& > (i);
+      e << static_cast< const  ::xml_schema_test::base64_binary& > (i);
     }
 
     void
     operator<< (::xercesc::DOMAttr& a, const CryptoBinary& i)
     {
-      a << static_cast< const ::xml_schema::base64_binary& > (i);
+      a << static_cast< const  ::xml_schema_test::base64_binary& > (i);
     }
 
     void
-    operator<< (::xml_schema::list_stream& l,
+    operator<< (::xml_schema_test::list_stream& l,
                 const CryptoBinary& i)
     {
-      l << static_cast< const ::xml_schema::base64_binary& > (i);
+      l << static_cast< const  ::xml_schema_test::base64_binary& > (i);
     }
   }
 }

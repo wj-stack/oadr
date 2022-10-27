@@ -74,23 +74,23 @@ namespace power
 
   EnergyApparentType::
   EnergyApparentType (const EnergyApparentType& x,
-                      ::xml_schema::flags f,
-                      ::xml_schema::container* c)
+                 ::xml_schema_test::flags f,
+                 ::xml_schema_test::container* c)
   : ::power::EnergyItemType (x, f, c)
   {
   }
 
   EnergyApparentType::
   EnergyApparentType (const ::xercesc::DOMElement& e,
-                      ::xml_schema::flags f,
-                      ::xml_schema::container* c)
+                 ::xml_schema_test::flags f,
+                 ::xml_schema_test::container* c)
   : ::power::EnergyItemType (e, f, c)
   {
   }
 
   EnergyApparentType* EnergyApparentType::
-  _clone (::xml_schema::flags f,
-          ::xml_schema::container* c) const
+  _clone (::xml_schema_test::flags f,
+     ::xml_schema_test::container* c) const
   {
     return new class EnergyApparentType (*this, f, c);
   }

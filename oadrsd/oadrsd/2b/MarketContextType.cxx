@@ -68,47 +68,47 @@ namespace oadr2b
     //
 
     MarketContextType::
-    MarketContextType (const ::xml_schema::uri& _xsd_uri_base)
-    : ::xml_schema::uri (_xsd_uri_base)
+    MarketContextType (const  ::xml_schema_test::uri& _xsd_uri_base)
+    : ::xml_schema_test::uri (_xsd_uri_base)
     {
     }
 
     MarketContextType::
     MarketContextType (const MarketContextType& x,
-                       ::xml_schema::flags f,
-                       ::xml_schema::container* c)
-    : ::xml_schema::uri (x, f, c)
+                  ::xml_schema_test::flags f,
+                  ::xml_schema_test::container* c)
+    : ::xml_schema_test::uri (x, f, c)
     {
     }
 
     MarketContextType::
     MarketContextType (const ::xercesc::DOMElement& e,
-                       ::xml_schema::flags f,
-                       ::xml_schema::container* c)
-    : ::xml_schema::uri (e, f, c)
+                  ::xml_schema_test::flags f,
+                  ::xml_schema_test::container* c)
+    : ::xml_schema_test::uri (e, f, c)
     {
     }
 
     MarketContextType::
     MarketContextType (const ::xercesc::DOMAttr& a,
-                       ::xml_schema::flags f,
-                       ::xml_schema::container* c)
-    : ::xml_schema::uri (a, f, c)
+                  ::xml_schema_test::flags f,
+                  ::xml_schema_test::container* c)
+    : ::xml_schema_test::uri (a, f, c)
     {
     }
 
     MarketContextType::
     MarketContextType (const ::std::string& s,
                        const ::xercesc::DOMElement* e,
-                       ::xml_schema::flags f,
-                       ::xml_schema::container* c)
-    : ::xml_schema::uri (s, e, f, c)
+                  ::xml_schema_test::flags f,
+                  ::xml_schema_test::container* c)
+    : ::xml_schema_test::uri (s, e, f, c)
     {
     }
 
     MarketContextType* MarketContextType::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class MarketContextType (*this, f, c);
     }
@@ -151,20 +151,20 @@ namespace oadr2b
     void
     operator<< (::xercesc::DOMElement& e, const MarketContextType& i)
     {
-      e << static_cast< const ::xml_schema::uri& > (i);
+      e << static_cast< const  ::xml_schema_test::uri& > (i);
     }
 
     void
     operator<< (::xercesc::DOMAttr& a, const MarketContextType& i)
     {
-      a << static_cast< const ::xml_schema::uri& > (i);
+      a << static_cast< const  ::xml_schema_test::uri& > (i);
     }
 
     void
-    operator<< (::xml_schema::list_stream& l,
+    operator<< (::xml_schema_test::list_stream& l,
                 const MarketContextType& i)
     {
-      l << static_cast< const ::xml_schema::uri& > (i);
+      l << static_cast< const  ::xml_schema_test::uri& > (i);
     }
   }
 }

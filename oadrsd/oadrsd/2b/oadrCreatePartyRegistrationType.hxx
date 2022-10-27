@@ -98,7 +98,7 @@
 #include <xsd/cxx/tree/serialization/double.hxx>
 #include <xsd/cxx/tree/serialization/decimal.hxx>
 
-namespace xml_schema
+namespace xml_schema_test
 {
   // anyType and anySimpleType.
   //
@@ -146,20 +146,19 @@ namespace xml_schema
 
   // String types.
   //
-  typedef ::xsd::cxx::tree::string< char, simple_type > string;
-  typedef ::xsd::cxx::tree::normalized_string< char, string > normalized_string;
-  typedef ::xsd::cxx::tree::token< char, normalized_string > token;
-  typedef ::xsd::cxx::tree::name< char, token > name;
-  typedef ::xsd::cxx::tree::nmtoken< char, token > nmtoken;
-  typedef ::xsd::cxx::tree::nmtokens< char, simple_type, nmtoken > nmtokens;
-  typedef ::xsd::cxx::tree::ncname< char, name > ncname;
-  typedef ::xsd::cxx::tree::language< char, token > language;
-
+typedef ::xsd::cxx::tree::string<char, simple_type> string;
+typedef ::xsd::cxx::tree::string<char, simple_type> normalized_string;
+typedef ::xsd::cxx::tree::string<char, simple_type> token;
+typedef ::xsd::cxx::tree::string<char, simple_type> name;
+typedef ::xsd::cxx::tree::string<char, simple_type> nmtoken;
+typedef ::xsd::cxx::tree::string<char, simple_type> nmtokens;
+typedef ::xsd::cxx::tree::string<char, simple_type> ncname;
+typedef ::xsd::cxx::tree::string<char, simple_type> language;
   // ID/IDREF.
   //
-  typedef ::xsd::cxx::tree::id< char, ncname > id;
-  typedef ::xsd::cxx::tree::idref< char, ncname, type > idref;
-  typedef ::xsd::cxx::tree::idrefs< char, simple_type, idref > idrefs;
+  typedef ::xsd::cxx::tree::string< char, simple_type > id;
+  typedef ::xsd::cxx::tree::string< char, simple_type > idref;
+  typedef ::xsd::cxx::tree::string< char, simple_type > idrefs;
 
   // URI.
   //
@@ -313,12 +312,12 @@ namespace oadr2b
 {
   namespace oadr
   {
-    class oadrCreatePartyRegistrationType: public ::xml_schema::type
+    class oadrCreatePartyRegistrationType: public ::xml_schema_test::type
     {
       public:
       // requestID
       //
-      typedef ::xml_schema::string requestID_type;
+      typedef ::xml_schema_test::string requestID_type;
       typedef ::xsd::cxx::tree::traits< requestID_type, char > requestID_traits;
 
       const requestID_type&
@@ -356,7 +355,7 @@ namespace oadr2b
 
       // venID
       //
-      typedef ::xml_schema::string venID_type;
+      typedef ::xml_schema_test::string venID_type;
       typedef ::xsd::cxx::tree::optional< venID_type > venID_optional;
       typedef ::xsd::cxx::tree::traits< venID_type, char > venID_traits;
 
@@ -411,7 +410,7 @@ namespace oadr2b
 
       // oadrTransportAddress
       //
-      typedef ::xml_schema::string oadrTransportAddress_type;
+      typedef ::xml_schema_test::string oadrTransportAddress_type;
       typedef ::xsd::cxx::tree::optional< oadrTransportAddress_type > oadrTransportAddress_optional;
       typedef ::xsd::cxx::tree::traits< oadrTransportAddress_type, char > oadrTransportAddress_traits;
 
@@ -432,7 +431,7 @@ namespace oadr2b
 
       // oadrReportOnly
       //
-      typedef ::xml_schema::boolean oadrReportOnly_type;
+      typedef ::xml_schema_test::boolean oadrReportOnly_type;
       typedef ::xsd::cxx::tree::traits< oadrReportOnly_type, char > oadrReportOnly_traits;
 
       const oadrReportOnly_type&
@@ -446,7 +445,7 @@ namespace oadr2b
 
       // oadrXmlSignature
       //
-      typedef ::xml_schema::boolean oadrXmlSignature_type;
+      typedef ::xml_schema_test::boolean oadrXmlSignature_type;
       typedef ::xsd::cxx::tree::traits< oadrXmlSignature_type, char > oadrXmlSignature_traits;
 
       const oadrXmlSignature_type&
@@ -460,7 +459,7 @@ namespace oadr2b
 
       // oadrVenName
       //
-      typedef ::xml_schema::string oadrVenName_type;
+      typedef ::xml_schema_test::string oadrVenName_type;
       typedef ::xsd::cxx::tree::optional< oadrVenName_type > oadrVenName_optional;
       typedef ::xsd::cxx::tree::traits< oadrVenName_type, char > oadrVenName_traits;
 
@@ -481,7 +480,7 @@ namespace oadr2b
 
       // oadrHttpPullModel
       //
-      typedef ::xml_schema::boolean oadrHttpPullModel_type;
+      typedef ::xml_schema_test::boolean oadrHttpPullModel_type;
       typedef ::xsd::cxx::tree::optional< oadrHttpPullModel_type > oadrHttpPullModel_optional;
       typedef ::xsd::cxx::tree::traits< oadrHttpPullModel_type, char > oadrHttpPullModel_traits;
 
@@ -527,16 +526,16 @@ namespace oadr2b
                                        const oadrXmlSignature_type&);
 
       oadrCreatePartyRegistrationType (const ::xercesc::DOMElement& e,
-                                       ::xml_schema::flags f = 0,
-                                       ::xml_schema::container* c = 0);
+                                  ::xml_schema_test::flags f = 0,
+                                  ::xml_schema_test::container* c = 0);
 
       oadrCreatePartyRegistrationType (const oadrCreatePartyRegistrationType& x,
-                                       ::xml_schema::flags f = 0,
-                                       ::xml_schema::container* c = 0);
+                                  ::xml_schema_test::flags f = 0,
+                                  ::xml_schema_test::container* c = 0);
 
       virtual oadrCreatePartyRegistrationType*
-      _clone (::xml_schema::flags f = 0,
-              ::xml_schema::container* c = 0) const;
+      _clone (::xml_schema_test::flags f = 0,
+         ::xml_schema_test::container* c = 0) const;
 
       oadrCreatePartyRegistrationType&
       operator= (const oadrCreatePartyRegistrationType& x);
@@ -549,7 +548,7 @@ namespace oadr2b
       protected:
       void
       parse (::xsd::cxx::xml::dom::parser< char >&,
-             ::xml_schema::flags);
+        ::xml_schema_test::flags);
 
       protected:
       ::xsd::cxx::tree::one< requestID_type > requestID_;

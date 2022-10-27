@@ -147,8 +147,8 @@ namespace oadr2b
 
     oadrPayloadResourceStatusType::
     oadrPayloadResourceStatusType (const oadrPayloadResourceStatusType& x,
-                                   ::xml_schema::flags f,
-                                   ::xml_schema::container* c)
+                              ::xml_schema_test::flags f,
+                              ::xml_schema_test::container* c)
     : ::oadr2b::ei::PayloadBaseType (x, f, c),
       oadrOnline_ (x.oadrOnline_, f, this),
       oadrManualOverride_ (x.oadrManualOverride_, f, this),
@@ -158,14 +158,14 @@ namespace oadr2b
 
     oadrPayloadResourceStatusType::
     oadrPayloadResourceStatusType (const ::xercesc::DOMElement& e,
-                                   ::xml_schema::flags f,
-                                   ::xml_schema::container* c)
-    : ::oadr2b::ei::PayloadBaseType (e, f | ::xml_schema::flags::base, c),
+                              ::xml_schema_test::flags f,
+                              ::xml_schema_test::container* c)
+    : ::oadr2b::ei::PayloadBaseType (e, f | ::xml_schema_test::flags::base, c),
       oadrOnline_ (this),
       oadrManualOverride_ (this),
       oadrLoadControlState_ (this)
     {
-      if ((f & ::xml_schema::flags::base) == 0)
+      if ((f & ::xml_schema_test::flags::base) == 0)
       {
         ::xsd::cxx::xml::dom::parser< char > p (e, true, false, false);
         this->parse (p, f);
@@ -174,7 +174,7 @@ namespace oadr2b
 
     void oadrPayloadResourceStatusType::
     parse (::xsd::cxx::xml::dom::parser< char >& p,
-           ::xml_schema::flags f)
+      ::xml_schema_test::flags f)
     {
       for (; p.more_content (); p.next_content (false))
       {
@@ -237,8 +237,8 @@ namespace oadr2b
     }
 
     oadrPayloadResourceStatusType* oadrPayloadResourceStatusType::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class oadrPayloadResourceStatusType (*this, f, c);
     }

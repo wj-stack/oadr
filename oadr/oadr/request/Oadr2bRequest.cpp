@@ -50,7 +50,7 @@ string Oadr2bRequest::serializePayload(oadrPayload *payload) {
   map[""].name = "";
   map[""].schema = "";
 
-  ::xml_schema::flags f = xml_schema::flags::dont_initialize;
+  ::xml_schema::flags f = xml_schema_test::flags::dont_initialize;
 
   oadrPayload_(ss, *payload, map, "", f);
 

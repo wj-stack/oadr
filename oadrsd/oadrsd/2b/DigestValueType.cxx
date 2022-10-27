@@ -69,52 +69,52 @@ namespace oadr2b
 
     DigestValueType::
     DigestValueType ()
-    : ::xml_schema::base64_binary ()
+    : ::xml_schema_test::base64_binary ()
     {
     }
 
     DigestValueType::
-    DigestValueType (const ::xml_schema::base64_binary& _xsd_base64_binary_base)
-    : ::xml_schema::base64_binary (_xsd_base64_binary_base)
+    DigestValueType (const  ::xml_schema_test::base64_binary& _xsd_base64_binary_base)
+    : ::xml_schema_test::base64_binary (_xsd_base64_binary_base)
     {
     }
 
     DigestValueType::
     DigestValueType (const DigestValueType& x,
-                     ::xml_schema::flags f,
-                     ::xml_schema::container* c)
-    : ::xml_schema::base64_binary (x, f, c)
+                ::xml_schema_test::flags f,
+                ::xml_schema_test::container* c)
+    : ::xml_schema_test::base64_binary (x, f, c)
     {
     }
 
     DigestValueType::
     DigestValueType (const ::xercesc::DOMElement& e,
-                     ::xml_schema::flags f,
-                     ::xml_schema::container* c)
-    : ::xml_schema::base64_binary (e, f, c)
+                ::xml_schema_test::flags f,
+                ::xml_schema_test::container* c)
+    : ::xml_schema_test::base64_binary (e, f, c)
     {
     }
 
     DigestValueType::
     DigestValueType (const ::xercesc::DOMAttr& a,
-                     ::xml_schema::flags f,
-                     ::xml_schema::container* c)
-    : ::xml_schema::base64_binary (a, f, c)
+                ::xml_schema_test::flags f,
+                ::xml_schema_test::container* c)
+    : ::xml_schema_test::base64_binary (a, f, c)
     {
     }
 
     DigestValueType::
     DigestValueType (const ::std::string& s,
                      const ::xercesc::DOMElement* e,
-                     ::xml_schema::flags f,
-                     ::xml_schema::container* c)
-    : ::xml_schema::base64_binary (s, e, f, c)
+                ::xml_schema_test::flags f,
+                ::xml_schema_test::container* c)
+    : ::xml_schema_test::base64_binary (s, e, f, c)
     {
     }
 
     DigestValueType* DigestValueType::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class DigestValueType (*this, f, c);
     }
@@ -157,20 +157,20 @@ namespace oadr2b
     void
     operator<< (::xercesc::DOMElement& e, const DigestValueType& i)
     {
-      e << static_cast< const ::xml_schema::base64_binary& > (i);
+      e << static_cast< const  ::xml_schema_test::base64_binary& > (i);
     }
 
     void
     operator<< (::xercesc::DOMAttr& a, const DigestValueType& i)
     {
-      a << static_cast< const ::xml_schema::base64_binary& > (i);
+      a << static_cast< const  ::xml_schema_test::base64_binary& > (i);
     }
 
     void
-    operator<< (::xml_schema::list_stream& l,
+    operator<< (::xml_schema_test::list_stream& l,
                 const DigestValueType& i)
     {
-      l << static_cast< const ::xml_schema::base64_binary& > (i);
+      l << static_cast< const  ::xml_schema_test::base64_binary& > (i);
     }
   }
 }

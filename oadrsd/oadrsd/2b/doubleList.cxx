@@ -49,22 +49,22 @@ namespace oadr2b
 
     doubleList::
     doubleList ()
-    : ::xsd::cxx::tree::list< ::xml_schema::double_, char, ::xsd::cxx::tree::schema_type::double_ > (this)
+    : ::xsd::cxx::tree::list< ::xml_schema_test::double_, char, ::xsd::cxx::tree::schema_type::double_ > (this)
     {
     }
 
     doubleList::
-    doubleList (size_type n, const ::xml_schema::double_& x)
-    : ::xsd::cxx::tree::list< ::xml_schema::double_, char, ::xsd::cxx::tree::schema_type::double_ > (n, x, this)
+    doubleList (size_type n, const  ::xml_schema_test::double_& x)
+    : ::xsd::cxx::tree::list< ::xml_schema_test::double_, char, ::xsd::cxx::tree::schema_type::double_ > (n, x, this)
     {
     }
 
     doubleList::
     doubleList (const doubleList& o,
-                ::xml_schema::flags f,
-                ::xml_schema::container* c)
-    : ::xml_schema::simple_type (o, f, c),
-      ::xsd::cxx::tree::list< ::xml_schema::double_, char, ::xsd::cxx::tree::schema_type::double_ > (o, f, this)
+           ::xml_schema_test::flags f,
+           ::xml_schema_test::container* c)
+    : ::xml_schema_test::simple_type (o, f, c),
+      ::xsd::cxx::tree::list< ::xml_schema_test::double_, char, ::xsd::cxx::tree::schema_type::double_ > (o, f, this)
     {
     }
   }
@@ -90,35 +90,35 @@ namespace oadr2b
 
     doubleList::
     doubleList (const ::xercesc::DOMElement& e,
-                ::xml_schema::flags f,
-                ::xml_schema::container* c)
-    : ::xml_schema::simple_type (e, f, c),
-      ::xsd::cxx::tree::list< ::xml_schema::double_, char, ::xsd::cxx::tree::schema_type::double_ > (e, f, this)
+           ::xml_schema_test::flags f,
+           ::xml_schema_test::container* c)
+    : ::xml_schema_test::simple_type (e, f, c),
+      ::xsd::cxx::tree::list< ::xml_schema_test::double_, char, ::xsd::cxx::tree::schema_type::double_ > (e, f, this)
     {
     }
 
     doubleList::
     doubleList (const ::xercesc::DOMAttr& a,
-                ::xml_schema::flags f,
-                ::xml_schema::container* c)
-    : ::xml_schema::simple_type (a, f, c),
-      ::xsd::cxx::tree::list< ::xml_schema::double_, char, ::xsd::cxx::tree::schema_type::double_ > (a, f, this)
+           ::xml_schema_test::flags f,
+           ::xml_schema_test::container* c)
+    : ::xml_schema_test::simple_type (a, f, c),
+      ::xsd::cxx::tree::list< ::xml_schema_test::double_, char, ::xsd::cxx::tree::schema_type::double_ > (a, f, this)
     {
     }
 
     doubleList::
     doubleList (const ::std::string& s,
                 const ::xercesc::DOMElement* e,
-                ::xml_schema::flags f,
-                ::xml_schema::container* c)
-    : ::xml_schema::simple_type (s, e, f, c),
-      ::xsd::cxx::tree::list< ::xml_schema::double_, char, ::xsd::cxx::tree::schema_type::double_ > (s, e, f, this)
+           ::xml_schema_test::flags f,
+           ::xml_schema_test::container* c)
+    : ::xml_schema_test::simple_type (s, e, f, c),
+      ::xsd::cxx::tree::list< ::xml_schema_test::double_, char, ::xsd::cxx::tree::schema_type::double_ > (s, e, f, this)
     {
     }
 
     doubleList* doubleList::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class doubleList (*this, f, c);
     }
@@ -161,20 +161,20 @@ namespace oadr2b
     void
     operator<< (::xercesc::DOMElement& e, const doubleList& i)
     {
-      e << static_cast< const ::xsd::cxx::tree::list< ::xml_schema::double_, char, ::xsd::cxx::tree::schema_type::double_ >& > (i);
+      e << static_cast< const ::xsd::cxx::tree::list< ::xml_schema_test::double_, char, ::xsd::cxx::tree::schema_type::double_ >& > (i);
     }
 
     void
     operator<< (::xercesc::DOMAttr& a, const doubleList& i)
     {
-      a << static_cast< const ::xsd::cxx::tree::list< ::xml_schema::double_, char, ::xsd::cxx::tree::schema_type::double_ >& > (i);
+      a << static_cast< const ::xsd::cxx::tree::list< ::xml_schema_test::double_, char, ::xsd::cxx::tree::schema_type::double_ >& > (i);
     }
 
     void
-    operator<< (::xml_schema::list_stream& l,
+    operator<< (::xml_schema_test::list_stream& l,
                 const doubleList& i)
     {
-      l << static_cast< const ::xsd::cxx::tree::list< ::xml_schema::double_, char, ::xsd::cxx::tree::schema_type::double_ >& > (i);
+      l << static_cast< const ::xsd::cxx::tree::list< ::xml_schema_test::double_, char, ::xsd::cxx::tree::schema_type::double_ >& > (i);
     }
   }
 }

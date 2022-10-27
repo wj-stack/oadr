@@ -204,7 +204,7 @@ namespace oadr2b
     SignatureType::
     SignatureType (const SignedInfo_type& SignedInfo,
                    const SignatureValue_type& SignatureValue)
-    : ::xml_schema::type (),
+    : ::xml_schema_test::type (),
       SignedInfo_ (SignedInfo, this),
       SignatureValue_ (SignatureValue, this),
       KeyInfo_ (this),
@@ -216,7 +216,7 @@ namespace oadr2b
     SignatureType::
     SignatureType (::std::unique_ptr< SignedInfo_type > SignedInfo,
                    ::std::unique_ptr< SignatureValue_type > SignatureValue)
-    : ::xml_schema::type (),
+    : ::xml_schema_test::type (),
       SignedInfo_ (std::move (SignedInfo), this),
       SignatureValue_ (std::move (SignatureValue), this),
       KeyInfo_ (this),
@@ -227,9 +227,9 @@ namespace oadr2b
 
     SignatureType::
     SignatureType (const SignatureType& x,
-                   ::xml_schema::flags f,
-                   ::xml_schema::container* c)
-    : ::xml_schema::type (x, f, c),
+              ::xml_schema_test::flags f,
+              ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (x, f, c),
       SignedInfo_ (x.SignedInfo_, f, this),
       SignatureValue_ (x.SignatureValue_, f, this),
       KeyInfo_ (x.KeyInfo_, f, this),
@@ -240,16 +240,16 @@ namespace oadr2b
 
     SignatureType::
     SignatureType (const ::xercesc::DOMElement& e,
-                   ::xml_schema::flags f,
-                   ::xml_schema::container* c)
-    : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
+              ::xml_schema_test::flags f,
+              ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (e, f | ::xml_schema_test::flags::base, c),
       SignedInfo_ (this),
       SignatureValue_ (this),
       KeyInfo_ (this),
       Object_ (this),
       Id_ (this)
     {
-      if ((f & ::xml_schema::flags::base) == 0)
+      if ((f & ::xml_schema_test::flags::base) == 0)
       {
         ::xsd::cxx::xml::dom::parser< char > p (e, true, false, true);
         this->parse (p, f);
@@ -258,7 +258,7 @@ namespace oadr2b
 
     void SignatureType::
     parse (::xsd::cxx::xml::dom::parser< char >& p,
-           ::xml_schema::flags f)
+      ::xml_schema_test::flags f)
     {
       for (; p.more_content (); p.next_content (false))
       {
@@ -351,8 +351,8 @@ namespace oadr2b
     }
 
     SignatureType* SignatureType::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class SignatureType (*this, f, c);
     }
@@ -362,7 +362,7 @@ namespace oadr2b
     {
       if (this != &x)
       {
-        static_cast< ::xml_schema::type& > (*this) = x;
+        static_cast< ::xml_schema_test::type& > (*this) = x;
         this->SignedInfo_ = x.SignedInfo_;
         this->SignatureValue_ = x.SignatureValue_;
         this->KeyInfo_ = x.KeyInfo_;
@@ -411,7 +411,7 @@ namespace oadr2b
     void
     operator<< (::xercesc::DOMElement& e, const SignatureType& i)
     {
-      e << static_cast< const ::xml_schema::type& > (i);
+      e << static_cast< const  ::xml_schema_test::type& > (i);
 
       // SignedInfo
       //

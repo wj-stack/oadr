@@ -69,46 +69,46 @@ namespace oadr2b
 
     ItemBaseType::
     ItemBaseType ()
-    : ::xml_schema::type ()
+    : ::xml_schema_test::type ()
     {
     }
 
     ItemBaseType::
     ItemBaseType (const ItemBaseType& x,
-                  ::xml_schema::flags f,
-                  ::xml_schema::container* c)
-    : ::xml_schema::type (x, f, c)
+             ::xml_schema_test::flags f,
+             ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (x, f, c)
     {
     }
 
     ItemBaseType::
     ItemBaseType (const ::xercesc::DOMElement& e,
-                  ::xml_schema::flags f,
-                  ::xml_schema::container* c)
-    : ::xml_schema::type (e, f, c)
+             ::xml_schema_test::flags f,
+             ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (e, f, c)
     {
     }
 
     ItemBaseType::
     ItemBaseType (const ::xercesc::DOMAttr& a,
-                  ::xml_schema::flags f,
-                  ::xml_schema::container* c)
-    : ::xml_schema::type (a, f, c)
+             ::xml_schema_test::flags f,
+             ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (a, f, c)
     {
     }
 
     ItemBaseType::
     ItemBaseType (const ::std::string& s,
                   const ::xercesc::DOMElement* e,
-                  ::xml_schema::flags f,
-                  ::xml_schema::container* c)
-    : ::xml_schema::type (s, e, f, c)
+             ::xml_schema_test::flags f,
+             ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (s, e, f, c)
     {
     }
 
     ItemBaseType* ItemBaseType::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class ItemBaseType (*this, f, c);
     }
@@ -157,7 +157,7 @@ namespace oadr2b
     void
     operator<< (::xercesc::DOMElement& e, const ItemBaseType& i)
     {
-      e << static_cast< const ::xml_schema::type& > (i);
+      e << static_cast< const  ::xml_schema_test::type& > (i);
     }
 
     void
@@ -166,7 +166,7 @@ namespace oadr2b
     }
 
     void
-    operator<< (::xml_schema::list_stream&,
+    operator<< (::xml_schema_test::list_stream&,
                 const ItemBaseType&)
     {
     }

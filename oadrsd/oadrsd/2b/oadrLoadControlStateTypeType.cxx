@@ -159,7 +159,7 @@ namespace oadr2b
 
     oadrLoadControlStateTypeType::
     oadrLoadControlStateTypeType (const oadrCurrent_type& oadrCurrent)
-    : ::xml_schema::type (),
+    : ::xml_schema_test::type (),
       oadrMin_ (this),
       oadrMax_ (this),
       oadrCurrent_ (oadrCurrent, this),
@@ -169,9 +169,9 @@ namespace oadr2b
 
     oadrLoadControlStateTypeType::
     oadrLoadControlStateTypeType (const oadrLoadControlStateTypeType& x,
-                                  ::xml_schema::flags f,
-                                  ::xml_schema::container* c)
-    : ::xml_schema::type (x, f, c),
+                             ::xml_schema_test::flags f,
+                             ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (x, f, c),
       oadrMin_ (x.oadrMin_, f, this),
       oadrMax_ (x.oadrMax_, f, this),
       oadrCurrent_ (x.oadrCurrent_, f, this),
@@ -181,15 +181,15 @@ namespace oadr2b
 
     oadrLoadControlStateTypeType::
     oadrLoadControlStateTypeType (const ::xercesc::DOMElement& e,
-                                  ::xml_schema::flags f,
-                                  ::xml_schema::container* c)
-    : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
+                             ::xml_schema_test::flags f,
+                             ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (e, f | ::xml_schema_test::flags::base, c),
       oadrMin_ (this),
       oadrMax_ (this),
       oadrCurrent_ (this),
       oadrNormal_ (this)
     {
-      if ((f & ::xml_schema::flags::base) == 0)
+      if ((f & ::xml_schema_test::flags::base) == 0)
       {
         ::xsd::cxx::xml::dom::parser< char > p (e, true, false, false);
         this->parse (p, f);
@@ -198,7 +198,7 @@ namespace oadr2b
 
     void oadrLoadControlStateTypeType::
     parse (::xsd::cxx::xml::dom::parser< char >& p,
-           ::xml_schema::flags f)
+      ::xml_schema_test::flags f)
     {
       for (; p.more_content (); p.next_content (false))
       {
@@ -262,8 +262,8 @@ namespace oadr2b
     }
 
     oadrLoadControlStateTypeType* oadrLoadControlStateTypeType::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class oadrLoadControlStateTypeType (*this, f, c);
     }
@@ -273,7 +273,7 @@ namespace oadr2b
     {
       if (this != &x)
       {
-        static_cast< ::xml_schema::type& > (*this) = x;
+        static_cast< ::xml_schema_test::type& > (*this) = x;
         this->oadrMin_ = x.oadrMin_;
         this->oadrMax_ = x.oadrMax_;
         this->oadrCurrent_ = x.oadrCurrent_;
@@ -321,7 +321,7 @@ namespace oadr2b
     void
     operator<< (::xercesc::DOMElement& e, const oadrLoadControlStateTypeType& i)
     {
-      e << static_cast< const ::xml_schema::type& > (i);
+      e << static_cast< const  ::xml_schema_test::type& > (i);
 
       // oadrMin
       //

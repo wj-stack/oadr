@@ -176,7 +176,7 @@ namespace oadr2b
                  const eiActivePeriod_type& eiActivePeriod,
                  const eiEventSignals_type& eiEventSignals,
                  const eiTarget_type& eiTarget)
-    : ::xml_schema::type (),
+    : ::xml_schema_test::type (),
       eventDescriptor_ (eventDescriptor, this),
       eiActivePeriod_ (eiActivePeriod, this),
       eiEventSignals_ (eiEventSignals, this),
@@ -189,7 +189,7 @@ namespace oadr2b
                  ::std::unique_ptr< eiActivePeriod_type > eiActivePeriod,
                  ::std::unique_ptr< eiEventSignals_type > eiEventSignals,
                  ::std::unique_ptr< eiTarget_type > eiTarget)
-    : ::xml_schema::type (),
+    : ::xml_schema_test::type (),
       eventDescriptor_ (std::move (eventDescriptor), this),
       eiActivePeriod_ (std::move (eiActivePeriod), this),
       eiEventSignals_ (std::move (eiEventSignals), this),
@@ -199,9 +199,9 @@ namespace oadr2b
 
     eiEventType::
     eiEventType (const eiEventType& x,
-                 ::xml_schema::flags f,
-                 ::xml_schema::container* c)
-    : ::xml_schema::type (x, f, c),
+            ::xml_schema_test::flags f,
+            ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (x, f, c),
       eventDescriptor_ (x.eventDescriptor_, f, this),
       eiActivePeriod_ (x.eiActivePeriod_, f, this),
       eiEventSignals_ (x.eiEventSignals_, f, this),
@@ -211,15 +211,15 @@ namespace oadr2b
 
     eiEventType::
     eiEventType (const ::xercesc::DOMElement& e,
-                 ::xml_schema::flags f,
-                 ::xml_schema::container* c)
-    : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
+            ::xml_schema_test::flags f,
+            ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (e, f | ::xml_schema_test::flags::base, c),
       eventDescriptor_ (this),
       eiActivePeriod_ (this),
       eiEventSignals_ (this),
       eiTarget_ (this)
     {
-      if ((f & ::xml_schema::flags::base) == 0)
+      if ((f & ::xml_schema_test::flags::base) == 0)
       {
         ::xsd::cxx::xml::dom::parser< char > p (e, true, false, false);
         this->parse (p, f);
@@ -228,7 +228,7 @@ namespace oadr2b
 
     void eiEventType::
     parse (::xsd::cxx::xml::dom::parser< char >& p,
-           ::xml_schema::flags f)
+      ::xml_schema_test::flags f)
     {
       for (; p.more_content (); p.next_content (false))
       {
@@ -325,8 +325,8 @@ namespace oadr2b
     }
 
     eiEventType* eiEventType::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class eiEventType (*this, f, c);
     }
@@ -336,7 +336,7 @@ namespace oadr2b
     {
       if (this != &x)
       {
-        static_cast< ::xml_schema::type& > (*this) = x;
+        static_cast< ::xml_schema_test::type& > (*this) = x;
         this->eventDescriptor_ = x.eventDescriptor_;
         this->eiActivePeriod_ = x.eiActivePeriod_;
         this->eiEventSignals_ = x.eiEventSignals_;
@@ -384,7 +384,7 @@ namespace oadr2b
     void
     operator<< (::xercesc::DOMElement& e, const eiEventType& i)
     {
-      e << static_cast< const ::xml_schema::type& > (i);
+      e << static_cast< const  ::xml_schema_test::type& > (i);
 
       // eventDescriptor
       //

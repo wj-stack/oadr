@@ -98,7 +98,7 @@
 #include <xsd/cxx/tree/serialization/double.hxx>
 #include <xsd/cxx/tree/serialization/decimal.hxx>
 
-namespace xml_schema
+namespace xml_schema_test
 {
   // anyType and anySimpleType.
   //
@@ -146,20 +146,19 @@ namespace xml_schema
 
   // String types.
   //
-  typedef ::xsd::cxx::tree::string< char, simple_type > string;
-  typedef ::xsd::cxx::tree::normalized_string< char, string > normalized_string;
-  typedef ::xsd::cxx::tree::token< char, normalized_string > token;
-  typedef ::xsd::cxx::tree::name< char, token > name;
-  typedef ::xsd::cxx::tree::nmtoken< char, token > nmtoken;
-  typedef ::xsd::cxx::tree::nmtokens< char, simple_type, nmtoken > nmtokens;
-  typedef ::xsd::cxx::tree::ncname< char, name > ncname;
-  typedef ::xsd::cxx::tree::language< char, token > language;
-
+typedef ::xsd::cxx::tree::string<char, simple_type> string;
+typedef ::xsd::cxx::tree::string<char, simple_type> normalized_string;
+typedef ::xsd::cxx::tree::string<char, simple_type> token;
+typedef ::xsd::cxx::tree::string<char, simple_type> name;
+typedef ::xsd::cxx::tree::string<char, simple_type> nmtoken;
+typedef ::xsd::cxx::tree::string<char, simple_type> nmtokens;
+typedef ::xsd::cxx::tree::string<char, simple_type> ncname;
+typedef ::xsd::cxx::tree::string<char, simple_type> language;
   // ID/IDREF.
   //
-  typedef ::xsd::cxx::tree::id< char, ncname > id;
-  typedef ::xsd::cxx::tree::idref< char, ncname, type > idref;
-  typedef ::xsd::cxx::tree::idrefs< char, simple_type, idref > idrefs;
+  typedef ::xsd::cxx::tree::string< char, simple_type > id;
+  typedef ::xsd::cxx::tree::string< char, simple_type > idref;
+  typedef ::xsd::cxx::tree::string< char, simple_type > idrefs;
 
   // URI.
   //
@@ -286,7 +285,7 @@ namespace oadr2b
 {
   namespace oadr
   {
-    class oadrSamplingRateType: public ::xml_schema::type
+    class oadrSamplingRateType: public ::xml_schema_test::type
     {
       public:
       // oadrMinPeriod
@@ -325,7 +324,7 @@ namespace oadr2b
 
       // oadrOnChange
       //
-      typedef ::xml_schema::boolean oadrOnChange_type;
+      typedef ::xml_schema_test::boolean oadrOnChange_type;
       typedef ::xsd::cxx::tree::traits< oadrOnChange_type, char > oadrOnChange_traits;
 
       const oadrOnChange_type&
@@ -344,16 +343,16 @@ namespace oadr2b
                             const oadrOnChange_type&);
 
       oadrSamplingRateType (const ::xercesc::DOMElement& e,
-                            ::xml_schema::flags f = 0,
-                            ::xml_schema::container* c = 0);
+                       ::xml_schema_test::flags f = 0,
+                       ::xml_schema_test::container* c = 0);
 
       oadrSamplingRateType (const oadrSamplingRateType& x,
-                            ::xml_schema::flags f = 0,
-                            ::xml_schema::container* c = 0);
+                       ::xml_schema_test::flags f = 0,
+                       ::xml_schema_test::container* c = 0);
 
       virtual oadrSamplingRateType*
-      _clone (::xml_schema::flags f = 0,
-              ::xml_schema::container* c = 0) const;
+      _clone (::xml_schema_test::flags f = 0,
+         ::xml_schema_test::container* c = 0) const;
 
       oadrSamplingRateType&
       operator= (const oadrSamplingRateType& x);
@@ -366,7 +365,7 @@ namespace oadr2b
       protected:
       void
       parse (::xsd::cxx::xml::dom::parser< char >&,
-             ::xml_schema::flags);
+        ::xml_schema_test::flags);
 
       protected:
       ::xsd::cxx::tree::one< oadrMinPeriod_type > oadrMinPeriod_;

@@ -295,7 +295,7 @@ namespace oadr2b
                const optReason_type& optReason,
                const venID_type& venID,
                const createdDateTime_type& createdDateTime)
-    : ::xml_schema::type (),
+    : ::xml_schema_test::type (),
       optID_ (optID, this),
       optType_ (optType, this),
       optReason_ (optReason, this),
@@ -309,9 +309,9 @@ namespace oadr2b
 
     EiOptType::
     EiOptType (const EiOptType& x,
-               ::xml_schema::flags f,
-               ::xml_schema::container* c)
-    : ::xml_schema::type (x, f, c),
+          ::xml_schema_test::flags f,
+          ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (x, f, c),
       optID_ (x.optID_, f, this),
       optType_ (x.optType_, f, this),
       optReason_ (x.optReason_, f, this),
@@ -325,9 +325,9 @@ namespace oadr2b
 
     EiOptType::
     EiOptType (const ::xercesc::DOMElement& e,
-               ::xml_schema::flags f,
-               ::xml_schema::container* c)
-    : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
+          ::xml_schema_test::flags f,
+          ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (e, f | ::xml_schema_test::flags::base, c),
       optID_ (this),
       optType_ (this),
       optReason_ (this),
@@ -337,7 +337,7 @@ namespace oadr2b
       createdDateTime_ (this),
       schemaVersion_ (this)
     {
-      if ((f & ::xml_schema::flags::base) == 0)
+      if ((f & ::xml_schema_test::flags::base) == 0)
       {
         ::xsd::cxx::xml::dom::parser< char > p (e, true, false, true);
         this->parse (p, f);
@@ -346,7 +346,7 @@ namespace oadr2b
 
     void EiOptType::
     parse (::xsd::cxx::xml::dom::parser< char >& p,
-           ::xml_schema::flags f)
+      ::xml_schema_test::flags f)
     {
       for (; p.more_content (); p.next_content (false))
       {
@@ -505,8 +505,8 @@ namespace oadr2b
     }
 
     EiOptType* EiOptType::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class EiOptType (*this, f, c);
     }
@@ -516,7 +516,7 @@ namespace oadr2b
     {
       if (this != &x)
       {
-        static_cast< ::xml_schema::type& > (*this) = x;
+        static_cast< ::xml_schema_test::type& > (*this) = x;
         this->optID_ = x.optID_;
         this->optType_ = x.optType_;
         this->optReason_ = x.optReason_;
@@ -568,7 +568,7 @@ namespace oadr2b
     void
     operator<< (::xercesc::DOMElement& e, const EiOptType& i)
     {
-      e << static_cast< const ::xml_schema::type& > (i);
+      e << static_cast< const  ::xml_schema_test::type& > (i);
 
       // optID
       //

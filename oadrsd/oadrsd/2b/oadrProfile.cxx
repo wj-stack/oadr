@@ -122,7 +122,7 @@ namespace oadr2b
     oadrProfile::
     oadrProfile (const oadrProfileName_type& oadrProfileName,
                  const oadrTransports_type& oadrTransports)
-    : ::xml_schema::type (),
+    : ::xml_schema_test::type (),
       oadrProfileName_ (oadrProfileName, this),
       oadrTransports_ (oadrTransports, this)
     {
@@ -131,7 +131,7 @@ namespace oadr2b
     oadrProfile::
     oadrProfile (const oadrProfileName_type& oadrProfileName,
                  ::std::unique_ptr< oadrTransports_type > oadrTransports)
-    : ::xml_schema::type (),
+    : ::xml_schema_test::type (),
       oadrProfileName_ (oadrProfileName, this),
       oadrTransports_ (std::move (oadrTransports), this)
     {
@@ -139,9 +139,9 @@ namespace oadr2b
 
     oadrProfile::
     oadrProfile (const oadrProfile& x,
-                 ::xml_schema::flags f,
-                 ::xml_schema::container* c)
-    : ::xml_schema::type (x, f, c),
+            ::xml_schema_test::flags f,
+            ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (x, f, c),
       oadrProfileName_ (x.oadrProfileName_, f, this),
       oadrTransports_ (x.oadrTransports_, f, this)
     {
@@ -149,13 +149,13 @@ namespace oadr2b
 
     oadrProfile::
     oadrProfile (const ::xercesc::DOMElement& e,
-                 ::xml_schema::flags f,
-                 ::xml_schema::container* c)
-    : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
+            ::xml_schema_test::flags f,
+            ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (e, f | ::xml_schema_test::flags::base, c),
       oadrProfileName_ (this),
       oadrTransports_ (this)
     {
-      if ((f & ::xml_schema::flags::base) == 0)
+      if ((f & ::xml_schema_test::flags::base) == 0)
       {
         ::xsd::cxx::xml::dom::parser< char > p (e, true, false, false);
         this->parse (p, f);
@@ -164,7 +164,7 @@ namespace oadr2b
 
     void oadrProfile::
     parse (::xsd::cxx::xml::dom::parser< char >& p,
-           ::xml_schema::flags f)
+      ::xml_schema_test::flags f)
     {
       for (; p.more_content (); p.next_content (false))
       {
@@ -219,8 +219,8 @@ namespace oadr2b
     }
 
     oadrProfile* oadrProfile::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class oadrProfile (*this, f, c);
     }
@@ -230,7 +230,7 @@ namespace oadr2b
     {
       if (this != &x)
       {
-        static_cast< ::xml_schema::type& > (*this) = x;
+        static_cast< ::xml_schema_test::type& > (*this) = x;
         this->oadrProfileName_ = x.oadrProfileName_;
         this->oadrTransports_ = x.oadrTransports_;
       }
@@ -276,7 +276,7 @@ namespace oadr2b
     void
     operator<< (::xercesc::DOMElement& e, const oadrProfile& i)
     {
-      e << static_cast< const ::xml_schema::type& > (i);
+      e << static_cast< const  ::xml_schema_test::type& > (i);
 
       // oadrProfileName
       //

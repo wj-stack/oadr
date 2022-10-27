@@ -90,35 +90,35 @@ namespace power
 
   ServiceLocationType::
   ServiceLocationType (const FeatureCollection_type& FeatureCollection)
-  : ::xml_schema::type (),
+  : ::xml_schema_test::type (),
     FeatureCollection_ (FeatureCollection, this)
   {
   }
 
   ServiceLocationType::
   ServiceLocationType (::std::unique_ptr< FeatureCollection_type > FeatureCollection)
-  : ::xml_schema::type (),
+  : ::xml_schema_test::type (),
     FeatureCollection_ (std::move (FeatureCollection), this)
   {
   }
 
   ServiceLocationType::
   ServiceLocationType (const ServiceLocationType& x,
-                       ::xml_schema::flags f,
-                       ::xml_schema::container* c)
-  : ::xml_schema::type (x, f, c),
+                  ::xml_schema_test::flags f,
+                  ::xml_schema_test::container* c)
+  : ::xml_schema_test::type (x, f, c),
     FeatureCollection_ (x.FeatureCollection_, f, this)
   {
   }
 
   ServiceLocationType::
   ServiceLocationType (const ::xercesc::DOMElement& e,
-                       ::xml_schema::flags f,
-                       ::xml_schema::container* c)
-  : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
+                  ::xml_schema_test::flags f,
+                  ::xml_schema_test::container* c)
+  : ::xml_schema_test::type (e, f | ::xml_schema_test::flags::base, c),
     FeatureCollection_ (this)
   {
-    if ((f & ::xml_schema::flags::base) == 0)
+    if ((f & ::xml_schema_test::flags::base) == 0)
     {
       ::xsd::cxx::xml::dom::parser< char > p (e, true, false, false);
       this->parse (p, f);
@@ -127,7 +127,7 @@ namespace power
 
   void ServiceLocationType::
   parse (::xsd::cxx::xml::dom::parser< char >& p,
-         ::xml_schema::flags f)
+    ::xml_schema_test::flags f)
   {
     for (; p.more_content (); p.next_content (false))
     {
@@ -161,8 +161,8 @@ namespace power
   }
 
   ServiceLocationType* ServiceLocationType::
-  _clone (::xml_schema::flags f,
-          ::xml_schema::container* c) const
+  _clone (::xml_schema_test::flags f,
+     ::xml_schema_test::container* c) const
   {
     return new class ServiceLocationType (*this, f, c);
   }
@@ -172,7 +172,7 @@ namespace power
   {
     if (this != &x)
     {
-      static_cast< ::xml_schema::type& > (*this) = x;
+      static_cast< ::xml_schema_test::type& > (*this) = x;
       this->FeatureCollection_ = x.FeatureCollection_;
     }
 
@@ -211,7 +211,7 @@ namespace power
   void
   operator<< (::xercesc::DOMElement& e, const ServiceLocationType& i)
   {
-    e << static_cast< const ::xml_schema::type& > (i);
+    e << static_cast< const  ::xml_schema_test::type& > (i);
 
     // FeatureCollection
     //

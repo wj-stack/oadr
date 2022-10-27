@@ -68,47 +68,47 @@ namespace oadr2b
     //
 
     ConfidenceType::
-    ConfidenceType (const ::xml_schema::unsigned_int& _xsd_unsigned_int_base)
-    : ::xsd::cxx::tree::fundamental_base< ::xml_schema::unsigned_int, char, ::xml_schema::simple_type > (_xsd_unsigned_int_base)
+    ConfidenceType (const  ::xml_schema_test::unsigned_int& _xsd_unsigned_int_base)
+    : ::xsd::cxx::tree::fundamental_base< ::xml_schema_test::unsigned_int, char, ::xml_schema_test::simple_type > (_xsd_unsigned_int_base)
     {
     }
 
     ConfidenceType::
     ConfidenceType (const ConfidenceType& x,
-                    ::xml_schema::flags f,
-                    ::xml_schema::container* c)
-    : ::xsd::cxx::tree::fundamental_base< ::xml_schema::unsigned_int, char, ::xml_schema::simple_type > (x, f, c)
+               ::xml_schema_test::flags f,
+               ::xml_schema_test::container* c)
+    : ::xsd::cxx::tree::fundamental_base< ::xml_schema_test::unsigned_int, char, ::xml_schema_test::simple_type > (x, f, c)
     {
     }
 
     ConfidenceType::
     ConfidenceType (const ::xercesc::DOMElement& e,
-                    ::xml_schema::flags f,
-                    ::xml_schema::container* c)
-    : ::xsd::cxx::tree::fundamental_base< ::xml_schema::unsigned_int, char, ::xml_schema::simple_type > (e, f, c)
+               ::xml_schema_test::flags f,
+               ::xml_schema_test::container* c)
+    : ::xsd::cxx::tree::fundamental_base< ::xml_schema_test::unsigned_int, char, ::xml_schema_test::simple_type > (e, f, c)
     {
     }
 
     ConfidenceType::
     ConfidenceType (const ::xercesc::DOMAttr& a,
-                    ::xml_schema::flags f,
-                    ::xml_schema::container* c)
-    : ::xsd::cxx::tree::fundamental_base< ::xml_schema::unsigned_int, char, ::xml_schema::simple_type > (a, f, c)
+               ::xml_schema_test::flags f,
+               ::xml_schema_test::container* c)
+    : ::xsd::cxx::tree::fundamental_base< ::xml_schema_test::unsigned_int, char, ::xml_schema_test::simple_type > (a, f, c)
     {
     }
 
     ConfidenceType::
     ConfidenceType (const ::std::string& s,
                     const ::xercesc::DOMElement* e,
-                    ::xml_schema::flags f,
-                    ::xml_schema::container* c)
-    : ::xsd::cxx::tree::fundamental_base< ::xml_schema::unsigned_int, char, ::xml_schema::simple_type > (s, e, f, c)
+               ::xml_schema_test::flags f,
+               ::xml_schema_test::container* c)
+    : ::xsd::cxx::tree::fundamental_base< ::xml_schema_test::unsigned_int, char, ::xml_schema_test::simple_type > (s, e, f, c)
     {
     }
 
     ConfidenceType* ConfidenceType::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class ConfidenceType (*this, f, c);
     }
@@ -151,20 +151,20 @@ namespace oadr2b
     void
     operator<< (::xercesc::DOMElement& e, const ConfidenceType& i)
     {
-      e << static_cast< const ::xsd::cxx::tree::fundamental_base< ::xml_schema::unsigned_int, char, ::xml_schema::simple_type >& > (i);
+      e << static_cast< const ::xsd::cxx::tree::fundamental_base< ::xml_schema_test::unsigned_int, char, ::xml_schema_test::simple_type >& > (i);
     }
 
     void
     operator<< (::xercesc::DOMAttr& a, const ConfidenceType& i)
     {
-      a << static_cast< const ::xsd::cxx::tree::fundamental_base< ::xml_schema::unsigned_int, char, ::xml_schema::simple_type >& > (i);
+      a << static_cast< const ::xsd::cxx::tree::fundamental_base< ::xml_schema_test::unsigned_int, char, ::xml_schema_test::simple_type >& > (i);
     }
 
     void
-    operator<< (::xml_schema::list_stream& l,
+    operator<< (::xml_schema_test::list_stream& l,
                 const ConfidenceType& i)
     {
-      l << static_cast< const ::xsd::cxx::tree::fundamental_base< ::xml_schema::unsigned_int, char, ::xml_schema::simple_type >& > (i);
+      l << static_cast< const ::xsd::cxx::tree::fundamental_base< ::xml_schema_test::unsigned_int, char, ::xml_schema_test::simple_type >& > (i);
     }
   }
 }

@@ -378,7 +378,7 @@ namespace Atom
 
   feedType::
   feedType ()
-  : ::xml_schema::type (),
+  : ::xml_schema_test::type (),
     author_ (this),
     category_ (this),
     contributor_ (this),
@@ -399,9 +399,9 @@ namespace Atom
 
   feedType::
   feedType (const feedType& x,
-            ::xml_schema::flags f,
-            ::xml_schema::container* c)
-  : ::xml_schema::type (x, f, c),
+       ::xml_schema_test::flags f,
+       ::xml_schema_test::container* c)
+  : ::xml_schema_test::type (x, f, c),
     author_ (x.author_, f, this),
     category_ (x.category_, f, this),
     contributor_ (x.contributor_, f, this),
@@ -422,9 +422,9 @@ namespace Atom
 
   feedType::
   feedType (const ::xercesc::DOMElement& e,
-            ::xml_schema::flags f,
-            ::xml_schema::container* c)
-  : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
+       ::xml_schema_test::flags f,
+       ::xml_schema_test::container* c)
+  : ::xml_schema_test::type (e, f | ::xml_schema_test::flags::base, c),
     author_ (this),
     category_ (this),
     contributor_ (this),
@@ -441,7 +441,7 @@ namespace Atom
     base_ (this),
     lang_ (this)
   {
-    if ((f & ::xml_schema::flags::base) == 0)
+    if ((f & ::xml_schema_test::flags::base) == 0)
     {
       ::xsd::cxx::xml::dom::parser< char > p (e, true, false, true);
       this->parse (p, f);
@@ -450,7 +450,7 @@ namespace Atom
 
   void feedType::
   parse (::xsd::cxx::xml::dom::parser< char >& p,
-         ::xml_schema::flags f)
+    ::xml_schema_test::flags f)
   {
     for (; p.more_content (); p.next_content (false))
     {
@@ -625,8 +625,8 @@ namespace Atom
   }
 
   feedType* feedType::
-  _clone (::xml_schema::flags f,
-          ::xml_schema::container* c) const
+  _clone (::xml_schema_test::flags f,
+     ::xml_schema_test::container* c) const
   {
     return new class feedType (*this, f, c);
   }
@@ -636,7 +636,7 @@ namespace Atom
   {
     if (this != &x)
     {
-      static_cast< ::xml_schema::type& > (*this) = x;
+      static_cast< ::xml_schema_test::type& > (*this) = x;
       this->author_ = x.author_;
       this->category_ = x.category_;
       this->contributor_ = x.contributor_;
@@ -689,7 +689,7 @@ namespace Atom
   void
   operator<< (::xercesc::DOMElement& e, const feedType& i)
   {
-    e << static_cast< const ::xml_schema::type& > (i);
+    e << static_cast< const  ::xml_schema_test::type& > (i);
 
     // author
     //

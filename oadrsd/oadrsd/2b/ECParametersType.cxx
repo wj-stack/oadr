@@ -232,7 +232,7 @@ namespace oadr2b
                       const Curve_type& Curve,
                       const Base_type& Base,
                       const Order_type& Order)
-    : ::xml_schema::type (),
+    : ::xml_schema_test::type (),
       FieldID_ (FieldID, this),
       Curve_ (Curve, this),
       Base_ (Base, this),
@@ -247,7 +247,7 @@ namespace oadr2b
                       ::std::unique_ptr< Curve_type > Curve,
                       const Base_type& Base,
                       const Order_type& Order)
-    : ::xml_schema::type (),
+    : ::xml_schema_test::type (),
       FieldID_ (std::move (FieldID), this),
       Curve_ (std::move (Curve), this),
       Base_ (Base, this),
@@ -259,9 +259,9 @@ namespace oadr2b
 
     ECParametersType::
     ECParametersType (const ECParametersType& x,
-                      ::xml_schema::flags f,
-                      ::xml_schema::container* c)
-    : ::xml_schema::type (x, f, c),
+                 ::xml_schema_test::flags f,
+                 ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (x, f, c),
       FieldID_ (x.FieldID_, f, this),
       Curve_ (x.Curve_, f, this),
       Base_ (x.Base_, f, this),
@@ -273,9 +273,9 @@ namespace oadr2b
 
     ECParametersType::
     ECParametersType (const ::xercesc::DOMElement& e,
-                      ::xml_schema::flags f,
-                      ::xml_schema::container* c)
-    : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
+                 ::xml_schema_test::flags f,
+                 ::xml_schema_test::container* c)
+    : ::xml_schema_test::type (e, f | ::xml_schema_test::flags::base, c),
       FieldID_ (this),
       Curve_ (this),
       Base_ (this),
@@ -283,7 +283,7 @@ namespace oadr2b
       CoFactor_ (this),
       ValidationData_ (this)
     {
-      if ((f & ::xml_schema::flags::base) == 0)
+      if ((f & ::xml_schema_test::flags::base) == 0)
       {
         ::xsd::cxx::xml::dom::parser< char > p (e, true, false, false);
         this->parse (p, f);
@@ -292,7 +292,7 @@ namespace oadr2b
 
     void ECParametersType::
     parse (::xsd::cxx::xml::dom::parser< char >& p,
-           ::xml_schema::flags f)
+      ::xml_schema_test::flags f)
     {
       for (; p.more_content (); p.next_content (false))
       {
@@ -414,8 +414,8 @@ namespace oadr2b
     }
 
     ECParametersType* ECParametersType::
-    _clone (::xml_schema::flags f,
-            ::xml_schema::container* c) const
+    _clone (::xml_schema_test::flags f,
+       ::xml_schema_test::container* c) const
     {
       return new class ECParametersType (*this, f, c);
     }
@@ -425,7 +425,7 @@ namespace oadr2b
     {
       if (this != &x)
       {
-        static_cast< ::xml_schema::type& > (*this) = x;
+        static_cast< ::xml_schema_test::type& > (*this) = x;
         this->FieldID_ = x.FieldID_;
         this->Curve_ = x.Curve_;
         this->Base_ = x.Base_;
@@ -475,7 +475,7 @@ namespace oadr2b
     void
     operator<< (::xercesc::DOMElement& e, const ECParametersType& i)
     {
-      e << static_cast< const ::xml_schema::type& > (i);
+      e << static_cast< const  ::xml_schema_test::type& > (i);
 
       // FieldID
       //
