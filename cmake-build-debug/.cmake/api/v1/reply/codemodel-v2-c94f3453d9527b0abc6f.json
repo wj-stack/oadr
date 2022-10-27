@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-6adf5b21c10dd04c86ea.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "OADR",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "oadr::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-oadr-Debug-a637b13d8c4ef99a3fa2.json",
+					"name" : "oadr",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "oadrsd::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-oadrsd-Debug-d627e609fbb4c0557268.json",
+					"name" : "oadrsd",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "samplevenmgr::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-samplevenmgr-Debug-8f67c041d9625142afbe.json",
+					"name" : "samplevenmgr",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/Administrator/Desktop/OpenADR-VEN-Library-master/OpenADR-VEN-Library-master/cmake-build-debug",
+		"source" : "C:/Users/Administrator/Desktop/OpenADR-VEN-Library-master/OpenADR-VEN-Library-master"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

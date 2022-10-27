@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wall -std=c++11  -rdynamic CMakeFiles/samplevenmgr.dir/samplevenmanager/samplevenmanager/VENImpl.cpp.o CMakeFiles/samplevenmgr.dir/samplevenmanager/samplevenmanager/main.cpp.o  -o samplevenmgr  -Wl,-rpath,/home/wyatt/code liboadr.so liboadrsd.so -lcurl -lxerces-c -lpthread 

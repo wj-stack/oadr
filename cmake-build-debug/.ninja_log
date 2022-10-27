@@ -1,0 +1,10 @@
+# ninja log v5
+19	139	6882081911235087	CMakeFiles/oadr.dir/oadr/oadr/helper/globaltime/IGlobalTime.cpp.obj	990095d6cede8660
+52	212	6882081911955271	CMakeFiles/oadr.dir/oadr/oadr/helper/thread/IRun.cpp.obj	8db298ee4d8ebcce
+37	214	6882081912005255	CMakeFiles/oadr.dir/oadr/oadr/helper/globaltime/GlobalTimeStandard.cpp.obj	dfe511ed6539e7ee
+32	215	6882081912005255	CMakeFiles/oadr.dir/oadr/oadr/helper/globaltime/GlobalTime.cpp.obj	f14de19d531988c0
+14	361	6882081913491779	CMakeFiles/oadr.dir/oadr/oadr/helper/RandomHex.cpp.obj	7a650fbc0329a72a
+43	449	6882081914371975	CMakeFiles/oadr.dir/oadr/oadr/helper/conditionalsleep/IConditionalSleep.cpp.obj	f60c5246d4c4fa9b
+9	503	6882081914908116	CMakeFiles/oadr.dir/oadr/oadr/helper/conditionalsleep/ConditionalSleep.cpp.obj	d8723036a6a04bd4
+65	521	6882081915087762	CMakeFiles/oadr.dir/oadr/oadr/helper/thread/ThreadRunner.cpp.obj	1c88fbed0f3a6c39
+84	578	6882081915667888	CMakeFiles/oadr.dir/oadr/oadr/manager/IVENManager.cpp.obj	2217424170b5944

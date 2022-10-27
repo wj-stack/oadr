@@ -1,0 +1,9 @@
+C:/Users/Administrator/Desktop/OpenADR-VEN-Library-master/OpenADR-VEN-Library-master/cmake-build-debug/CMakeFiles/oadr.dir
+C:/Users/Administrator/Desktop/OpenADR-VEN-Library-master/OpenADR-VEN-Library-master/cmake-build-debug/CMakeFiles/oadrsd.dir
+C:/Users/Administrator/Desktop/OpenADR-VEN-Library-master/OpenADR-VEN-Library-master/cmake-build-debug/CMakeFiles/samplevenmgr.dir
+C:/Users/Administrator/Desktop/OpenADR-VEN-Library-master/OpenADR-VEN-Library-master/cmake-build-debug/CMakeFiles/install.dir
+C:/Users/Administrator/Desktop/OpenADR-VEN-Library-master/OpenADR-VEN-Library-master/cmake-build-debug/CMakeFiles/install/local.dir
+C:/Users/Administrator/Desktop/OpenADR-VEN-Library-master/OpenADR-VEN-Library-master/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Administrator/Desktop/OpenADR-VEN-Library-master/OpenADR-VEN-Library-master/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Administrator/Desktop/OpenADR-VEN-Library-master/OpenADR-VEN-Library-master/cmake-build-debug/CMakeFiles/list_install_components.dir
+C:/Users/Administrator/Desktop/OpenADR-VEN-Library-master/OpenADR-VEN-Library-master/cmake-build-debug/CMakeFiles/install/strip.dir
